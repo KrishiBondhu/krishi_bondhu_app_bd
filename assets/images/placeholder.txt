@@ -1,0 +1,11 @@
+# Assets Directory
+
+This directory is for storing image assets for the KrishiBondhu app.
+
+You can add images here like:
+- app_logo.png
+- onboarding_images/
+- icons/
+- etc.
+
+This placeholder file ensures the directory exists and is tracked by version control.
