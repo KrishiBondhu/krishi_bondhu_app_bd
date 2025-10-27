@@ -32,7 +32,7 @@ class ActivityList extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Row(
               children: [
-                Text(
+                const Text(
                   AppStrings.recentActivity,
                   style: AppTextStyles.heading3,
                 ),
@@ -45,7 +45,7 @@ class ActivityList extends StatelessWidget {
                               Text('View All Activities feature coming soon!')),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'View All',
                     style: TextStyle(
                       color: AppColors.primaryGreen,
