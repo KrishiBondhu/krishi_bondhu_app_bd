@@ -1,55 +1,73 @@
-/// User model for the application
 class User {
   final String id;
-  final String fullName;
   final String email;
-  final String? phoneNumber;
+  final String name;
+  final String? phone;
+  final String? location;
   final DateTime createdAt;
 
   User({
     required this.id,
-    required this.fullName,
     required this.email,
-    this.phoneNumber,
+    required this.name,
+    this.phone,
+    this.location,
     required this.createdAt,
   });
 
-  /// Create User from JSON
+  // Create User from Firestore document
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['id'] ?? '',
-      fullName: json['fullName'] ?? '',
       email: json['email'] ?? '',
-      phoneNumber: json['phoneNumber'],
-      createdAt:
-          DateTime.parse(json['createdAt'] ?? DateTime.now().toIso8601String()),
+      name: json['name'] ?? '',
+      phone: json['phone'],
+      location: json['location'],
+      createdAt: json['createdAt'] != null
+          ? DateTime.parse(json['createdAt'])
+          : DateTime.now(),
     );
   }
 
-  /// Convert User to JSON
+  // Convert User to JSON for Firestore
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'fullName': fullName,
       'email': email,
-      'phoneNumber': phoneNumber,
+      'name': name,
+      'phone': phone,
+      'location': location,
       'createdAt': createdAt.toIso8601String(),
     };
   }
 
-  /// Create a copy of User with updated fields
+  // Create empty/default user
+  factory User.empty() {
+    return User(
+      id: '',
+      email: '',
+      name: 'কৃষক',
+      phone: null,
+      location: null,
+      createdAt: DateTime.now(),
+    );
+  }
+
+  // CopyWith method for easy updates
   User copyWith({
     String? id,
-    String? fullName,
     String? email,
-    String? phoneNumber,
+    String? name,
+    String? phone,
+    String? location,
     DateTime? createdAt,
   }) {
     return User(
       id: id ?? this.id,
-      fullName: fullName ?? this.fullName,
       email: email ?? this.email,
-      phoneNumber: phoneNumber ?? this.phoneNumber,
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      location: location ?? this.location,
       createdAt: createdAt ?? this.createdAt,
     );
   }

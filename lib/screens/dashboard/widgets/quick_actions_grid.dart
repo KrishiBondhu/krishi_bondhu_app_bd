@@ -141,9 +141,8 @@ class QuickActionsGrid extends StatelessWidget {
         icon: Icons.trending_up,
         color: Colors.blue,
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Market Prices feature coming soon!')),
-          );
+          // ✅ CHANGED: Navigate to Market Prices screen
+          Navigator.pushNamed(context, '/market-prices');
         },
       ),
       QuickActionItem(

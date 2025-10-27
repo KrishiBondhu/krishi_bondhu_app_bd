@@ -72,9 +72,9 @@ class AuthService {
     if (email != null && name != null) {
       return User(
         id: '1',
-        fullName: name,
+        name: name,
         email: email,
-        phoneNumber: prefs.getString('user_phone'),
+       phone: prefs.getString('user_phone'), 
         createdAt: DateTime.now(),
       );
     }
