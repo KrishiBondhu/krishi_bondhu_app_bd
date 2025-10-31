@@ -1,9 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class User {
   final String id;
   final String email;
   final String name;
   final String? phone;
-  final String? location;
+  final String? location; // Kept for legacy
+  final String? district;
+  final String? upazila;
   final DateTime createdAt;
 
   User({
@@ -12,6 +16,8 @@ class User {
     required this.name,
     this.phone,
     this.location,
+    this.district,
+    this.upazila,
     required this.createdAt,
   });
 
@@ -23,8 +29,10 @@ class User {
       name: json['name'] ?? '',
       phone: json['phone'],
       location: json['location'],
+      district: json['district'], // Added
+      upazila: json['upazila'], // Added
       createdAt: json['createdAt'] != null
-          ? DateTime.parse(json['createdAt'])
+          ? (json['createdAt'] as Timestamp).toDate() // Corrected parsing
           : DateTime.now(),
     );
   }
@@ -37,6 +45,8 @@ class User {
       'name': name,
       'phone': phone,
       'location': location,
+      'district': district, // Added
+      'upazila': upazila, // Added
       'createdAt': createdAt.toIso8601String(),
     };
   }
@@ -49,6 +59,8 @@ class User {
       name: 'কৃষক',
       phone: null,
       location: null,
+      district: null,
+      upazila: null,
       createdAt: DateTime.now(),
     );
   }
@@ -60,6 +72,8 @@ class User {
     String? name,
     String? phone,
     String? location,
+    String? district,
+    String? upazila,
     DateTime? createdAt,
   }) {
     return User(
@@ -68,6 +82,8 @@ class User {
       name: name ?? this.name,
       phone: phone ?? this.phone,
       location: location ?? this.location,
+      district: district ?? this.district, // Added
+      upazila: upazila ?? this.upazila, // Added
       createdAt: createdAt ?? this.createdAt,
     );
   }

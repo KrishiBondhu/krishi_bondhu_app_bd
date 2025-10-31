@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/constants.dart';
-import '../../utils/validators.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text_field.dart';
 import '../../services/auth_service.dart';
 
-/// Signup screen with form validation
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -15,27 +11,29 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _fullNameController = TextEditingController();
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   final _authService = AuthService();
+
   bool _isLoading = false;
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
 
   @override
   void dispose() {
-    _fullNameController.dispose();
+    _nameController.dispose();
     _emailController.dispose();
     _phoneController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
   }
 
-  /// Handle signup process
   Future<void> _handleSignup() async {
-    if (!_formKey.currentState!.validate()) {
-      return;
-    }
+    if (!_formKey.currentState!.validate()) return;
 
     setState(() {
       _isLoading = true;
@@ -43,7 +41,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
     try {
       final success = await _authService.signup(
-        _fullNameController.text.trim(),
+        _nameController.text.trim(),
         _emailController.text.trim(),
         _passwordController.text,
         phoneNumber: _phoneController.text.trim().isNotEmpty
@@ -52,19 +50,25 @@ class _SignupScreenState extends State<SignupScreen> {
       );
 
       if (success && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Account created successfully!'),
-            backgroundColor: AppColors.primaryGreen,
-          ),
-        );
-        // Navigate to main app or login screen
-        Navigator.pushReplacementNamed(context, '/login');
-      } else if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Failed to create account'),
-            backgroundColor: Colors.red,
+        // Show success dialog
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => AlertDialog(
+            icon: const Icon(Icons.check_circle, size: 48, color: Colors.green),
+            title: const Text('Account Created'),
+            content: const Text(
+              'Your account has been created successfully!\n\nA verification email has been sent to your email address.',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
+                child: const Text('Go to Login'),
+              ),
+            ],
           ),
         );
       }
@@ -72,7 +76,7 @@ class _SignupScreenState extends State<SignupScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Signup failed: ${e.toString()}'),
+            content: Text(e.toString()),
             backgroundColor: Colors.red,
           ),
         );
@@ -86,125 +90,214 @@ class _SignupScreenState extends State<SignupScreen> {
     }
   }
 
-  /// Navigate back to login screen
-  void _navigateToLogin() {
-    Navigator.pop(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: _navigateToLogin,
-        ),
+        title: const Text('Create Account'),
+        backgroundColor: AppColors.primaryGreen,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(24),
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Create account title
+                const SizedBox(height: 20),
+
+                // Title
                 Text(
-                  'Create Account',
+                  'Sign Up',
                   style: AppTextStyles.heading1.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryGreen,
                   ),
+                  textAlign: TextAlign.center,
                 ),
 
                 const SizedBox(height: 8),
 
                 Text(
-                  'Join our farming community today',
-                  style: AppTextStyles.subtitle.copyWith(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onSurface
-                        .withValues(alpha: 0.7),
+                  'Create your account to get started',
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.textSecondary,
                   ),
+                  textAlign: TextAlign.center,
                 ),
 
-                const SizedBox(height: 40),
+                const SizedBox(height: 32),
 
                 // Full Name field
-                CustomTextField(
-                  label: AppStrings.fullName,
-                  controller: _fullNameController,
-                  prefixIcon: Icons.person_outline,
-                  validator: (value) =>
-                      Validators.validateRequired(value, 'Full name'),
-                ),
-
-                // Email field
-                CustomTextField(
-                  label: AppStrings.email,
-                  controller: _emailController,
-                  keyboardType: TextInputType.emailAddress,
-                  prefixIcon: Icons.email_outlined,
-                  validator: Validators.validateEmail,
-                ),
-
-                // Phone number field (optional)
-                CustomTextField(
-                  label: '${AppStrings.phoneNumber} (Optional)',
-                  controller: _phoneController,
-                  keyboardType: TextInputType.phone,
-                  prefixIcon: Icons.phone_outlined,
+                TextFormField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Full Name',
+                    hintText: 'Enter your full name',
+                    prefixIcon: Icon(Icons.person_outline),
+                  ),
                   validator: (value) {
-                    if (value != null && value.isNotEmpty) {
-                      return Validators.validatePhoneNumber(value);
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    if (value.length < 3) {
+                      return 'Name must be at least 3 characters';
                     }
                     return null;
                   },
                 ),
 
+                const SizedBox(height: 16),
+
+                // Email field
+                TextFormField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter email';
+                    }
+                    if (!value.contains('@')) {
+                      return 'Please enter valid email';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                // Phone field (optional)
+                TextFormField(
+                  controller: _phoneController,
+                  keyboardType: TextInputType.phone,
+                  decoration: const InputDecoration(
+                    labelText: 'Phone Number (Optional)',
+                    hintText: 'Enter your phone number',
+                    prefixIcon: Icon(Icons.phone_outlined),
+                  ),
+                ),
+
+                const SizedBox(height: 16),
+
                 // Password field
-                CustomTextField(
-                  label: AppStrings.password,
+                TextFormField(
                   controller: _passwordController,
-                  isPassword: true,
-                  prefixIcon: Icons.lock_outline,
-                  validator: Validators.validatePassword,
+                  obscureText: _obscurePassword,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscurePassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter password';
+                    }
+                    if (value.length < 6) {
+                      return 'Password must be at least 6 characters';
+                    }
+                    return null;
+                  },
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 16),
 
-                // Signup button
-                CustomButton(
-                  text: AppStrings.signup,
-                  onPressed: _handleSignup,
-                  isLoading: _isLoading,
+                // Confirm Password field
+                TextFormField(
+                  controller: _confirmPasswordController,
+                  obscureText: _obscureConfirmPassword,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    hintText: 'Re-enter your password',
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscureConfirmPassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscureConfirmPassword = !_obscureConfirmPassword;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please confirm password';
+                    }
+                    if (value != _passwordController.text) {
+                      return 'Passwords do not match';
+                    }
+                    return null;
+                  },
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 32),
+
+                // Sign Up button
+                ElevatedButton(
+                  onPressed: _isLoading ? null : _handleSignup,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor: AppColors.primaryGreen,
+                  ),
+                  child: _isLoading
+                      ? const SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
+                          ),
+                        )
+                      : const Text(
+                          'Sign Up',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                ),
+
+                const SizedBox(height: 24),
 
                 // Login link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      AppStrings.alreadyHaveAccount,
+                      'Already have an account? ',
                       style: AppTextStyles.body.copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSurface
-                            .withValues(alpha: 0.7),
+                        color: AppColors.textSecondary,
                       ),
                     ),
                     TextButton(
-                      onPressed: _navigateToLogin,
-                      child: Text(
-                        AppStrings.login,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        'Login',
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.w600,
+                          color: AppColors.primaryGreen,
                         ),
                       ),
                     ),

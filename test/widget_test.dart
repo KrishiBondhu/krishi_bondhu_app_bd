@@ -1,12 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:krishi_bondhu_app_bd/main.dart';
 
-import 'package:krishi_bondhu_app_bd/main.dart 
 void main() {
-  testWidgets('App builds without errors', (WidgetTester tester) async {
-    // Build the app
+  testWidgets('KrishiBondhu app smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
     await tester.pumpWidget(const KrishiBondhuApp());
 
-    // Simple verification that app built successfully
-    expect(true, isTrue);
+    // Verify that the app builds without crashing
+    expect(find.byType(MaterialApp), findsOneWidget);
   });
 }

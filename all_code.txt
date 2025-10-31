@@ -1,0 +1,4979 @@
+﻿---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\.dart_tool\dartpad\web_plugin_registrant.dart
+// Flutter web plugin registrant file.
+//
+// Generated file. Do not edit.
+//
+
+// @dart = 2.13
+// ignore_for_file: type=lint
+
+import 'package:cloud_firestore_web/cloud_firestore_web.dart';
+import 'package:firebase_auth_web/firebase_auth_web.dart';
+import 'package:firebase_core_web/firebase_core_web.dart';
+import 'package:shared_preferences_web/shared_preferences_web.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
+void registerPlugins([final Registrar? pluginRegistrar]) {
+  final Registrar registrar = pluginRegistrar ?? webPluginRegistrar;
+  FirebaseFirestoreWeb.registerWith(registrar);
+  FirebaseAuthWeb.registerWith(registrar);
+  FirebaseCoreWeb.registerWith(registrar);
+  SharedPreferencesPlugin.registerWith(registrar);
+  registrar.registerMessageHandler();
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\.dart_tool\flutter_build\dart_plugin_registrant.dart
+//
+// Generated file. Do not edit.
+// This file is generated from template in file `flutter_tools/lib/src/flutter_plugins.dart`.
+//
+
+// @dart = 3.1
+
+import 'dart:io'; // flutter_ignore: dart_io_import.
+import 'package:shared_preferences_android/shared_preferences_android.dart';
+import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
+import 'package:path_provider_linux/path_provider_linux.dart';
+import 'package:shared_preferences_linux/shared_preferences_linux.dart';
+import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
+import 'package:path_provider_windows/path_provider_windows.dart';
+import 'package:shared_preferences_windows/shared_preferences_windows.dart';
+
+@pragma('vm:entry-point')
+class _PluginRegistrant {
+
+  @pragma('vm:entry-point')
+  static void register() {
+    if (Platform.isAndroid) {
+      try {
+        SharedPreferencesAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isIOS) {
+      try {
+        SharedPreferencesFoundation.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_foundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isLinux) {
+      try {
+        PathProviderLinux.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesLinux.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isMacOS) {
+      try {
+        SharedPreferencesFoundation.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_foundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isWindows) {
+      try {
+        PathProviderWindows.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesWindows.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    }
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\main.dart
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'screens/splash_screen.dart';
+import 'screens/onboarding/onboarding_screen.dart';
+import 'screens/auth/login_screen.dart';
+import 'screens/auth/signup_screen.dart';
+import 'screens/auth/forgot_password_screen.dart';
+import 'screens/dashboard/dashboard_screen.dart';
+import 'screens/market/market_price_screen.dart';
+import 'utils/constants.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase (Android reads google-services.json automatically)
+  await Firebase.initializeApp();
+
+  runApp(const KrishiBondhuApp());
+}
+
+class KrishiBondhuApp extends StatelessWidget {
+  const KrishiBondhuApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'KrishiBondhu',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryGreen),
+        useMaterial3: true,
+        fontFamily: 'Roboto',
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.primaryGreen,
+          foregroundColor: AppColors.white,
+          elevation: 0,
+          centerTitle: true,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primaryGreen,
+            foregroundColor: AppColors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          filled: true,
+          fillColor: AppColors.white,
+        ),
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/onboarding': (context) => const OnboardingScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignupScreen(),
+        '/forgot-password': (context) => const ForgotPasswordScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
+        '/market-prices': (context) => const MarketPriceScreen(),
+      },
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\activity_model.dart
+import 'package:flutter/material.dart';
+
+/// Farm activity model for dashboard
+class FarmActivity {
+  final String id;
+  final String title;
+  final String description;
+  final ActivityType type;
+  final DateTime timestamp;
+  final String? cropName;
+  final String? fieldName;
+
+  FarmActivity({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.type,
+    required this.timestamp,
+    this.cropName,
+    this.fieldName,
+  });
+
+  /// Get icon for activity type
+  IconData get icon {
+    switch (type) {
+      case ActivityType.planting:
+        return Icons.agriculture;
+      case ActivityType.watering:
+        return Icons.water_drop;
+      case ActivityType.harvesting:
+        return Icons.grass;
+      case ActivityType.fertilizing:
+        return Icons.eco;
+      case ActivityType.pestControl:
+        return Icons.bug_report;
+      case ActivityType.monitoring:
+        return Icons.visibility;
+    }
+  }
+
+  /// Get color for activity type
+  Color get color {
+    switch (type) {
+      case ActivityType.planting:
+        return Colors.green;
+      case ActivityType.watering:
+        return Colors.blue;
+      case ActivityType.harvesting:
+        return Colors.orange;
+      case ActivityType.fertilizing:
+        return Colors.brown;
+      case ActivityType.pestControl:
+        return Colors.red;
+      case ActivityType.monitoring:
+        return Colors.purple;
+    }
+  }
+
+  /// Get formatted time string
+  String get timeAgo {
+    final now = DateTime.now();
+    final difference = now.difference(timestamp);
+
+    if (difference.inDays > 0) {
+      return '${difference.inDays} day${difference.inDays == 1 ? '' : 's'} ago';
+    } else if (difference.inHours > 0) {
+      return '${difference.inHours} hour${difference.inHours == 1 ? '' : 's'} ago';
+    } else if (difference.inMinutes > 0) {
+      return '${difference.inMinutes} minute${difference.inMinutes == 1 ? '' : 's'} ago';
+    } else {
+      return 'Just now';
+    }
+  }
+
+  /// Create mock activities for demo
+  static List<FarmActivity> mockActivities() {
+    return [
+      FarmActivity(
+        id: '1',
+        title: 'Planted Rice Seeds',
+        description: 'Planted rice seeds in Field A, Section 1',
+        type: ActivityType.planting,
+        timestamp: DateTime.now().subtract(const Duration(hours: 2)),
+        cropName: 'Rice',
+        fieldName: 'Field A',
+      ),
+      FarmActivity(
+        id: '2',
+        title: 'Watered Vegetables',
+        description: 'Irrigation completed for vegetable section',
+        type: ActivityType.watering,
+        timestamp: DateTime.now().subtract(const Duration(days: 1)),
+        cropName: 'Vegetables',
+        fieldName: 'Field B',
+      ),
+      FarmActivity(
+        id: '3',
+        title: 'Harvested Tomatoes',
+        description: 'Collected 50kg of fresh tomatoes',
+        type: ActivityType.harvesting,
+        timestamp: DateTime.now().subtract(const Duration(days: 2)),
+        cropName: 'Tomatoes',
+        fieldName: 'Field C',
+      ),
+      FarmActivity(
+        id: '4',
+        title: 'Applied Fertilizer',
+        description: 'Organic fertilizer applied to wheat field',
+        type: ActivityType.fertilizing,
+        timestamp: DateTime.now().subtract(const Duration(days: 3)),
+        cropName: 'Wheat',
+        fieldName: 'Field D',
+      ),
+    ];
+  }
+}
+
+/// Types of farm activities
+enum ActivityType {
+  planting,
+  watering,
+  harvesting,
+  fertilizing,
+  pestControl,
+  monitoring,
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\market_price.dart
+/// Model for market price data
+class MarketPrice {
+  final String id;
+  final String cropName;
+  final String category;
+  final double price;
+  final String unit;
+  final String market;
+  final DateTime date;
+  final String? imageUrl;
+  final double? previousPrice;
+  final List<PriceHistory>? priceHistory;
+  final String? description;
+  final double? minPrice;
+  final double? maxPrice;
+  final double? avgPrice;
+
+  MarketPrice({
+    required this.id,
+    required this.cropName,
+    required this.category,
+    required this.price,
+    required this.unit,
+    required this.market,
+    required this.date,
+    this.imageUrl,
+    this.previousPrice,
+    this.priceHistory,
+    this.description,
+    this.minPrice,
+    this.maxPrice,
+    this.avgPrice,
+  });
+
+  double? get priceChangePercentage {
+    if (previousPrice == null || previousPrice == 0) return null;
+    return ((price - previousPrice!) / previousPrice!) * 100;
+  }
+
+  bool get isPriceIncreased {
+    if (previousPrice == null) return false;
+    return price > previousPrice!;
+  }
+
+  String get priceTrend {
+    if (previousPrice == null) return 'Unknown';
+    if (price > previousPrice!) return 'Increasing';
+    if (price < previousPrice!) return 'Decreasing';
+    return 'Stable';
+  }
+
+  factory MarketPrice.fromJson(Map<String, dynamic> json) {
+    return MarketPrice(
+      id: json['id'],
+      cropName: json['cropName'],
+      category: json['category'],
+      price: json['price'].toDouble(),
+      unit: json['unit'],
+      market: json['market'],
+      date: DateTime.parse(json['date']),
+      imageUrl: json['imageUrl'],
+      previousPrice: json['previousPrice']?.toDouble(),
+      priceHistory: json['priceHistory'] != null
+          ? (json['priceHistory'] as List)
+              .map((e) => PriceHistory.fromJson(e))
+              .toList()
+          : null,
+      description: json['description'],
+      minPrice: json['minPrice']?.toDouble(),
+      maxPrice: json['maxPrice']?.toDouble(),
+      avgPrice: json['avgPrice']?.toDouble(),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'cropName': cropName,
+      'category': category,
+      'price': price,
+      'unit': unit,
+      'market': market,
+      'date': date.toIso8601String(),
+      'imageUrl': imageUrl,
+      'previousPrice': previousPrice,
+      'priceHistory': priceHistory?.map((e) => e.toJson()).toList(),
+      'description': description,
+      'minPrice': minPrice,
+      'maxPrice': maxPrice,
+      'avgPrice': avgPrice,
+    };
+  }
+}
+
+class PriceHistory {
+  final DateTime date;
+  final double price;
+
+  PriceHistory({
+    required this.date,
+    required this.price,
+  });
+
+  factory PriceHistory.fromJson(Map<String, dynamic> json) {
+    return PriceHistory(
+      date: DateTime.parse(json['date']),
+      price: json['price'].toDouble(),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'date': date.toIso8601String(),
+      'price': price,
+    };
+  }
+}
+
+class PriceAlert {
+  final String id;
+  final String cropId;
+  final String cropName;
+  final double targetPrice;
+  final String condition;
+  final bool isActive;
+  final DateTime createdAt;
+
+  PriceAlert({
+    required this.id,
+    required this.cropId,
+    required this.cropName,
+    required this.targetPrice,
+    required this.condition,
+    required this.isActive,
+    required this.createdAt,
+  });
+
+  factory PriceAlert.fromJson(Map<String, dynamic> json) {
+    return PriceAlert(
+      id: json['id'],
+      cropId: json['cropId'],
+      cropName: json['cropName'],
+      targetPrice: json['targetPrice'].toDouble(),
+      condition: json['condition'],
+      isActive: json['isActive'],
+      createdAt: DateTime.parse(json['createdAt']),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'cropId': cropId,
+      'cropName': cropName,
+      'targetPrice': targetPrice,
+      'condition': condition,
+      'isActive': isActive,
+      'createdAt': createdAt.toIso8601String(),
+    };
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\user_model.dart
+class User {
+  final String id;
+  final String email;
+  final String name;
+  final String? phone;
+  final String? location;
+  final DateTime createdAt;
+
+  User({
+    required this.id,
+    required this.email,
+    required this.name,
+    this.phone,
+    this.location,
+    required this.createdAt,
+  });
+
+  // Create User from Firestore document
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['id'] ?? '',
+      email: json['email'] ?? '',
+      name: json['name'] ?? '',
+      phone: json['phone'],
+      location: json['location'],
+      createdAt: json['createdAt'] != null
+          ? DateTime.parse(json['createdAt'])
+          : DateTime.now(),
+    );
+  }
+
+  // Convert User to JSON for Firestore
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'email': email,
+      'name': name,
+      'phone': phone,
+      'location': location,
+      'createdAt': createdAt.toIso8601String(),
+    };
+  }
+
+  // Create empty/default user
+  factory User.empty() {
+    return User(
+      id: '',
+      email: '',
+      name: 'à¦•à§ƒà¦·à¦•',
+      phone: null,
+      location: null,
+      createdAt: DateTime.now(),
+    );
+  }
+
+  // CopyWith method for easy updates
+  User copyWith({
+    String? id,
+    String? email,
+    String? name,
+    String? phone,
+    String? location,
+    DateTime? createdAt,
+  }) {
+    return User(
+      id: id ?? this.id,
+      email: email ?? this.email,
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      location: location ?? this.location,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\weather_model.dart
+/// Weather data model for dashboard
+class Weather {
+  final double temperature;
+  final String condition;
+  final String location;
+  final int humidity;
+  final double windSpeed;
+  final String icon;
+  final DateTime lastUpdated;
+
+  Weather({
+    required this.temperature,
+    required this.condition,
+    required this.location,
+    required this.humidity,
+    required this.windSpeed,
+    required this.icon,
+    required this.lastUpdated,
+  });
+
+  /// Create Weather from JSON
+  factory Weather.fromJson(Map<String, dynamic> json) {
+    return Weather(
+      temperature: (json['temperature'] ?? 0.0).toDouble(),
+      condition: json['condition'] ?? 'Clear',
+      location: json['location'] ?? 'Unknown',
+      humidity: json['humidity'] ?? 0,
+      windSpeed: (json['windSpeed'] ?? 0.0).toDouble(),
+      icon: json['icon'] ?? 'sunny',
+      lastUpdated: DateTime.parse(
+        json['lastUpdated'] ?? DateTime.now().toIso8601String(),
+      ),
+    );
+  }
+
+  /// Convert Weather to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'temperature': temperature,
+      'condition': condition,
+      'location': location,
+      'humidity': humidity,
+      'windSpeed': windSpeed,
+      'icon': icon,
+      'lastUpdated': lastUpdated.toIso8601String(),
+    };
+  }
+
+  /// Create mock weather data for demo
+  static Weather mock() {
+    return Weather(
+      temperature: 28.5,
+      condition: 'Partly Cloudy',
+      location: 'Dhaka, Bangladesh',
+      humidity: 65,
+      windSpeed: 12.5,
+      icon: 'partly_cloudy',
+      lastUpdated: DateTime.now(),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\splash_screen.dart
+import 'package:flutter/material.dart';
+import '../utils/constants.dart';
+import '../services/auth_service.dart';
+
+/// Splash screen with app logo and navigation logic
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeAnimations();
+    _navigateAfterDelay();
+  }
+
+  /// Initialize fade animations
+  void _initializeAnimations() {
+    _animationController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    ));
+
+    _animationController.forward();
+  }
+
+  /// Navigate to appropriate screen after delay
+  void _navigateAfterDelay() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    if (!mounted) return;
+
+    // Check if user has completed onboarding
+    final authService = AuthService();
+    final isLoggedIn = await authService.isLoggedIn();
+
+    if (!mounted) return;
+
+    if (isLoggedIn) {
+      // Navigate to main app (not implemented in this demo)
+      Navigator.pushReplacementNamed(context, '/login');
+    } else {
+      // Navigate to onboarding
+      Navigator.pushReplacementNamed(context, '/onboarding');
+    }
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.primaryGreen,
+      body: Center(
+        child: FadeTransition(
+          opacity: _fadeAnimation,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // App Logo
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(60),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.1),
+                      spreadRadius: 5,
+                      blurRadius: 20,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.agriculture,
+                  size: 60,
+                  color: AppColors.primaryGreen,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // App Name
+              const Text(
+                AppStrings.appName,
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.white,
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              // Tagline
+              const Text(
+                AppStrings.tagline,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.white,
+                  fontWeight: FontWeight.w300,
+                ),
+                textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: 50),
+
+              // Loading indicator
+              const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
+                strokeWidth: 2,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\auth\forgot_password_screen.dart
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../services/auth_service.dart';
+
+class ForgotPasswordScreen extends StatefulWidget {
+  const ForgotPasswordScreen({super.key});
+
+  @override
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
+}
+
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _authService = AuthService();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _sendResetEmail() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      await _authService.sendPasswordResetEmail(_emailController.text.trim());
+
+      if (mounted) {
+        // Show success dialog
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            icon: const Icon(Icons.email,
+                size: 48, color: AppColors.primaryGreen),
+            title: const Text('Email Sent'),
+            content: Text(
+              'Password reset link has been sent to ${_emailController.text}\n\nPlease check your email and click the link to reset your password.',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pop(context); // Go back to login
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.toString()),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Reset Password'),
+        backgroundColor: AppColors.primaryGreen,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 40),
+
+                // Icon
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGreen.withValues(alpha: 0.3),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.lock_reset,
+                    size: 64,
+                    color: AppColors.primaryGreen,
+                  ),
+                ),
+
+                const SizedBox(height: 32),
+
+                // Title
+                Text(
+                  'Forgot Password?',
+                  style: AppTextStyles.heading2.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                const SizedBox(height: 16),
+
+                // Description
+                Text(
+                  'Enter your email address and we will send you a link to reset your password.',
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                const SizedBox(height: 40),
+
+                // Email field
+                TextFormField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter email';
+                    }
+                    if (!value.contains('@')) {
+                      return 'Please enter valid email';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 32),
+
+                // Send button
+                ElevatedButton(
+                  onPressed: _isLoading ? null : _sendResetEmail,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor: AppColors.primaryGreen,
+                  ),
+                  child: _isLoading
+                      ? const SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
+                          ),
+                        )
+                      : const Text(
+                          'Send Reset Link',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                ),
+
+                const SizedBox(height: 24),
+
+                // Back to login
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Back to Login'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\auth\login_screen.dart
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../services/auth_service.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _authService = AuthService();
+
+  bool _isLoading = false;
+  bool _obscurePassword = true;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleLogin() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final success = await _authService.login(
+        _emailController.text.trim(),
+        _passwordController.text,
+      );
+
+      if (success && mounted) {
+        Navigator.pushReplacementNamed(context, '/dashboard');
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.toString()),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 60),
+
+                // Logo
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGreen.withValues(alpha: 0.3),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.agriculture,
+                    size: 64,
+                    color: AppColors.primaryGreen,
+                  ),
+                ),
+
+                const SizedBox(height: 32),
+
+                // Title
+                Text(
+                  'Welcome Back',
+                  style: AppTextStyles.heading1.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryGreen,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                const SizedBox(height: 8),
+
+                Text(
+                  'Sign in to continue',
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                const SizedBox(height: 48),
+
+                // Email field
+                TextFormField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter email';
+                    }
+                    if (!value.contains('@')) {
+                      return 'Please enter valid email';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                // Password field
+                TextFormField(
+                  controller: _passwordController,
+                  obscureText: _obscurePassword,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscurePassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter password';
+                    }
+                    if (value.length < 6) {
+                      return 'Password must be at least 6 characters';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 24),
+
+                // Login button
+                ElevatedButton(
+                  onPressed: _isLoading ? null : _handleLogin,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor: AppColors.primaryGreen,
+                  ),
+                  child: _isLoading
+                      ? const SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
+                          ),
+                        )
+                      : const Text(
+                          'Login',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                ),
+
+                const SizedBox(height: 16),
+
+                // Forgot Password button
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/forgot-password');
+                  },
+                  child: const Text(
+                    'Forgot Password?',
+                    style: TextStyle(color: AppColors.primaryGreen),
+                  ),
+                ),
+
+                const SizedBox(height: 24),
+
+                // Sign up link
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account? ",
+                      style: AppTextStyles.body.copyWith(
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/signup');
+                      },
+                      child: const Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.primaryGreen,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\auth\signup_screen.dart
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../services/auth_service.dart';
+
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+  final _authService = AuthService();
+
+  bool _isLoading = false;
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _phoneController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleSignup() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final success = await _authService.signup(
+        _nameController.text.trim(),
+        _emailController.text.trim(),
+        _passwordController.text,
+        phoneNumber: _phoneController.text.trim().isNotEmpty
+            ? _phoneController.text.trim()
+            : null,
+      );
+
+      if (success && mounted) {
+        // Show success dialog
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => AlertDialog(
+            icon: const Icon(Icons.check_circle, size: 48, color: Colors.green),
+            title: const Text('Account Created'),
+            content: const Text(
+              'Your account has been created successfully!\n\nA verification email has been sent to your email address.',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
+                child: const Text('Go to Login'),
+              ),
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.toString()),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Create Account'),
+        backgroundColor: AppColors.primaryGreen,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 20),
+
+                // Title
+                Text(
+                  'Sign Up',
+                  style: AppTextStyles.heading1.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryGreen,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                const SizedBox(height: 8),
+
+                Text(
+                  'Create your account to get started',
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+
+                const SizedBox(height: 32),
+
+                // Full Name field
+                TextFormField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Full Name',
+                    hintText: 'Enter your full name',
+                    prefixIcon: Icon(Icons.person_outline),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    if (value.length < 3) {
+                      return 'Name must be at least 3 characters';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                // Email field
+                TextFormField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter email';
+                    }
+                    if (!value.contains('@')) {
+                      return 'Please enter valid email';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                // Phone field (optional)
+                TextFormField(
+                  controller: _phoneController,
+                  keyboardType: TextInputType.phone,
+                  decoration: const InputDecoration(
+                    labelText: 'Phone Number (Optional)',
+                    hintText: 'Enter your phone number',
+                    prefixIcon: Icon(Icons.phone_outlined),
+                  ),
+                ),
+
+                const SizedBox(height: 16),
+
+                // Password field
+                TextFormField(
+                  controller: _passwordController,
+                  obscureText: _obscurePassword,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscurePassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter password';
+                    }
+                    if (value.length < 6) {
+                      return 'Password must be at least 6 characters';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 16),
+
+                // Confirm Password field
+                TextFormField(
+                  controller: _confirmPasswordController,
+                  obscureText: _obscureConfirmPassword,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    hintText: 'Re-enter your password',
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscureConfirmPassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscureConfirmPassword = !_obscureConfirmPassword;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please confirm password';
+                    }
+                    if (value != _passwordController.text) {
+                      return 'Passwords do not match';
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 32),
+
+                // Sign Up button
+                ElevatedButton(
+                  onPressed: _isLoading ? null : _handleSignup,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    backgroundColor: AppColors.primaryGreen,
+                  ),
+                  child: _isLoading
+                      ? const SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
+                          ),
+                        )
+                      : const Text(
+                          'Sign Up',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                ),
+
+                const SizedBox(height: 24),
+
+                // Login link
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account? ',
+                      style: AppTextStyles.body.copyWith(
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.primaryGreen,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\dashboard_screen.dart
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import '../../utils/constants.dart';
+import '../../services/auth_service.dart';
+import '../../services/weather_service.dart';
+import '../../models/weather_model.dart';
+import 'widgets/weather_card.dart';
+import 'widgets/quick_actions_grid.dart';
+
+/// Main dashboard screen for farmers
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  final _authService = AuthService();
+  final _weatherService = WeatherService();
+
+  Weather? _currentWeather;
+  bool _isLoading = true;
+  String _userName = 'Farmer';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadDashboardData();
+  }
+
+  /// Load dashboard data
+  Future<void> _loadDashboardData() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      // Get user data
+      final user = await _authService.getCurrentUser();
+      if (user != null) {
+        _userName = user.name.split(' ').first;
+      }
+
+      // Load weather data
+      _currentWeather = await _weatherService.getCurrentWeather();
+
+      setState(() {
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to load dashboard data: ${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  /// Handle logout
+  Future<void> _handleLogout() async {
+    final shouldLogout = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Logout'),
+        content: const Text('Are you sure you want to logout?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Logout'),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldLogout == true) {
+      await _authService.logout();
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/login');
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey.shade50,
+      appBar: AppBar(
+        title: const Text(
+          AppStrings.dashboard,
+          style: AppTextStyles.heading3,
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications_outlined),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    content: Text('Notifications feature coming soon!')),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Search feature coming soon!')),
+              );
+            },
+          ),
+        ],
+      ),
+      drawer: _buildDrawer(),
+      body: _isLoading
+          ? const Center(
+              child: CircularProgressIndicator(
+                color: AppColors.primaryGreen,
+              ),
+            )
+          : RefreshIndicator(
+              onRefresh: _loadDashboardData,
+              color: AppColors.primaryGreen,
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Welcome header
+                    _buildWelcomeHeader(),
+
+                    const SizedBox(height: 32),
+
+                    // Weather card
+                    if (_currentWeather != null)
+                      WeatherCard(weather: _currentWeather!),
+
+                    const SizedBox(height: 32),
+
+                    // Quick actions
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryGreen,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Icon(
+                            Icons.dashboard,
+                            color: AppColors.white,
+                            size: 20,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Text(
+                          AppStrings.quickActions,
+                          style: AppTextStyles.heading3.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    const QuickActionsGrid(),
+
+                    const SizedBox(height: 32),
+                  ],
+                ),
+              ),
+            ),
+    );
+  }
+
+  /// Build welcome header
+  Widget _buildWelcomeHeader() {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primaryGreen,
+            AppColors.darkGreen,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryGreen.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          // Profile picture placeholder
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: const CircleAvatar(
+              radius: 28,
+              backgroundColor: AppColors.lightGreen,
+              child: Icon(
+                Icons.person,
+                size: 28,
+                color: AppColors.darkGreen,
+              ),
+            ),
+          ),
+
+          const SizedBox(width: 20),
+
+          // Welcome message
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppStrings.welcomeMessage,
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: AppColors.white.withValues(alpha: 0.9),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  _userName,
+                  style: AppTextStyles.heading2.copyWith(
+                    color: AppColors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'ðŸŒ± Have a productive day!',
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.white.withValues(alpha: 0.8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Date and time
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: AppColors.white.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      DateFormat('MMM dd').format(DateTime.now()),
+                      style: AppTextStyles.caption.copyWith(
+                        color: AppColors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      DateFormat('hh:mm a').format(DateTime.now()),
+                      style: AppTextStyles.caption.copyWith(
+                        color: AppColors.white.withValues(alpha: 0.8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Build navigation drawer
+  Widget _buildDrawer() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: AppColors.primaryGreen,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const CircleAvatar(
+                  radius: 30,
+                  backgroundColor: AppColors.white,
+                  child: Icon(
+                    Icons.person,
+                    size: 30,
+                    color: AppColors.primaryGreen,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  _userName,
+                  style: const TextStyle(
+                    color: AppColors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const Text(
+                  'Farmer',
+                  style: TextStyle(
+                    color: AppColors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Dashboard'),
+            onTap: () => Navigator.pop(context),
+          ),
+          ListTile(
+            leading: const Icon(Icons.person),
+            title: const Text('Profile'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Profile feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.agriculture),
+            title: const Text('My Crops'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('My Crops feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.analytics),
+            title: const Text('Analytics'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Analytics feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Settings feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.help_outline),
+            title: const Text('Help & Support'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Help feature coming soon!')),
+              );
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            onTap: _handleLogout,
+          ),
+        ],
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\activity_list.dart
+import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+import '../../../models/activity_model.dart';
+
+/// List of recent farm activities
+class ActivityList extends StatelessWidget {
+  final List<FarmActivity> activities;
+
+  const ActivityList({
+    super.key,
+    required this.activities,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          // Header
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                const Text(
+                  AppStrings.recentActivity,
+                  style: AppTextStyles.heading3,
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content:
+                              Text('View All Activities feature coming soon!')),
+                    );
+                  },
+                  child: const Text(
+                    'View All',
+                    style: TextStyle(
+                      color: AppColors.primaryGreen,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Activity list
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: activities.length > 5 ? 5 : activities.length,
+            separatorBuilder: (context, index) => const Divider(
+              height: 1,
+              indent: 20,
+              endIndent: 20,
+            ),
+            itemBuilder: (context, index) {
+              final activity = activities[index];
+              return _buildActivityItem(activity);
+            },
+          ),
+
+          const SizedBox(height: 8),
+        ],
+      ),
+    );
+  }
+
+  /// Build individual activity item
+  Widget _buildActivityItem(FarmActivity activity) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      child: Row(
+        children: [
+          // Activity icon
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: activity.color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(
+              activity.icon,
+              size: 20,
+              color: activity.color,
+            ),
+          ),
+
+          const SizedBox(width: 16),
+
+          // Activity details
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  activity.title,
+                  style: AppTextStyles.body.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  activity.description,
+                  style: AppTextStyles.caption,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                if (activity.fieldName != null) ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    activity.fieldName!,
+                    style: AppTextStyles.caption.copyWith(
+                      color: AppColors.primaryGreen,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+
+          // Time
+          Text(
+            activity.timeAgo,
+            style: AppTextStyles.caption.copyWith(
+              color: AppColors.grey,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\quick_actions_grid.dart
+import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+
+/// Grid of quick action buttons for dashboard
+class QuickActionsGrid extends StatelessWidget {
+  const QuickActionsGrid({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final actions = _getQuickActions(context);
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.3,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: actions.length,
+          itemBuilder: (context, index) {
+            final action = actions[index];
+            return AnimatedContainer(
+              duration: Duration(milliseconds: 200 + (index * 100)),
+              curve: Curves.easeOutBack,
+              child: _buildActionCard(action),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  /// Build individual action card
+  Widget _buildActionCard(QuickActionItem action) {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: action.color.withValues(alpha: 0.1),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: action.onTap,
+          splashColor: action.color.withValues(alpha: 0.1),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          action.color.withValues(alpha: 0.15),
+                          action.color.withValues(alpha: 0.08),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: action.color.withValues(alpha: 0.2),
+                        width: 1,
+                      ),
+                    ),
+                    child: Icon(
+                      action.icon,
+                      size: 24,
+                      color: action.color,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Flexible(
+                  child: Text(
+                    action.title,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.caption.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Get list of quick actions
+  List<QuickActionItem> _getQuickActions(BuildContext context) {
+    return [
+      QuickActionItem(
+        title: AppStrings.cropManagement,
+        icon: Icons.agriculture,
+        color: AppColors.primaryGreen,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Crop Management feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.weatherForecast,
+        icon: Icons.wb_sunny,
+        color: Colors.orange,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Weather Forecast feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.marketPrices,
+        icon: Icons.trending_up,
+        color: Colors.blue,
+        onTap: () {
+          Navigator.pushNamed(context, '/market-prices');
+        },
+      ),
+      // âœ… à¦¨à¦¤à§à¦¨ "Buy & Sell" action à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¹à¦²à§‹
+      QuickActionItem(
+        title: 'Buy & Sell',
+        icon: Icons.shopping_cart,
+        color: Colors.deepOrange,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Buy & Sell feature coming soon!'),
+              backgroundColor: Colors.deepOrange,
+            ),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.expertAdvice,
+        icon: Icons.psychology,
+        color: Colors.purple,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Expert Advice feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.communityForum,
+        icon: Icons.groups,
+        color: Colors.teal,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Community Forum feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.pestControl,
+        icon: Icons.bug_report,
+        color: Colors.red,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Pest Control feature coming soon!')),
+          );
+        },
+      ),
+    ];
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\stats_cards.dart
+import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+
+/// Statistics cards for dashboard
+class StatsCards extends StatelessWidget {
+  const StatsCards({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: _buildStatCard(
+            'Active Fields',
+            '12',
+            Icons.landscape,
+            AppColors.primaryGreen,
+            context,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: _buildStatCard(
+            'Total Crops',
+            '8',
+            Icons.agriculture,
+            Colors.orange,
+            context,
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// Build individual stat card
+  Widget _buildStatCard(
+    String title,
+    String value,
+    IconData icon,
+    Color color,
+    BuildContext context,
+  ) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(
+                  icon,
+                  size: 20,
+                  color: color,
+                ),
+              ),
+              const Spacer(),
+              const Icon(
+                Icons.trending_up,
+                size: 16,
+                color: AppColors.primaryGreen,
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            value,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: AppColors.black,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            title,
+            style: AppTextStyles.caption,
+          ),
+        ],
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\weather_card.dart
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import '../../../utils/constants.dart';
+import '../../../models/weather_model.dart';
+
+/// Weather information card for dashboard
+class WeatherCard extends StatelessWidget {
+  final Weather weather;
+
+  const WeatherCard({
+    super.key,
+    required this.weather,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primaryGreen,
+            AppColors.darkGreen,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryGreen.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header
+          Row(
+            children: [
+              const Icon(
+                Icons.wb_sunny,
+                color: AppColors.white,
+                size: 24,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                AppStrings.weatherToday,
+                style: AppTextStyles.subtitle.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                DateFormat('hh:mm a').format(weather.lastUpdated),
+                style: AppTextStyles.caption.copyWith(
+                  color: AppColors.white.withValues(alpha: 0.8),
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          // Main weather info
+          Row(
+            children: [
+              // Temperature and condition
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${weather.temperature.round()}Â°C',
+                      style: const TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.white,
+                      ),
+                    ),
+                    Text(
+                      weather.condition,
+                      style: AppTextStyles.body.copyWith(
+                        color: AppColors.white.withValues(alpha: 0.9),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.location_on,
+                          size: 16,
+                          color: AppColors.white,
+                        ),
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Text(
+                            weather.location,
+                            style: AppTextStyles.caption.copyWith(
+                              color: AppColors.white.withValues(alpha: 0.8),
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              // Weather icon
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.white.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  _getWeatherIcon(weather.icon),
+                  size: 48,
+                  color: AppColors.white,
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          // Additional info
+          Row(
+            children: [
+              Expanded(
+                child: _buildInfoItem(
+                  Icons.water_drop,
+                  'Humidity',
+                  '${weather.humidity}%',
+                ),
+              ),
+              Expanded(
+                child: _buildInfoItem(
+                  Icons.air,
+                  'Wind',
+                  '${weather.windSpeed.round()} km/h',
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Build info item widget
+  Widget _buildInfoItem(IconData icon, String label, String value) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: 16,
+          color: AppColors.white.withValues(alpha: 0.8),
+        ),
+        const SizedBox(width: 8),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              label,
+              style: AppTextStyles.caption.copyWith(
+                color: AppColors.white.withValues(alpha: 0.8),
+              ),
+            ),
+            Text(
+              value,
+              style: AppTextStyles.body.copyWith(
+                color: AppColors.white,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  /// Get weather icon based on condition
+  IconData _getWeatherIcon(String condition) {
+    switch (condition.toLowerCase()) {
+      case 'sunny':
+        return Icons.wb_sunny;
+      case 'partly_cloudy':
+        return Icons.wb_cloudy;
+      case 'cloudy':
+        return Icons.cloud;
+      case 'rainy':
+        return Icons.grain;
+      case 'thunderstorm':
+        return Icons.thunderstorm;
+      default:
+        return Icons.wb_sunny;
+    }
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\market_price_screen.dart
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class MarketPriceScreen extends StatefulWidget {
+  const MarketPriceScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MarketPriceScreen> createState() => _MarketPriceScreenState();
+}
+
+class _MarketPriceScreenState extends State<MarketPriceScreen> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  String _selectedCategory = 'à¦¸à¦¬';
+
+  final List<String> _categories = [
+    'à¦¸à¦¬',
+    'à¦¸à¦¬à¦œà¦¿',
+    'à¦«à¦²',
+    'à¦®à¦¸à¦²à¦¾',
+    'à¦¡à¦¾à¦²',
+    'à¦šà¦¾à¦²',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('à¦¬à¦¾à¦œà¦¾à¦° à¦¦à¦°'),
+        backgroundColor: Colors.green,
+      ),
+      body: Column(
+        children: [
+          // Category Filter
+          Container(
+            height: 50,
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              itemCount: _categories.length,
+              itemBuilder: (context, index) {
+                final category = _categories[index];
+                final isSelected = category == _selectedCategory;
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: FilterChip(
+                    label: Text(category),
+                    selected: isSelected,
+                    onSelected: (selected) {
+                      setState(() {
+                        _selectedCategory = category;
+                      });
+                    },
+                    backgroundColor: Colors.grey[200],
+                    selectedColor: Colors.green[100],
+                  ),
+                );
+              },
+            ),
+          ),
+
+          // Market Price List
+          Expanded(
+            child: StreamBuilder<QuerySnapshot>(
+              stream: _selectedCategory == 'à¦¸à¦¬'
+                  ? _firestore.collection('market_prices').snapshots()
+                  : _firestore
+                      .collection('market_prices')
+                      .where('category', isEqualTo: _selectedCategory)
+                      .snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Center(
+                    child: Text('à¦à¦•à¦Ÿà¦¿ à¦¸à¦®à¦¸à§à¦¯à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡: ${snapshot.error}'),
+                  );
+                }
+
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+
+                if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                  return const Center(
+                    child: Text(
+                      'à¦•à§‹à¦¨à§‹ à¦¤à¦¥à§à¦¯ à¦ªà¦¾à¦“à¦¯à¦¼à¦¾ à¦¯à¦¾à¦¯à¦¼à¦¨à¦¿\nà¦¦à¦¯à¦¼à¦¾ à¦•à¦°à§‡ à¦†à¦¬à¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦•à¦°à§à¦¨',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  );
+                }
+
+                return ListView.builder(
+                  padding: const EdgeInsets.all(16),
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (context, index) {
+                    final doc = snapshot.data!.docs[index];
+                    final data = doc.data() as Map<String, dynamic>;
+
+                    // âœ… Null Safety Handle
+                    final name = data['cropName']?.toString() ?? 'à¦¨à¦¾à¦® à¦¨à§‡à¦‡';
+                    final price = data['price']?.toString() ?? 'à§¦';
+                    final unit = data['unit']?.toString() ?? 'à¦•à§‡à¦œà¦¿';
+                    final category = data['category']?.toString() ?? 'à¦…à¦¨à§à¦¯à¦¾à¦¨à§à¦¯';
+
+                    return Card(
+                      margin: const EdgeInsets.only(bottom: 12),
+                      elevation: 2,
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.green[100],
+                          child: const Icon(
+                            Icons.shopping_basket,
+                            color: Colors.green,
+                          ),
+                        ),
+                        title: Text(
+                          name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        subtitle: Text('à¦¬à¦¿à¦­à¦¾à¦—: $category'),
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              'à§³$price',
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green,
+                              ),
+                            ),
+                            Text(
+                              'à¦ªà§à¦°à¦¤à¦¿ $unit',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\onboarding\onboarding_content.dart
+import 'package:flutter/material.dart';
+
+/// Model class for onboarding content
+class OnboardingContent {
+  final String image;
+  final String title;
+  final String description;
+
+  OnboardingContent({
+    required this.image,
+    required this.title,
+    required this.description,
+  });
+}
+
+/// Widget to display onboarding content
+class OnboardingContentWidget extends StatelessWidget {
+  final OnboardingContent content;
+
+  const OnboardingContentWidget({
+    super.key,
+    required this.content,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // Image placeholder (using icon for now)
+          Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Icon(
+              _getIconForImage(content.image),
+              size: 80,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+
+          const SizedBox(height: 50),
+
+          // Title
+          Text(
+            content.title,
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: 20),
+
+          // Description
+          Text(
+            content.description,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
+                  height: 1.5,
+                ),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Get icon based on image name
+  IconData _getIconForImage(String imageName) {
+    switch (imageName) {
+      case 'onboarding1.png':
+        return Icons.agriculture;
+      case 'onboarding2.png':
+        return Icons.wb_sunny;
+      case 'onboarding3.png':
+        return Icons.groups;
+      default:
+        return Icons.agriculture;
+    }
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\onboarding\onboarding_screen.dart
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../widgets/custom_button.dart';
+import 'onboarding_content.dart';
+
+/// Onboarding screen with three slides
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  /// List of onboarding content
+  final List<OnboardingContent> _contents = [
+    OnboardingContent(
+      image: 'onboarding1.png',
+      title: AppStrings.onboarding1Title,
+      description: AppStrings.onboarding1Description,
+    ),
+    OnboardingContent(
+      image: 'onboarding2.png',
+      title: AppStrings.onboarding2Title,
+      description: AppStrings.onboarding2Description,
+    ),
+    OnboardingContent(
+      image: 'onboarding3.png',
+      title: AppStrings.onboarding3Title,
+      description: AppStrings.onboarding3Description,
+    ),
+  ];
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  /// Navigate to next page or login screen
+  void _nextPage() {
+    if (_currentPage < _contents.length - 1) {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    } else {
+      _navigateToLogin();
+    }
+  }
+
+  /// Skip onboarding and go to login
+  void _skipOnboarding() {
+    _navigateToLogin();
+  }
+
+  /// Navigate to login screen
+  void _navigateToLogin() {
+    Navigator.pushReplacementNamed(context, '/login');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Skip button
+            Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextButton(
+                  onPressed: _skipOnboarding,
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            // Page view
+            Expanded(
+              child: PageView.builder(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                itemCount: _contents.length,
+                itemBuilder: (context, index) {
+                  return OnboardingContentWidget(
+                    content: _contents[index],
+                  );
+                },
+              ),
+            ),
+
+            // Page indicators
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  _contents.length,
+                  (index) => _buildPageIndicator(index),
+                ),
+              ),
+            ),
+
+            // Next/Get Started button
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: CustomButton(
+                text: _currentPage == _contents.length - 1
+                    ? 'Get Started'
+                    : 'Next',
+                onPressed: _nextPage,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Build page indicator dot
+  Widget _buildPageIndicator(int index) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      width: _currentPage == index ? 12 : 8,
+      height: 8,
+      decoration: BoxDecoration(
+        color: _currentPage == index
+            ? AppColors.primaryGreen
+            : AppColors.grey.withValues(alpha: 0.3),
+        borderRadius: BorderRadius.circular(4),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\auth_service.dart
+import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../models/user_model.dart';
+
+/// Authentication service with Firebase integration
+class AuthService {
+  static final AuthService _instance = AuthService._internal();
+  factory AuthService() => _instance;
+  AuthService._internal();
+
+  final firebase_auth.FirebaseAuth _firebaseAuth =
+      firebase_auth.FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  /// Login user with email and password
+  Future<bool> login(String email, String password) async {
+    try {
+      // Firebase Authentication login
+      final credential = await _firebaseAuth.signInWithEmailAndPassword(
+        email: email.trim(),
+        password: password,
+      );
+
+      if (credential.user != null) {
+        // Save login state locally
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('user_email', email);
+        await prefs.setBool('is_logged_in', true);
+        await prefs.setString('user_id', credential.user!.uid);
+
+        return true;
+      }
+      return false;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'Login failed. Please try again.';
+    }
+  }
+
+  /// Register new user
+  Future<bool> signup(
+    String fullName,
+    String email,
+    String password, {
+    String? phoneNumber,
+  }) async {
+    try {
+      // 1. Create Firebase Authentication user
+      final credential = await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email.trim(),
+        password: password,
+      );
+
+      if (credential.user != null) {
+        final userId = credential.user!.uid;
+
+        // 2. Save user data to Firestore Database
+        await _firestore.collection('users').doc(userId).set({
+          'name': fullName.trim(),
+          'email': email.trim().toLowerCase(),
+          'phone': phoneNumber?.trim() ?? '',
+          'role': 'farmer', // Default role
+          'district': '',
+          'upazila': '',
+          'village': '',
+          'profilePicture': '',
+          'isVerified': false,
+          'createdAt': FieldValue.serverTimestamp(),
+          'updatedAt': FieldValue.serverTimestamp(),
+        });
+
+        // 3. Update Firebase Auth profile
+        await credential.user!.updateDisplayName(fullName.trim());
+
+        // 4. Send email verification (optional)
+        await credential.user!.sendEmailVerification();
+
+        // 5. Save login state locally
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('user_email', email);
+        await prefs.setString('user_name', fullName);
+        await prefs.setString('user_id', userId);
+        if (phoneNumber != null) {
+          await prefs.setString('user_phone', phoneNumber);
+        }
+        await prefs.setBool('is_logged_in', true);
+
+        return true;
+      }
+      return false;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      print('FIRESTORE SIGNUP ERROR: ${e.toString()}');
+      throw 'Failed to save user data. Please check console for details.';
+    }
+  }
+
+  /// Send password reset email
+  Future<bool> sendPasswordResetEmail(String email) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(
+        email: email.trim().toLowerCase(),
+      );
+      return true;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'Failed to send reset email. Please try again.';
+    }
+  }
+
+  /// Verify password reset code and reset password
+  Future<bool> confirmPasswordReset(String code, String newPassword) async {
+    try {
+      await _firebaseAuth.confirmPasswordReset(
+        code: code,
+        newPassword: newPassword,
+      );
+      return true;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'Failed to reset password. Please try again.';
+    }
+  }
+
+  /// Change password for logged in user
+  Future<bool> changePassword(
+      String currentPassword, String newPassword) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user == null || user.email == null) {
+        throw 'No user logged in';
+      }
+
+      // Re-authenticate user
+      final credential = firebase_auth.EmailAuthProvider.credential(
+        email: user.email!,
+        password: currentPassword,
+      );
+      await user.reauthenticateWithCredential(credential);
+
+      // Update password
+      await user.updatePassword(newPassword);
+      return true;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'Failed to change password. Please try again.';
+    }
+  }
+
+  /// Check if user is logged in
+  Future<bool> isLoggedIn() async {
+    // Check both Firebase and local storage
+    final firebaseUser = _firebaseAuth.currentUser;
+    final prefs = await SharedPreferences.getInstance();
+    final localLogin = prefs.getBool('is_logged_in') ?? false;
+
+    return firebaseUser != null && localLogin;
+  }
+
+  /// Logout user
+  Future<void> logout() async {
+    await _firebaseAuth.signOut();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+  }
+
+  /// Get current user data from Firestore
+  Future<User?> getCurrentUser() async {
+    try {
+      final firebaseUser = _firebaseAuth.currentUser;
+
+      if (firebaseUser != null) {
+        // Get user data from Firestore
+        final userDoc =
+            await _firestore.collection('users').doc(firebaseUser.uid).get();
+
+        if (userDoc.exists) {
+          final data = userDoc.data()!;
+          return User(
+            id: firebaseUser.uid,
+            name: data['name'] ?? firebaseUser.displayName ?? 'User',
+            email: data['email'] ?? firebaseUser.email ?? '',
+            phone: data['phone'],
+            createdAt:
+                (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
+          );
+        }
+      }
+
+      // Fallback to local storage
+      final prefs = await SharedPreferences.getInstance();
+      final email = prefs.getString('user_email');
+      final name = prefs.getString('user_name');
+
+      if (email != null && name != null) {
+        return User(
+          id: prefs.getString('user_id') ?? '1',
+          name: name,
+          email: email,
+          phone: prefs.getString('user_phone'),
+          createdAt: DateTime.now(),
+        );
+      }
+
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /// Get Firebase Auth user
+  firebase_auth.User? get currentFirebaseUser => _firebaseAuth.currentUser;
+
+  /// Check if email is verified
+  bool get isEmailVerified => _firebaseAuth.currentUser?.emailVerified ?? false;
+
+  /// Send email verification
+  Future<void> sendEmailVerification() async {
+    try {
+      await _firebaseAuth.currentUser?.sendEmailVerification();
+    } catch (e) {
+      throw 'Failed to send verification email.';
+    }
+  }
+
+  /// Handle Firebase Auth exceptions
+  String _handleAuthException(firebase_auth.FirebaseAuthException e) {
+    switch (e.code) {
+      case 'weak-password':
+        return 'Password is too weak. Use at least 6 characters.';
+      case 'email-already-in-use':
+        return 'This email is already registered. Please login.';
+      case 'invalid-email':
+        return 'Invalid email address.';
+      case 'user-not-found':
+        return 'No user found with this email.';
+      case 'wrong-password':
+        return 'Incorrect password. Please try again.';
+      case 'user-disabled':
+        return 'This account has been disabled.';
+      case 'too-many-requests':
+        return 'Too many attempts. Please try again later.';
+      case 'operation-not-allowed':
+        return 'Operation not allowed.';
+      case 'invalid-credential':
+        return 'Invalid email or password.';
+      case 'network-request-failed':
+        return 'No internet connection.';
+      case 'invalid-verification-code':
+        return 'Invalid verification code.';
+      case 'invalid-verification-id':
+        return 'Verification code has expired.';
+      default:
+        return 'Authentication failed. Please try again.';
+    }
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\firebase_data_uploader.dart
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class FirebaseDataUploader {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  /// Upload all market prices data at once (40+ crops)
+  Future<void> uploadMarketPricesData() async {
+    try {
+      // Complete data - à¦¸à¦¬ à¦¬à¦¾à¦‚à¦²à¦¾à¦¯à¦¼, à§ªà§¦+ à¦«à¦¸à¦²
+      final List<Map<String, dynamic>> marketPrices = [
+        // ========== à¦¸à¦¬à¦œà¦¿ (Vegetables) - à§§à§«à¦Ÿà¦¿ ==========
+        {
+          'cropName': 'à¦†à¦²à§',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 25.50,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥”',
+          'previousPrice': 23.00,
+          'minPrice': 22.00,
+          'maxPrice': 28.00,
+          'avgPrice': 25.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦Ÿà¦®à§‡à¦Ÿà§‹',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 60.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ…',
+          'previousPrice': 65.00,
+          'minPrice': 55.00,
+          'maxPrice': 70.00,
+          'avgPrice': 62.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦ªà§‡à¦à¦¯à¦¼à¦¾à¦œ',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 45.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ§…',
+          'previousPrice': 42.00,
+          'minPrice': 40.00,
+          'maxPrice': 50.00,
+          'avgPrice': 45.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¬à§‡à¦—à§à¦¨',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 35.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ†',
+          'previousPrice': 32.00,
+          'minPrice': 30.00,
+          'maxPrice': 40.00,
+          'avgPrice': 35.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦®à¦°à¦¿à¦š',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 80.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ¶ï¸',
+          'previousPrice': 75.00,
+          'minPrice': 70.00,
+          'maxPrice': 90.00,
+          'avgPrice': 80.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦—à¦¾à¦œà¦°',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 40.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥•',
+          'previousPrice': 38.00,
+          'minPrice': 35.00,
+          'maxPrice': 45.00,
+          'avgPrice': 40.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¶à¦¸à¦¾',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 30.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥’',
+          'previousPrice': 28.00,
+          'minPrice': 25.00,
+          'maxPrice': 35.00,
+          'avgPrice': 30.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦²à¦¾à¦‰',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 20.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥¬',
+          'previousPrice': 18.00,
+          'minPrice': 15.00,
+          'maxPrice': 25.00,
+          'avgPrice': 20.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦«à§à¦²à¦•à¦ªà¦¿',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 50.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥¦',
+          'previousPrice': 48.00,
+          'minPrice': 45.00,
+          'maxPrice': 55.00,
+          'avgPrice': 50.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¬à¦¾à¦à¦§à¦¾à¦•à¦ªà¦¿',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 35.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥¬',
+          'previousPrice': 33.00,
+          'minPrice': 30.00,
+          'maxPrice': 40.00,
+          'avgPrice': 35.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¶à¦¿à¦®',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 55.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«›',
+          'previousPrice': 52.00,
+          'minPrice': 50.00,
+          'maxPrice': 60.00,
+          'avgPrice': 55.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦ªà¦Ÿà¦²',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 45.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥’',
+          'previousPrice': 42.00,
+          'minPrice': 40.00,
+          'maxPrice': 50.00,
+          'avgPrice': 45.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦•à¦°à¦²à¦¾',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 38.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥’',
+          'previousPrice': 35.00,
+          'minPrice': 32.00,
+          'maxPrice': 42.00,
+          'avgPrice': 37.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¢à§‡à¦à¦¡à¦¼à¦¸',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 48.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ±',
+          'previousPrice': 45.00,
+          'minPrice': 42.00,
+          'maxPrice': 52.00,
+          'avgPrice': 47.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦ªà¦¾à¦²à¦‚ à¦¶à¦¾à¦•',
+          'category': 'à¦¸à¦¬à¦œà¦¿',
+          'price': 25.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥¬',
+          'previousPrice': 22.00,
+          'minPrice': 20.00,
+          'maxPrice': 28.00,
+          'avgPrice': 24.00,
+          'date': Timestamp.now(),
+        },
+
+        // ========== à¦«à¦² (Fruits) - à§§à§¦à¦Ÿà¦¿ ==========
+        {
+          'cropName': 'à¦†à¦®',
+          'category': 'à¦«à¦²',
+          'price': 120.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ¥­',
+          'previousPrice': 115.00,
+          'minPrice': 100.00,
+          'maxPrice': 140.00,
+          'avgPrice': 120.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦•à¦²à¦¾',
+          'category': 'à¦«à¦²',
+          'price': 50.00,
+          'unit': 'à¦¡à¦œà¦¨',
+          'imageUrl': 'ðŸŒ',
+          'previousPrice': 48.00,
+          'minPrice': 45.00,
+          'maxPrice': 55.00,
+          'avgPrice': 50.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦ªà§‡à¦à¦ªà§‡',
+          'category': 'à¦«à¦²',
+          'price': 35.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸˆ',
+          'previousPrice': 32.00,
+          'minPrice': 30.00,
+          'maxPrice': 40.00,
+          'avgPrice': 35.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦†à¦¨à¦¾à¦°à¦¸',
+          'category': 'à¦«à¦²',
+          'price': 80.00,
+          'unit': 'à¦ªà¦¿à¦¸',
+          'imageUrl': 'ðŸ',
+          'previousPrice': 75.00,
+          'minPrice': 70.00,
+          'maxPrice': 90.00,
+          'avgPrice': 80.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦†à¦ªà§‡à¦²',
+          'category': 'à¦«à¦²',
+          'price': 180.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŽ',
+          'previousPrice': 175.00,
+          'minPrice': 160.00,
+          'maxPrice': 200.00,
+          'avgPrice': 180.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦•à¦®à¦²à¦¾',
+          'category': 'à¦«à¦²',
+          'price': 100.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŠ',
+          'previousPrice': 95.00,
+          'minPrice': 90.00,
+          'maxPrice': 110.00,
+          'avgPrice': 100.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦†à¦™à§à¦°',
+          'category': 'à¦«à¦²',
+          'price': 250.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ‡',
+          'previousPrice': 240.00,
+          'minPrice': 230.00,
+          'maxPrice': 270.00,
+          'avgPrice': 250.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¤à¦°à¦®à§à¦œ',
+          'category': 'à¦«à¦²',
+          'price': 30.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ‰',
+          'previousPrice': 28.00,
+          'minPrice': 25.00,
+          'maxPrice': 35.00,
+          'avgPrice': 30.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦²à¦¿à¦šà§',
+          'category': 'à¦«à¦²',
+          'price': 150.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ’',
+          'previousPrice': 145.00,
+          'minPrice': 140.00,
+          'maxPrice': 160.00,
+          'avgPrice': 150.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦ªà§‡à¦¯à¦¼à¦¾à¦°à¦¾',
+          'category': 'à¦«à¦²',
+          'price': 40.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ',
+          'previousPrice': 38.00,
+          'minPrice': 35.00,
+          'maxPrice': 45.00,
+          'avgPrice': 40.00,
+          'date': Timestamp.now(),
+        },
+
+        // ========== à¦¶à¦¸à§à¦¯ (Grains) - à§«à¦Ÿà¦¿ ==========
+        {
+          'cropName': 'à¦§à¦¾à¦¨ (BR-28)',
+          'category': 'à¦¶à¦¸à§à¦¯',
+          'price': 55.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ¾',
+          'previousPrice': 52.00,
+          'minPrice': 50.00,
+          'maxPrice': 58.00,
+          'avgPrice': 54.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦—à¦®',
+          'category': 'à¦¶à¦¸à§à¦¯',
+          'price': 45.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ¾',
+          'previousPrice': 42.00,
+          'minPrice': 40.00,
+          'maxPrice': 48.00,
+          'avgPrice': 44.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦­à§à¦Ÿà§à¦Ÿà¦¾',
+          'category': 'à¦¶à¦¸à§à¦¯',
+          'price': 38.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ½',
+          'previousPrice': 35.00,
+          'minPrice': 32.00,
+          'maxPrice': 42.00,
+          'avgPrice': 37.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¯à¦¬',
+          'category': 'à¦¶à¦¸à§à¦¯',
+          'price': 42.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ¾',
+          'previousPrice': 40.00,
+          'minPrice': 38.00,
+          'maxPrice': 45.00,
+          'avgPrice': 42.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦œà§‹à¦¯à¦¼à¦¾à¦°',
+          'category': 'à¦¶à¦¸à§à¦¯',
+          'price': 35.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ¾',
+          'previousPrice': 32.00,
+          'minPrice': 30.00,
+          'maxPrice': 38.00,
+          'avgPrice': 34.00,
+          'date': Timestamp.now(),
+        },
+
+        // ========== à¦¡à¦¾à¦² (Pulses) - à§«à¦Ÿà¦¿ ==========
+        {
+          'cropName': 'à¦®à¦¸à§à¦° à¦¡à¦¾à¦²',
+          'category': 'à¦¡à¦¾à¦²',
+          'price': 110.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«˜',
+          'previousPrice': 105.00,
+          'minPrice': 100.00,
+          'maxPrice': 120.00,
+          'avgPrice': 110.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦®à§à¦— à¦¡à¦¾à¦²',
+          'category': 'à¦¡à¦¾à¦²',
+          'price': 125.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«˜',
+          'previousPrice': 120.00,
+          'minPrice': 115.00,
+          'maxPrice': 135.00,
+          'avgPrice': 125.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦›à§‹à¦²à¦¾',
+          'category': 'à¦¡à¦¾à¦²',
+          'price': 95.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«˜',
+          'previousPrice': 90.00,
+          'minPrice': 85.00,
+          'maxPrice': 105.00,
+          'avgPrice': 95.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦®à¦Ÿà¦° à¦¡à¦¾à¦²',
+          'category': 'à¦¡à¦¾à¦²',
+          'price': 88.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«›',
+          'previousPrice': 85.00,
+          'minPrice': 80.00,
+          'maxPrice': 95.00,
+          'avgPrice': 88.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦…à¦¡à¦¼à¦¹à¦° à¦¡à¦¾à¦²',
+          'category': 'à¦¡à¦¾à¦²',
+          'price': 115.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«˜',
+          'previousPrice': 110.00,
+          'minPrice': 105.00,
+          'maxPrice': 125.00,
+          'avgPrice': 115.00,
+          'date': Timestamp.now(),
+        },
+
+        // ========== à¦®à¦¸à¦²à¦¾ (Spices) - à§«à¦Ÿà¦¿ ==========
+        {
+          'cropName': 'à¦°à¦¸à§à¦¨',
+          'category': 'à¦®à¦¸à¦²à¦¾',
+          'price': 180.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ§„',
+          'previousPrice': 175.00,
+          'minPrice': 160.00,
+          'maxPrice': 200.00,
+          'avgPrice': 180.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦†à¦¦à¦¾',
+          'category': 'à¦®à¦¸à¦²à¦¾',
+          'price': 200.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸ«š',
+          'previousPrice': 190.00,
+          'minPrice': 180.00,
+          'maxPrice': 220.00,
+          'avgPrice': 200.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦¹à¦²à§à¦¦',
+          'category': 'à¦®à¦¸à¦²à¦¾',
+          'price': 250.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŸ¡',
+          'previousPrice': 240.00,
+          'minPrice': 230.00,
+          'maxPrice': 270.00,
+          'avgPrice': 250.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦§à¦¨à¦¿à¦¯à¦¼à¦¾',
+          'category': 'à¦®à¦¸à¦²à¦¾',
+          'price': 150.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ¿',
+          'previousPrice': 145.00,
+          'minPrice': 140.00,
+          'maxPrice': 160.00,
+          'avgPrice': 150.00,
+          'date': Timestamp.now(),
+        },
+        {
+          'cropName': 'à¦œà¦¿à¦°à¦¾',
+          'category': 'à¦®à¦¸à¦²à¦¾',
+          'price': 600.00,
+          'unit': 'à¦•à§‡à¦œà¦¿',
+          'imageUrl': 'ðŸŒ°',
+          'previousPrice': 580.00,
+          'minPrice': 550.00,
+          'maxPrice': 650.00,
+          'avgPrice': 600.00,
+          'date': Timestamp.now(),
+        },
+      ];
+
+      // Upload data using batch (efficient way)
+      final batch = _firestore.batch();
+
+      for (var priceData in marketPrices) {
+        final docRef = _firestore.collection('market_prices').doc();
+        batch.set(docRef, priceData);
+      }
+
+      // Commit all at once
+      await batch.commit();
+
+      print('âœ… Successfully uploaded ${marketPrices.length} market prices!');
+    } catch (e) {
+      print('âŒ Error uploading data: $e');
+      rethrow;
+    }
+  }
+
+  /// Clear all existing data (use carefully!)
+  Future<void> clearAllMarketPrices() async {
+    final snapshot = await _firestore.collection('market_prices').get();
+    final batch = _firestore.batch();
+
+    for (var doc in snapshot.docs) {
+      batch.delete(doc.reference);
+    }
+
+    await batch.commit();
+    print('ðŸ—‘ï¸ All market prices cleared!');
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\firebase_market_service.dart
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../models/market_price.dart';
+
+class FirebaseMarketService {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final String _collection = 'market_prices';
+
+  /// Get all market prices from Firebase (Real-time stream)
+  Stream<List<MarketPrice>> getMarketPrices() {
+    return _firestore
+        .collection(_collection)
+        .orderBy('cropName')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs.map((doc) {
+        final data = doc.data();
+        data['id'] = doc.id;
+        return MarketPrice.fromJson(data);
+      }).toList();
+    });
+  }
+
+  /// Get market prices by category (Real-time stream)
+  Stream<List<MarketPrice>> getMarketPricesByCategory(String category) {
+    return _firestore
+        .collection(_collection)
+        .where('category', isEqualTo: category)
+        .orderBy('cropName')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs.map((doc) {
+        final data = doc.data();
+        data['id'] = doc.id;
+        return MarketPrice.fromJson(data);
+      }).toList();
+    });
+  }
+
+  /// Search market prices by crop name
+  Stream<List<MarketPrice>> searchMarketPrices(String query) {
+    return _firestore
+        .collection(_collection)
+        .where('cropName', isGreaterThanOrEqualTo: query)
+        .where('cropName', isLessThanOrEqualTo: '$query\uf8ff')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs.map((doc) {
+        final data = doc.data();
+        data['id'] = doc.id;
+        return MarketPrice.fromJson(data);
+      }).toList();
+    });
+  }
+
+  /// Add a new market price
+  Future<void> addMarketPrice(Map<String, dynamic> priceData) async {
+    await _firestore.collection(_collection).add(priceData);
+  }
+
+  /// Update market price
+  Future<void> updateMarketPrice(
+      String id, Map<String, dynamic> priceData) async {
+    await _firestore.collection(_collection).doc(id).update(priceData);
+  }
+
+  /// Delete market price
+  Future<void> deleteMarketPrice(String id) async {
+    await _firestore.collection(_collection).doc(id).delete();
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\market_price_service.dart
+import '../models/market_price.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+
+class MarketPriceService {
+  static final MarketPriceService _instance = MarketPriceService._internal();
+  factory MarketPriceService() => _instance;
+  MarketPriceService._internal();
+
+  static const String _favoritesKey = 'favorite_crops';
+  static const String _alertsKey = 'price_alerts';
+
+  Future<List<MarketPrice>> getAllPrices() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return _getMockPrices();
+  }
+
+  Future<List<MarketPrice>> getPricesByCategory(String category) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    final allPrices = await getAllPrices();
+    return allPrices.where((price) => price.category == category).toList();
+  }
+
+  Future<List<MarketPrice>> searchPrices(String query) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    final allPrices = await getAllPrices();
+    return allPrices
+        .where((price) =>
+            price.cropName.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+  }
+
+  Future<List<MarketPrice>> getTrendingPrices() async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    final allPrices = await getAllPrices();
+    final withPrevious =
+        allPrices.where((p) => p.previousPrice != null).toList();
+
+    withPrevious.sort((a, b) {
+      final aChange = (a.priceChangePercentage ?? 0).abs();
+      final bChange = (b.priceChangePercentage ?? 0).abs();
+      return bChange.compareTo(aChange);
+    });
+
+    return withPrevious.take(5).toList();
+  }
+
+  Future<MarketPrice?> getPriceById(String id) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    final allPrices = await getAllPrices();
+    try {
+      return allPrices.firstWhere((price) => price.id == id);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Future<List<PriceHistory>> getPriceHistory(String cropId,
+      {int days = 30}) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    final now = DateTime.now();
+    const basePrice = 50.0;
+    return List.generate(days, (index) {
+      final date = now.subtract(Duration(days: days - 1 - index));
+      final variance = (index % 5 - 2) * 5.0;
+      return PriceHistory(
+        date: date,
+        price: basePrice + variance + (index * 0.5),
+      );
+    });
+  }
+
+  Future<Map<String, List<MarketPrice>>> compareMarketsForCrop(
+      String cropName) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    final allPrices = await getAllPrices();
+    final cropPrices = allPrices.where((p) => p.cropName == cropName).toList();
+
+    final Map<String, List<MarketPrice>> marketMap = {};
+    for (var price in cropPrices) {
+      if (!marketMap.containsKey(price.market)) {
+        marketMap[price.market] = [];
+      }
+      marketMap[price.market]!.add(price);
+    }
+    return marketMap;
+  }
+
+  Future<List<String>> getFavoriteCropIds() async {
+    final prefs = await SharedPreferences.getInstance();
+    final favoritesJson = prefs.getString(_favoritesKey);
+    if (favoritesJson == null) return [];
+
+    final List<dynamic> favorites = json.decode(favoritesJson);
+    return favorites.cast<String>();
+  }
+
+  Future<bool> addToFavorites(String cropId) async {
+    final prefs = await SharedPreferences.getInstance();
+    final favorites = await getFavoriteCropIds();
+
+    if (!favorites.contains(cropId)) {
+      favorites.add(cropId);
+      await prefs.setString(_favoritesKey, json.encode(favorites));
+      return true;
+    }
+    return false;
+  }
+
+  Future<bool> removeFromFavorites(String cropId) async {
+    final prefs = await SharedPreferences.getInstance();
+    final favorites = await getFavoriteCropIds();
+
+    if (favorites.contains(cropId)) {
+      favorites.remove(cropId);
+      await prefs.setString(_favoritesKey, json.encode(favorites));
+      return true;
+    }
+    return false;
+  }
+
+  Future<bool> isFavorite(String cropId) async {
+    final favorites = await getFavoriteCropIds();
+    return favorites.contains(cropId);
+  }
+
+  Future<List<MarketPrice>> getFavoriteCrops() async {
+    final favoriteIds = await getFavoriteCropIds();
+    final allPrices = await getAllPrices();
+    return allPrices.where((price) => favoriteIds.contains(price.id)).toList();
+  }
+
+  Future<List<PriceAlert>> getAllAlerts() async {
+    final prefs = await SharedPreferences.getInstance();
+    final alertsJson = prefs.getString(_alertsKey);
+    if (alertsJson == null) return [];
+
+    final List<dynamic> alerts = json.decode(alertsJson);
+    return alerts.map((e) => PriceAlert.fromJson(e)).toList();
+  }
+
+  Future<bool> addPriceAlert(PriceAlert alert) async {
+    final prefs = await SharedPreferences.getInstance();
+    final alerts = await getAllAlerts();
+
+    alerts.add(alert);
+    await prefs.setString(
+        _alertsKey, json.encode(alerts.map((e) => e.toJson()).toList()));
+    return true;
+  }
+
+  Future<bool> removePriceAlert(String alertId) async {
+    final prefs = await SharedPreferences.getInstance();
+    final alerts = await getAllAlerts();
+
+    alerts.removeWhere((alert) => alert.id == alertId);
+    await prefs.setString(
+        _alertsKey, json.encode(alerts.map((e) => e.toJson()).toList()));
+    return true;
+  }
+
+  Future<bool> toggleAlert(String alertId) async {
+    final prefs = await SharedPreferences.getInstance();
+    final alerts = await getAllAlerts();
+
+    final index = alerts.indexWhere((alert) => alert.id == alertId);
+    if (index != -1) {
+      final alert = alerts[index];
+      alerts[index] = PriceAlert(
+        id: alert.id,
+        cropId: alert.cropId,
+        cropName: alert.cropName,
+        targetPrice: alert.targetPrice,
+        condition: alert.condition,
+        isActive: !alert.isActive,
+        createdAt: alert.createdAt,
+      );
+      await prefs.setString(
+          _alertsKey, json.encode(alerts.map((e) => e.toJson()).toList()));
+      return true;
+    }
+    return false;
+  }
+
+  List<MarketPrice> _getMockPrices() {
+    return [
+      // VEGETABLES
+      MarketPrice(
+        id: '1',
+        cropName: 'Potato',
+        category: 'Vegetables',
+        price: 25.50,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 23.00,
+        description: 'Fresh potatoes from local farms',
+        minPrice: 22.00,
+        maxPrice: 28.00,
+        avgPrice: 25.00,
+      ),
+      MarketPrice(
+        id: '2',
+        cropName: 'Tomato',
+        category: 'Vegetables',
+        price: 60.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 65.00,
+        description: 'Ripe red tomatoes',
+        minPrice: 55.00,
+        maxPrice: 70.00,
+        avgPrice: 60.00,
+      ),
+      MarketPrice(
+        id: '3',
+        cropName: 'Onion',
+        category: 'Vegetables',
+        price: 45.00,
+        unit: 'kg',
+        market: 'Chittagong - Chaktai',
+        date: DateTime.now(),
+        previousPrice: 42.00,
+        description: 'Golden onions',
+        minPrice: 40.00,
+        maxPrice: 48.00,
+        avgPrice: 44.00,
+      ),
+      MarketPrice(
+        id: '4',
+        cropName: 'Cabbage',
+        category: 'Vegetables',
+        price: 20.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 22.00,
+        description: 'Fresh green cabbage',
+        minPrice: 18.00,
+        maxPrice: 25.00,
+        avgPrice: 20.50,
+      ),
+      MarketPrice(
+        id: '5',
+        cropName: 'Cauliflower',
+        category: 'Vegetables',
+        price: 30.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 28.00,
+        description: 'White cauliflower',
+        minPrice: 25.00,
+        maxPrice: 35.00,
+        avgPrice: 30.00,
+      ),
+      MarketPrice(
+        id: '6',
+        cropName: 'Eggplant',
+        category: 'Vegetables',
+        price: 35.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 38.00,
+        description: 'Purple eggplant',
+        minPrice: 30.00,
+        maxPrice: 40.00,
+        avgPrice: 35.00,
+      ),
+      MarketPrice(
+        id: '7',
+        cropName: 'Carrot',
+        category: 'Vegetables',
+        price: 32.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 30.00,
+        description: 'Orange carrots',
+        minPrice: 28.00,
+        maxPrice: 36.00,
+        avgPrice: 32.00,
+      ),
+      MarketPrice(
+        id: '8',
+        cropName: 'Cucumber',
+        category: 'Vegetables',
+        price: 28.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 25.00,
+        description: 'Fresh cucumbers',
+        minPrice: 24.00,
+        maxPrice: 32.00,
+        avgPrice: 28.00,
+      ),
+      MarketPrice(
+        id: '9',
+        cropName: 'Bell Pepper',
+        category: 'Vegetables',
+        price: 55.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 52.00,
+        description: 'Colorful bell peppers',
+        minPrice: 50.00,
+        maxPrice: 60.00,
+        avgPrice: 55.00,
+      ),
+      MarketPrice(
+        id: '10',
+        cropName: 'Spinach',
+        category: 'Vegetables',
+        price: 40.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 38.00,
+        description: 'Fresh green spinach',
+        minPrice: 35.00,
+        maxPrice: 45.00,
+        avgPrice: 40.00,
+      ),
+
+      // FRUITS
+      MarketPrice(
+        id: '11',
+        cropName: 'Mango',
+        category: 'Fruits',
+        price: 120.00,
+        unit: 'kg',
+        market: 'Rajshahi - Shah Makhdum',
+        date: DateTime.now(),
+        previousPrice: 110.00,
+        description: 'Sweet mangoes',
+        minPrice: 100.00,
+        maxPrice: 150.00,
+        avgPrice: 120.00,
+      ),
+      MarketPrice(
+        id: '12',
+        cropName: 'Banana',
+        category: 'Fruits',
+        price: 40.00,
+        unit: 'dozen',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 45.00,
+        description: 'Yellow bananas',
+        minPrice: 35.00,
+        maxPrice: 50.00,
+        avgPrice: 40.00,
+      ),
+      MarketPrice(
+        id: '13',
+        cropName: 'Papaya',
+        category: 'Fruits',
+        price: 25.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 25.00,
+        description: 'Orange papayas',
+        minPrice: 20.00,
+        maxPrice: 30.00,
+        avgPrice: 25.00,
+      ),
+      MarketPrice(
+        id: '14',
+        cropName: 'Guava',
+        category: 'Fruits',
+        price: 50.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 48.00,
+        description: 'Fresh guavas',
+        minPrice: 45.00,
+        maxPrice: 55.00,
+        avgPrice: 50.00,
+      ),
+      MarketPrice(
+        id: '15',
+        cropName: 'Pineapple',
+        category: 'Fruits',
+        price: 35.00,
+        unit: 'piece',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 32.00,
+        description: 'Golden pineapples',
+        minPrice: 30.00,
+        maxPrice: 40.00,
+        avgPrice: 35.00,
+      ),
+      MarketPrice(
+        id: '16',
+        cropName: 'Watermelon',
+        category: 'Fruits',
+        price: 15.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 14.00,
+        description: 'Sweet watermelons',
+        minPrice: 12.00,
+        maxPrice: 18.00,
+        avgPrice: 15.00,
+      ),
+      MarketPrice(
+        id: '17',
+        cropName: 'Orange',
+        category: 'Fruits',
+        price: 45.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 42.00,
+        description: 'Juicy oranges',
+        minPrice: 40.00,
+        maxPrice: 50.00,
+        avgPrice: 45.00,
+      ),
+      MarketPrice(
+        id: '18',
+        cropName: 'Pomegranate',
+        category: 'Fruits',
+        price: 80.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 75.00,
+        description: 'Red pomegranates',
+        minPrice: 70.00,
+        maxPrice: 90.00,
+        avgPrice: 80.00,
+      ),
+
+      // GRAINS
+      MarketPrice(
+        id: '19',
+        cropName: 'Rice (BR-28)',
+        category: 'Grains',
+        price: 55.00,
+        unit: 'kg',
+        market: 'Dhaka - Badamtoli',
+        date: DateTime.now(),
+        previousPrice: 52.00,
+        description: 'Medium grain rice',
+        minPrice: 50.00,
+        maxPrice: 60.00,
+        avgPrice: 55.00,
+      ),
+      MarketPrice(
+        id: '20',
+        cropName: 'Rice (Basmati)',
+        category: 'Grains',
+        price: 85.00,
+        unit: 'kg',
+        market: 'Dhaka - Badamtoli',
+        date: DateTime.now(),
+        previousPrice: 80.00,
+        description: 'Premium basmati rice',
+        minPrice: 75.00,
+        maxPrice: 95.00,
+        avgPrice: 85.00,
+      ),
+      MarketPrice(
+        id: '21',
+        cropName: 'Wheat',
+        category: 'Grains',
+        price: 38.00,
+        unit: 'kg',
+        market: 'Dhaka - Badamtoli',
+        date: DateTime.now(),
+        previousPrice: 38.00,
+        description: 'Wheat flour',
+        minPrice: 35.00,
+        maxPrice: 42.00,
+        avgPrice: 38.00,
+      ),
+      MarketPrice(
+        id: '22',
+        cropName: 'Corn',
+        category: 'Grains',
+        price: 32.00,
+        unit: 'kg',
+        market: 'Dhaka - Badamtoli',
+        date: DateTime.now(),
+        previousPrice: 30.00,
+        description: 'Yellow corn',
+        minPrice: 28.00,
+        maxPrice: 35.00,
+        avgPrice: 32.00,
+      ),
+      MarketPrice(
+        id: '23',
+        cropName: 'Maize',
+        category: 'Grains',
+        price: 28.00,
+        unit: 'kg',
+        market: 'Dhaka - Badamtoli',
+        date: DateTime.now(),
+        previousPrice: 26.00,
+        description: 'Corn grain',
+        minPrice: 25.00,
+        maxPrice: 31.00,
+        avgPrice: 28.00,
+      ),
+      MarketPrice(
+        id: '24',
+        cropName: 'Barley',
+        category: 'Grains',
+        price: 35.00,
+        unit: 'kg',
+        market: 'Dhaka - Badamtoli',
+        date: DateTime.now(),
+        previousPrice: 33.00,
+        description: 'Barley grain',
+        minPrice: 32.00,
+        maxPrice: 38.00,
+        avgPrice: 35.00,
+      ),
+
+      // PULSES
+      MarketPrice(
+        id: '25',
+        cropName: 'Lentil (Red)',
+        category: 'Pulses',
+        price: 110.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 105.00,
+        description: 'Red lentils',
+        minPrice: 100.00,
+        maxPrice: 120.00,
+        avgPrice: 110.00,
+      ),
+      MarketPrice(
+        id: '26',
+        cropName: 'Lentil (Green)',
+        category: 'Pulses',
+        price: 125.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 120.00,
+        description: 'Green lentils',
+        minPrice: 115.00,
+        maxPrice: 135.00,
+        avgPrice: 125.00,
+      ),
+      MarketPrice(
+        id: '27',
+        cropName: 'Chickpea',
+        category: 'Pulses',
+        price: 95.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 98.00,
+        description: 'Chickpeas',
+        minPrice: 90.00,
+        maxPrice: 105.00,
+        avgPrice: 95.00,
+      ),
+      MarketPrice(
+        id: '28',
+        cropName: 'Black Gram',
+        category: 'Pulses',
+        price: 120.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 115.00,
+        description: 'Black gram',
+        minPrice: 110.00,
+        maxPrice: 130.00,
+        avgPrice: 120.00,
+      ),
+      MarketPrice(
+        id: '29',
+        cropName: 'Peas (Green)',
+        category: 'Pulses',
+        price: 85.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 82.00,
+        description: 'Green peas',
+        minPrice: 78.00,
+        maxPrice: 92.00,
+        avgPrice: 85.00,
+      ),
+      MarketPrice(
+        id: '30',
+        cropName: 'Moong Dal',
+        category: 'Pulses',
+        price: 105.00,
+        unit: 'kg',
+        market: 'Dhaka - Karwan Bazar',
+        date: DateTime.now(),
+        previousPrice: 100.00,
+        description: 'Moong beans',
+        minPrice: 95.00,
+        maxPrice: 115.00,
+        avgPrice: 105.00,
+      ),
+
+      // SPICES
+      MarketPrice(
+        id: '31',
+        cropName: 'Chili (Red)',
+        category: 'Spices',
+        price: 180.00,
+        unit: 'kg',
+        market: 'Dhaka - Spice Market',
+        date: DateTime.now(),
+        previousPrice: 175.00,
+        description: 'Red chili peppers',
+        minPrice: 170.00,
+        maxPrice: 200.00,
+        avgPrice: 180.00,
+      ),
+      MarketPrice(
+        id: '32',
+        cropName: 'Turmeric',
+        category: 'Spices',
+        price: 95.00,
+        unit: 'kg',
+        market: 'Dhaka - Spice Market',
+        date: DateTime.now(),
+        previousPrice: 92.00,
+        description: 'Turmeric powder',
+        minPrice: 85.00,
+        maxPrice: 105.00,
+        avgPrice: 95.00,
+      ),
+      MarketPrice(
+        id: '33',
+        cropName: 'Cumin',
+        category: 'Spices',
+        price: 250.00,
+        unit: 'kg',
+        market: 'Dhaka - Spice Market',
+        date: DateTime.now(),
+        previousPrice: 245.00,
+        description: 'Cumin seeds',
+        minPrice: 240.00,
+        maxPrice: 270.00,
+        avgPrice: 250.00,
+      ),
+      MarketPrice(
+        id: '34',
+        cropName: 'Garlic',
+        category: 'Spices',
+        price: 75.00,
+        unit: 'kg',
+        market: 'Dhaka - Spice Market',
+        date: DateTime.now(),
+        previousPrice: 72.00,
+        description: 'Fresh garlic',
+        minPrice: 68.00,
+        maxPrice: 85.00,
+        avgPrice: 75.00,
+      ),
+      MarketPrice(
+        id: '35',
+        cropName: 'Ginger',
+        category: 'Spices',
+        price: 65.00,
+        unit: 'kg',
+        market: 'Dhaka - Spice Market',
+        date: DateTime.now(),
+        previousPrice: 62.00,
+        description: 'Fresh ginger',
+        minPrice: 58.00,
+        maxPrice: 72.00,
+        avgPrice: 65.00,
+      ),
+
+      // CASH CROPS
+      MarketPrice(
+        id: '36',
+        cropName: 'Tea',
+        category: 'Cash Crops',
+        price: 450.00,
+        unit: 'kg',
+        market: 'Sylhet - Tea Market',
+        date: DateTime.now(),
+        previousPrice: 440.00,
+        description: 'Premium tea leaves',
+        minPrice: 420.00,
+        maxPrice: 480.00,
+        avgPrice: 450.00,
+      ),
+      MarketPrice(
+        id: '37',
+        cropName: 'Cotton',
+        category: 'Cash Crops',
+        price: 5200.00,
+        unit: 'quintal',
+        market: 'Dhaka - Cotton Market',
+        date: DateTime.now(),
+        previousPrice: 5000.00,
+        description: 'Raw cotton',
+        minPrice: 4800.00,
+        maxPrice: 5500.00,
+        avgPrice: 5200.00,
+      ),
+      MarketPrice(
+        id: '38',
+        cropName: 'Jute',
+        category: 'Cash Crops',
+        price: 3800.00,
+        unit: 'quintal',
+        market: 'Dhaka - Jute Market',
+        date: DateTime.now(),
+        previousPrice: 3700.00,
+        description: 'Raw jute fiber',
+        minPrice: 3500.00,
+        maxPrice: 4100.00,
+        avgPrice: 3800.00,
+      ),
+      MarketPrice(
+        id: '39',
+        cropName: 'Sugarcane',
+        category: 'Cash Crops',
+        price: 380.00,
+        unit: 'quintal',
+        market: 'Khulna - Sugar Market',
+        date: DateTime.now(),
+        previousPrice: 370.00,
+        description: 'Fresh sugarcane',
+        minPrice: 350.00,
+        maxPrice: 420.00,
+        avgPrice: 380.00,
+      ),
+      MarketPrice(
+        id: '40',
+        cropName: 'Coconut',
+        category: 'Cash Crops',
+        price: 28.00,
+        unit: 'piece',
+        market: 'Chittagong - Coconut Market',
+        date: DateTime.now(),
+        previousPrice: 25.00,
+        description: 'Fresh coconuts',
+        minPrice: 22.00,
+        maxPrice: 32.00,
+        avgPrice: 28.00,
+      ),
+    ];
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\weather_service.dart
+import '../models/weather_model.dart';
+
+/// Service to handle weather data
+class WeatherService {
+  static final WeatherService _instance = WeatherService._internal();
+  factory WeatherService() => _instance;
+  WeatherService._internal();
+
+  /// Get current weather data
+  /// In a real app, this would fetch from a weather API
+  Future<Weather> getCurrentWeather() async {
+    // Simulate API call delay
+    await Future.delayed(const Duration(seconds: 1));
+
+    // Return mock data for demo
+    return Weather.mock();
+  }
+
+  /// Get weather forecast for next days
+  Future<List<Weather>> getWeatherForecast({int days = 7}) async {
+    await Future.delayed(const Duration(seconds: 1));
+
+    // Generate mock forecast data
+    final List<Weather> forecast = [];
+    final now = DateTime.now();
+
+    for (int i = 0; i < days; i++) {
+      forecast.add(Weather(
+        temperature: 25.0 + (i * 2) + (DateTime.now().millisecond % 10),
+        condition: _getRandomCondition(),
+        location: 'Dhaka, Bangladesh',
+        humidity: 60 + (i * 5),
+        windSpeed: 10.0 + (i * 1.5),
+        icon: _getRandomIcon(),
+        lastUpdated: now.add(Duration(days: i)),
+      ));
+    }
+
+    return forecast;
+  }
+
+  /// Get random weather condition for mock data
+  String _getRandomCondition() {
+    final conditions = [
+      'Sunny',
+      'Partly Cloudy',
+      'Cloudy',
+      'Rainy',
+      'Thunderstorm'
+    ];
+    return conditions[DateTime.now().millisecond % conditions.length];
+  }
+
+  /// Get random weather icon for mock data
+  String _getRandomIcon() {
+    final icons = ['sunny', 'partly_cloudy', 'cloudy', 'rainy', 'thunderstorm'];
+    return icons[DateTime.now().millisecond % icons.length];
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\utils\constants.dart
+import 'package:flutter/material.dart';
+
+/// Application constants and color definitions
+class AppColors {
+  static const Color primaryGreen = Color(0xFF4CAF50);
+  static const Color darkGreen = Color(0xFF388E3C);
+  static const Color lightGreen = Color(0xFFC8E6C9);
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+  static const Color grey = Colors.grey;
+  static const Color lightGrey = Color(0xFFF5F5F5);
+  static const Color cardBackground = Color(0xFFF8F9FA);
+
+  // âœ… Added missing colors
+  static const Color textSecondary = Color(0xFF757575);
+  static const Color red = Color(0xFFD32F2F);
+  static const Color orange = Color(0xFFFF6F00);
+  static const Color blue = Color(0xFF1976D2);
+}
+
+/// Text style constants
+class AppTextStyles {
+  static const TextStyle heading1 = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
+  static const TextStyle heading2 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle heading3 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle subtitle = TextStyle(
+    fontSize: 16,
+    color: AppColors.grey,
+  );
+
+  static const TextStyle body = TextStyle(
+    fontSize: 14,
+    color: AppColors.black,
+  );
+
+  static const TextStyle caption = TextStyle(
+    fontSize: 12,
+    color: AppColors.grey,
+  );
+}
+
+/// App string constants
+class AppStrings {
+  static const String appName = 'KrishiBondhu';
+  static const String tagline = 'Empowering Farmers, Growing Together';
+
+  // Dashboard
+  static const String welcomeMessage = 'Welcome back,';
+  static const String dashboard = 'Dashboard';
+  static const String quickActions = 'Quick Actions';
+  static const String recentActivity = 'Recent Activity';
+  static const String weatherToday = 'Today\'s Weather';
+
+  // Quick Actions
+  static const String cropManagement = 'Crop Management';
+  static const String weatherForecast = 'Weather Forecast';
+  static const String marketPrices = 'Market Prices';
+  static const String expertAdvice = 'Expert Advice';
+  static const String communityForum = 'Community Forum';
+  static const String pestControl = 'Pest Control';
+
+  // Navigation
+  static const String profile = 'Profile';
+  static const String settings = 'Settings';
+  static const String logout = 'Logout';
+
+  // Onboarding
+  static const String onboarding1Title = 'Welcome to KrishiBondhu';
+  static const String onboarding1Description =
+      'Your digital companion for modern farming and agricultural solutions.';
+
+  static const String onboarding2Title = 'Smart Farming Solutions';
+  static const String onboarding2Description =
+      'Get expert advice, weather updates, and crop management tools.';
+
+  static const String onboarding3Title = 'Connect with Community';
+  static const String onboarding3Description =
+      'Join thousands of farmers sharing knowledge and experiences.';
+
+  // Authentication
+  static const String login = 'Login';
+  static const String signup = 'Sign Up';
+  static const String email = 'Email';
+  static const String password = 'Password';
+  static const String fullName = 'Full Name';
+  static const String phoneNumber = 'Phone Number';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String dontHaveAccount = "Don't have an account?";
+  static const String alreadyHaveAccount = 'Already have an account?';
+}
+
+/// Dashboard action items
+class QuickActionItem {
+  final String title;
+  final IconData icon;
+  final Color color;
+  final VoidCallback? onTap;
+
+  QuickActionItem({
+    required this.title,
+    required this.icon,
+    required this.color,
+    this.onTap,
+  });
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\utils\validators.dart
+import 'package:email_validator/email_validator.dart';
+
+/// Form validation utilities
+class Validators {
+  /// Validate email format
+  static String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Email is required';
+    }
+    if (!EmailValidator.validate(value)) {
+      return 'Please enter a valid email';
+    }
+    return null;
+  }
+
+  /// Validate password strength
+  static String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required';
+    }
+    if (value.length < 8) {
+      return 'Password must be at least 8 characters';
+    }
+    return null;
+  }
+
+  /// Validate required fields
+  static String? validateRequired(String? value, String fieldName) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required';
+    }
+    return null;
+  }
+
+  /// Validate phone number
+  static String? validatePhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone number is required';
+    }
+    if (value.length < 10) {
+      return 'Please enter a valid phone number';
+    }
+    return null;
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\widgets\custom_button.dart
+import 'package:flutter/material.dart';
+import '../utils/constants.dart';
+
+/// Custom elevated button widget with loading state
+class CustomButton extends StatelessWidget {
+  final String text;
+  final VoidCallback? onPressed;
+  final bool isLoading;
+  final Color? backgroundColor;
+  final Color? textColor;
+  final double? width;
+  final EdgeInsets? margin;
+
+  const CustomButton({
+    super.key,
+    required this.text,
+    this.onPressed,
+    this.isLoading = false,
+    this.backgroundColor,
+    this.textColor,
+    this.width,
+    this.margin,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width ?? double.infinity,
+      margin: margin,
+      child: ElevatedButton(
+        onPressed: isLoading ? null : onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor ?? AppColors.primaryGreen,
+          foregroundColor: textColor ?? AppColors.white,
+          disabledBackgroundColor: AppColors.grey,
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: isLoading
+            ? const SizedBox(
+                height: 20,
+                width: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
+                ),
+              )
+            : Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\widgets\custom_text_field.dart
+import 'package:flutter/material.dart';
+import '../utils/constants.dart';
+
+/// Custom text form field with validation
+class CustomTextField extends StatefulWidget {
+  final String label;
+  final String? hint;
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
+  final TextInputType keyboardType;
+  final bool obscureText;
+  final bool isPassword;
+  final IconData? prefixIcon;
+  final EdgeInsets? margin;
+  final int? maxLines;
+
+  const CustomTextField({
+    super.key,
+    required this.label,
+    this.hint,
+    required this.controller,
+    this.validator,
+    this.keyboardType = TextInputType.text,
+    this.obscureText = false,
+    this.isPassword = false,
+    this.prefixIcon,
+    this.margin,
+    this.maxLines = 1,
+  });
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool _isObscured = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isObscured = widget.obscureText || widget.isPassword;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: widget.margin ?? const EdgeInsets.only(bottom: 16),
+      child: TextFormField(
+        controller: widget.controller,
+        validator: widget.validator,
+        keyboardType: widget.keyboardType,
+        obscureText: _isObscured,
+        maxLines: widget.maxLines,
+        decoration: InputDecoration(
+          labelText: widget.label,
+          hintText: widget.hint ?? widget.label,
+          prefixIcon: widget.prefixIcon != null
+              ? Icon(widget.prefixIcon, color: AppColors.primaryGreen)
+              : null,
+          suffixIcon: widget.isPassword
+              ? IconButton(
+                  icon: Icon(
+                    _isObscured ? Icons.visibility : Icons.visibility_off,
+                    color: AppColors.grey,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _isObscured = !_isObscured;
+                    });
+                  },
+                )
+              : null,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: AppColors.grey),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide:
+                const BorderSide(color: AppColors.primaryGreen, width: 2),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Colors.red),
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
+        ),
+      ),
+    );
+  }
+}
+---- C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\test\widget_test.dart
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:krishi_bondhu_app_bd/main.dart';
+
+void main() {
+  testWidgets('KrishiBondhu app smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const KrishiBondhuApp());
+
+    // Verify that the app builds without crashing
+    expect(find.byType(MaterialApp), findsOneWidget);
+  });
+}

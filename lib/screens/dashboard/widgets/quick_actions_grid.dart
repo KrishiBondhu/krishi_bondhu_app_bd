@@ -141,8 +141,21 @@ class QuickActionsGrid extends StatelessWidget {
         icon: Icons.trending_up,
         color: Colors.blue,
         onTap: () {
-          // ✅ CHANGED: Navigate to Market Prices screen
           Navigator.pushNamed(context, '/market-prices');
+        },
+      ),
+      // ✅ নতুন "Buy & Sell" action যোগ করা হলো
+      QuickActionItem(
+        title: 'Buy & Sell',
+        icon: Icons.shopping_cart,
+        color: Colors.deepOrange,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Buy & Sell feature coming soon!'),
+              backgroundColor: Colors.deepOrange,
+            ),
+          );
         },
       ),
       QuickActionItem(

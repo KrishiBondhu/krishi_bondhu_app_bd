@@ -6,6 +6,7 @@ import '../../services/weather_service.dart';
 import '../../models/weather_model.dart';
 import 'widgets/weather_card.dart';
 import 'widgets/quick_actions_grid.dart';
+import 'package:krishi_bondhu_app_bd/screens/settings/settings_screen.dart'; // <-- IMPORT ADDED
 
 /// Main dashboard screen for farmers
 class DashboardScreen extends StatefulWidget {
@@ -200,7 +201,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryGreen.withValues(alpha: 0.3),
+            color: AppColors.primaryGreen.withOpacity(0.3),
             blurRadius: 15,
             offset: const Offset(0, 5),
           ),
@@ -236,7 +237,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Text(
                   AppStrings.welcomeMessage,
                   style: AppTextStyles.subtitle.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.9),
+                    color: AppColors.white.withOpacity(0.9),
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -249,9 +250,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '🌱 Have a productive day!',
+                  '🌱 Have a productive day!', // Original emoji was a seedling
                   style: AppTextStyles.body.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.8),
+                    color: AppColors.white.withOpacity(0.8),
                   ),
                 ),
               ],
@@ -266,7 +267,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: AppColors.white.withValues(alpha: 0.2),
+                  color: AppColors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
@@ -281,7 +282,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     Text(
                       DateFormat('hh:mm a').format(DateTime.now()),
                       style: AppTextStyles.caption.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.8),
+                        color: AppColors.white.withOpacity(0.8),
                       ),
                     ),
                   ],
@@ -345,8 +346,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             title: const Text('Profile'),
             onTap: () {
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Profile feature coming soon!')),
+              // Changed this to point to Settings, as it's more direct
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
               );
             },
           ),
@@ -374,10 +377,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Settings feature coming soon!')),
+              // === THIS IS THE CHANGE ===
+              Navigator.pop(context); // Close the drawer
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
               );
+              // ==========================
             },
           ),
           ListTile(
