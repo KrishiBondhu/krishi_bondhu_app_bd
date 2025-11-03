@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
+import '../../pest_control/pest_control_screen.dart';
 
 /// Grid of quick action buttons for dashboard
 class QuickActionsGrid extends StatelessWidget {
@@ -172,8 +173,11 @@ class QuickActionsGrid extends StatelessWidget {
         icon: Icons.bug_report,
         color: Colors.red,
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Pest Control feature coming soon!')),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PestControlScreen(),
+            ),
           );
         },
       ),
