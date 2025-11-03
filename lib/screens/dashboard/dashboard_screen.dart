@@ -96,7 +96,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           AppStrings.dashboard,
           style: AppTextStyles.heading3,
         ),
@@ -189,7 +189,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
@@ -215,10 +215,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               color: AppColors.white,
               borderRadius: BorderRadius.circular(50),
             ),
-            child: const CircleAvatar(
+            child: CircleAvatar(
               radius: 28,
               backgroundColor: AppColors.lightGreen,
-              child: Icon(
+              child: const Icon(
                 Icons.person,
                 size: 28,
                 color: AppColors.darkGreen,

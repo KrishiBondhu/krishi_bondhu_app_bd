@@ -71,7 +71,7 @@ class StatsCards extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const Icon(
+              Icon(
                 Icons.trending_up,
                 size: 16,
                 color: AppColors.primaryGreen,
