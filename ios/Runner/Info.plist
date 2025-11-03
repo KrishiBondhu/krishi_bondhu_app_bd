@@ -49,5 +49,10 @@
 	<string>Take photos of crops to detect diseases</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Select crop photos from gallery</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

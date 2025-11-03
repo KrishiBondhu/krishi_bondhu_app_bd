@@ -20,7 +20,10 @@ class GeminiService {
       ),
       systemInstruction: Content.text(
         'You are a helpful AI assistant. Keep responses brief and natural. '
-        'Answer in the same language the user uses.',
+        'IMPORTANT: Always respond in the EXACT same language that the user asks the question in. '
+        'If the user asks in English, respond in English. '
+        'If the user asks in Bengali, respond in Bengali. '
+        'Never switch languages.',
       ),
     );
 
@@ -45,6 +48,17 @@ class GeminiService {
 
       return response.text ?? 'Sorry, I could not generate a response.';
     } catch (e) {
+      // Handle rate limit error
+      if (e.toString().contains('Resource exhausted') ||
+          e.toString().contains('429')) {
+        return '⚠️ API Limit Reached\n\n'
+            'The AI service has temporarily reached its usage limit. '
+            'Please try again in a few minutes.\n\n'
+            'Tips:\n'
+            '• Wait 1-2 minutes before next question\n'
+            '• Keep questions concise\n'
+            '• Avoid sending too many messages quickly';
+      }
       return 'Error: ${e.toString()}';
     }
   }
@@ -70,6 +84,16 @@ class GeminiService {
       return response.text ??
           'Sorry, I could not analyze the image. Please try again.';
     } catch (e) {
+      // Handle rate limit error
+      if (e.toString().contains('Resource exhausted') ||
+          e.toString().contains('429')) {
+        return '⚠️ API Limit Reached\n\n'
+            'The AI service has temporarily reached its usage limit. '
+            'Please try again in a few minutes.\n\n'
+            'Tips:\n'
+            '• Wait 1-2 minutes before next analysis\n'
+            '• Reduce image analysis frequency';
+      }
       return 'Error analyzing image: ${e.toString()}';
     }
   }
@@ -82,9 +106,25 @@ class GeminiService {
   /// Send message in an ongoing chat session
   Future<String> sendChatMessage(ChatSession chat, String message) async {
     try {
-      final response = await chat.sendMessage(Content.text(message));
+      // Add language instruction to each message
+      final enhancedMessage =
+          'Respond in the EXACT same language as this message. Do not translate. '
+          'User message: $message';
+
+      final response = await chat.sendMessage(Content.text(enhancedMessage));
       return response.text ?? 'Sorry, I could not generate a response.';
     } catch (e) {
+      // Handle rate limit error
+      if (e.toString().contains('Resource exhausted') ||
+          e.toString().contains('429')) {
+        return '⚠️ API Limit Reached\n\n'
+            'The AI service has temporarily reached its usage limit. '
+            'Please try again in a few minutes.\n\n'
+            'Tips:\n'
+            '• Wait 1-2 minutes before next question\n'
+            '• Keep questions concise\n'
+            '• Avoid sending too many messages quickly';
+      }
       return 'Error: ${e.toString()}';
     }
   }
