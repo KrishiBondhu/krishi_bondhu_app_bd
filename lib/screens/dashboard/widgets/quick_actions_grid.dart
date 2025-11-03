@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
+// This is the CORRECT path
+import 'package:krishibondhu/weather-forecast/weather_forecast_screen.dart';
 
-/// Grid of quick action buttons for dashboard
 class QuickActionsGrid extends StatelessWidget {
   const QuickActionsGrid({super.key});
 
@@ -126,16 +127,16 @@ class QuickActionsGrid extends StatelessWidget {
         },
       ),
       QuickActionItem(
-        title: AppStrings.weatherForecast,
-        icon: Icons.wb_sunny,
-        color: Colors.orange,
-        onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-                content: Text('Weather Forecast feature coming soon!')),
-          );
-        },
-      ),
+  title: AppStrings.weatherForecast,
+  icon: Icons.wb_sunny,
+  color: Colors.orange,
+  onTap: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => WeatherForecastScreen()), // <-- 'const' is removed
+  );
+},
+),
       QuickActionItem(
         title: AppStrings.marketPrices,
         icon: Icons.trending_up,
