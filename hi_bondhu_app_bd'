@@ -1,0 +1,33 @@
+[33mcommit e443ff68fe9e659702d2114ba59004329b02eb7f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Jubaer <22235103421@cse.bubt.edu.bd>
+Date:   Mon Nov 3 21:41:19 2025 +0600
+
+    Reapply "Integration guide added"
+    
+    This reverts commit 0ff96c08cced7e10ee6c757abe25d6e286b4615e.
+
+[33mcommit 0ff96c08cced7e10ee6c757abe25d6e286b4615e[m[33m ([m[1;31morigin/feature/expert-tabs-call[m[33m, [m[1;32mfeature/expert-tabs-call[m[33m)[m
+Author: Jubaer <22235103421@cse.bubt.edu.bd>
+Date:   Mon Nov 3 21:31:59 2025 +0600
+
+    Revert "Integration guide added"
+    
+    This reverts commit 964b79e99110025c0342623cf948e47a48c39b74.
+
+[33mcommit 964b79e99110025c0342623cf948e47a48c39b74[m[33m ([m[1;31morigin/weather-forecasting[m[33m, [m[1;31morigin/Pest_Control(Blog)[m[33m, [m[1;31morigin/Expert_advice_new[m[33m, [m[1;31morigin/Expert_advice[m[33m)[m
+Author: Rayhan-446 <22235103446@cse.bubt.edu.bd>
+Date:   Mon Oct 27 23:48:10 2025 +0600
+
+    Integration guide added
+
+[33mcommit 173ca0f2df14387b4a13d94494c062a2b564ed74[m
+Author: Rayhan-446 <22235103446@cse.bubt.edu.bd>
+Date:   Mon Oct 13 21:44:07 2025 +0600
+
+    added Descriptive files
+
+[33mcommit 718b73a30fb90816521c16020188fd3f47f9c6a8[m
+Author: Rayhan-446 <22235103446@cse.bubt.edu.bd>
+Date:   Mon Oct 13 21:23:40 2025 +0600
+
+    Initial Flutter project upload 🚀

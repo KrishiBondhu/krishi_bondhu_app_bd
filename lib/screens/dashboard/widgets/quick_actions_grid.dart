@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
+// Add this import to navigate to the ExpertAdvicePage
+import '../../expert_advice/expert_advice_page.dart';
 
 /// Grid of quick action buttons for dashboard
 class QuickActionsGrid extends StatelessWidget {
@@ -151,8 +153,11 @@ class QuickActionsGrid extends StatelessWidget {
         icon: Icons.psychology,
         color: Colors.purple,
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Expert Advice feature coming soon!')),
+          debugPrint('ExpertAdvice tapped');
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => const ExpertAdvicePage(),
+            ),
           );
         },
       ),
