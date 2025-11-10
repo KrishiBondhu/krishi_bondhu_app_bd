@@ -6,6 +6,10 @@ import 'screens/auth/signup_screen.dart';
 import 'screens/dashboard/dashboard_screen.dart';
 import 'utils/constants.dart';
 
+// <-- ১. আপনার নতুন ওয়েদার স্ক্রিনটি এখানে ইমপোর্ট করুন
+// (আপনার ফাইল পাথ lib/weather-forecast/weather_forecast_screen.dart অনুযায়ী)
+import 'weather-forecast/weather_forecast_screen.dart';
+
 void main() {
   runApp(const KrishiBondhuApp());
 }
@@ -27,6 +31,9 @@ class KrishiBondhuApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
         '/dashboard': (context) => const DashboardScreen(),
+
+        // <-- ২. আপনার নতুন রুটটি এখানে যোগ করুন
+        '/weather': (context) => const WeatherForecastScreen(),
       },
     );
   }
