@@ -1,0 +1,5553 @@
+﻿// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\.dart_tool\dartpad\web_plugin_registrant.dart
+
+// Flutter web plugin registrant file.
+//
+// Generated file. Do not edit.
+//
+
+// @dart = 2.13
+// ignore_for_file: type=lint
+
+import 'package:cloud_firestore_web/cloud_firestore_web.dart';
+import 'package:firebase_auth_web/firebase_auth_web.dart';
+import 'package:firebase_core_web/firebase_core_web.dart';
+import 'package:firebase_storage_web/firebase_storage_web.dart';
+import 'package:image_picker_for_web/image_picker_for_web.dart';
+import 'package:shared_preferences_web/shared_preferences_web.dart';
+import 'package:url_launcher_web/url_launcher_web.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
+void registerPlugins([final Registrar? pluginRegistrar]) {
+  final Registrar registrar = pluginRegistrar ?? webPluginRegistrar;
+  FirebaseFirestoreWeb.registerWith(registrar);
+  FirebaseAuthWeb.registerWith(registrar);
+  FirebaseCoreWeb.registerWith(registrar);
+  FirebaseStorageWeb.registerWith(registrar);
+  ImagePickerPlugin.registerWith(registrar);
+  SharedPreferencesPlugin.registerWith(registrar);
+  UrlLauncherPlugin.registerWith(registrar);
+  registrar.registerMessageHandler();
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\.dart_tool\flutter_build\dart_plugin_registrant.dart
+
+//
+// Generated file. Do not edit.
+// This file is generated from template in file `flutter_tools/lib/src/flutter_plugins.dart`.
+//
+
+// @dart = 3.1
+
+import 'dart:io'; // flutter_ignore: dart_io_import.
+import 'package:image_picker_android/image_picker_android.dart';
+import 'package:shared_preferences_android/shared_preferences_android.dart';
+import 'package:url_launcher_android/url_launcher_android.dart';
+import 'package:image_picker_ios/image_picker_ios.dart';
+import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
+import 'package:url_launcher_ios/url_launcher_ios.dart';
+import 'package:file_selector_linux/file_selector_linux.dart';
+import 'package:image_picker_linux/image_picker_linux.dart';
+import 'package:path_provider_linux/path_provider_linux.dart';
+import 'package:shared_preferences_linux/shared_preferences_linux.dart';
+import 'package:url_launcher_linux/url_launcher_linux.dart';
+import 'package:file_selector_macos/file_selector_macos.dart';
+import 'package:image_picker_macos/image_picker_macos.dart';
+import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
+import 'package:url_launcher_macos/url_launcher_macos.dart';
+import 'package:file_selector_windows/file_selector_windows.dart';
+import 'package:image_picker_windows/image_picker_windows.dart';
+import 'package:path_provider_windows/path_provider_windows.dart';
+import 'package:shared_preferences_windows/shared_preferences_windows.dart';
+import 'package:url_launcher_windows/url_launcher_windows.dart';
+
+@pragma('vm:entry-point')
+class _PluginRegistrant {
+
+  @pragma('vm:entry-point')
+  static void register() {
+    if (Platform.isAndroid) {
+      try {
+        ImagePickerAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        UrlLauncherAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isIOS) {
+      try {
+        ImagePickerIOS.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_ios` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesFoundation.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_foundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        UrlLauncherIOS.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_ios` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isLinux) {
+      try {
+        FileSelectorLinux.registerWith();
+      } catch (err) {
+        print(
+          '`file_selector_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerLinux.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderLinux.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesLinux.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        UrlLauncherLinux.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isMacOS) {
+      try {
+        FileSelectorMacOS.registerWith();
+      } catch (err) {
+        print(
+          '`file_selector_macos` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerMacOS.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_macos` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesFoundation.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_foundation` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        UrlLauncherMacOS.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_macos` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    } else if (Platform.isWindows) {
+      try {
+        FileSelectorWindows.registerWith();
+      } catch (err) {
+        print(
+          '`file_selector_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        ImagePickerWindows.registerWith();
+      } catch (err) {
+        print(
+          '`image_picker_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        PathProviderWindows.registerWith();
+      } catch (err) {
+        print(
+          '`path_provider_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        SharedPreferencesWindows.registerWith();
+      } catch (err) {
+        print(
+          '`shared_preferences_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        UrlLauncherWindows.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+    }
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\main.dart
+
+import 'package:flutter/material.dart';
+import 'screens/splash_screen.dart';
+import 'screens/onboarding/onboarding_screen.dart';
+import 'screens/auth/login_screen.dart';
+import 'screens/auth/signup_screen.dart';
+import 'screens/dashboard/dashboard_screen.dart';
+import 'utils/constants.dart';
+
+void main() {
+  runApp(const KrishiBondhuApp());
+}
+
+/// Main application widget for KrishiBondhu
+class KrishiBondhuApp extends StatelessWidget {
+  const KrishiBondhuApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'KrishiBondhu',
+      debugShowCheckedModeBanner: false,
+      theme: _buildTheme(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/onboarding': (context) => const OnboardingScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignupScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
+      },
+    );
+  }
+
+  /// Build Material 3 theme with green primary color
+  ThemeData _buildTheme() {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColors.primaryGreen,
+        brightness: Brightness.light,
+      ),
+      fontFamily: 'Poppins',
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 16,
+        ),
+      ),
+      cardTheme: CardThemeData(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\activity_model.dart
+
+import 'package:flutter/material.dart';
+
+/// Farm activity model for dashboard
+class FarmActivity {
+  final String id;
+  final String title;
+  final String description;
+  final ActivityType type;
+  final DateTime timestamp;
+  final String? cropName;
+  final String? fieldName;
+
+  FarmActivity({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.type,
+    required this.timestamp,
+    this.cropName,
+    this.fieldName,
+  });
+
+  /// Get icon for activity type
+  IconData get icon {
+    switch (type) {
+      case ActivityType.planting:
+        return Icons.agriculture;
+      case ActivityType.watering:
+        return Icons.water_drop;
+      case ActivityType.harvesting:
+        return Icons.grass;
+      case ActivityType.fertilizing:
+        return Icons.eco;
+      case ActivityType.pestControl:
+        return Icons.bug_report;
+      case ActivityType.monitoring:
+        return Icons.visibility;
+    }
+  }
+
+  /// Get color for activity type
+  Color get color {
+    switch (type) {
+      case ActivityType.planting:
+        return Colors.green;
+      case ActivityType.watering:
+        return Colors.blue;
+      case ActivityType.harvesting:
+        return Colors.orange;
+      case ActivityType.fertilizing:
+        return Colors.brown;
+      case ActivityType.pestControl:
+        return Colors.red;
+      case ActivityType.monitoring:
+        return Colors.purple;
+    }
+  }
+
+  /// Get formatted time string
+  String get timeAgo {
+    final now = DateTime.now();
+    final difference = now.difference(timestamp);
+
+    if (difference.inDays > 0) {
+      return '${difference.inDays} day${difference.inDays == 1 ? '' : 's'} ago';
+    } else if (difference.inHours > 0) {
+      return '${difference.inHours} hour${difference.inHours == 1 ? '' : 's'} ago';
+    } else if (difference.inMinutes > 0) {
+      return '${difference.inMinutes} minute${difference.inMinutes == 1 ? '' : 's'} ago';
+    } else {
+      return 'Just now';
+    }
+  }
+
+  /// Create mock activities for demo
+  static List<FarmActivity> mockActivities() {
+    return [
+      FarmActivity(
+        id: '1',
+        title: 'Planted Rice Seeds',
+        description: 'Planted rice seeds in Field A, Section 1',
+        type: ActivityType.planting,
+        timestamp: DateTime.now().subtract(const Duration(hours: 2)),
+        cropName: 'Rice',
+        fieldName: 'Field A',
+      ),
+      FarmActivity(
+        id: '2',
+        title: 'Watered Vegetables',
+        description: 'Irrigation completed for vegetable section',
+        type: ActivityType.watering,
+        timestamp: DateTime.now().subtract(const Duration(days: 1)),
+        cropName: 'Vegetables',
+        fieldName: 'Field B',
+      ),
+      FarmActivity(
+        id: '3',
+        title: 'Harvested Tomatoes',
+        description: 'Collected 50kg of fresh tomatoes',
+        type: ActivityType.harvesting,
+        timestamp: DateTime.now().subtract(const Duration(days: 2)),
+        cropName: 'Tomatoes',
+        fieldName: 'Field C',
+      ),
+      FarmActivity(
+        id: '4',
+        title: 'Applied Fertilizer',
+        description: 'Organic fertilizer applied to wheat field',
+        type: ActivityType.fertilizing,
+        timestamp: DateTime.now().subtract(const Duration(days: 3)),
+        cropName: 'Wheat',
+        fieldName: 'Field D',
+      ),
+    ];
+  }
+}
+
+/// Types of farm activities
+enum ActivityType {
+  planting,
+  watering,
+  harvesting,
+  fertilizing,
+  pestControl,
+  monitoring,
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\product_model.dart
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class Product {
+  final String? id;
+  final String productName;
+  final String category;
+  final double pricePerUnit;
+  final String unit;
+  final String availableQuantity;
+  final List<String>
+      imageUrls; // <-- âš ï¸ This is the main change (was String imageUrl)
+  final String sellerId;
+  final String sellerName;
+  final String? sellerPhone;
+  final String? sellerDistrict;
+  final String? sellerUpazila;
+  final Timestamp createdAt;
+
+  Product({
+    this.id,
+    required this.productName,
+    required this.category,
+    required this.pricePerUnit,
+    required this.unit,
+    required this.availableQuantity,
+    required this.imageUrls, // <-- âš ï¸ Updated
+    required this.sellerId,
+    required this.sellerName,
+    this.sellerPhone,
+    this.sellerDistrict,
+    this.sellerUpazila,
+    required this.createdAt,
+  });
+
+  // Convert to JSON (for sending to Firestore)
+  Map<String, dynamic> toJson() {
+    return {
+      'productName': productName,
+      'category': category,
+      'pricePerUnit': pricePerUnit,
+      'unit': unit,
+      'availableQuantity': availableQuantity,
+      'imageUrls': imageUrls, // <-- âš ï¸ Updated
+      'sellerId': sellerId,
+      'sellerName': sellerName,
+      'sellerPhone': sellerPhone,
+      'sellerDistrict': sellerDistrict,
+      'sellerUpazila': sellerUpazila,
+      'createdAt': createdAt,
+    };
+  }
+
+  // Create from JSON (for reading from Firestore)
+  factory Product.fromJson(Map<String, dynamic> json, String id) {
+    // Handle if imageUrls is missing or is an old single string
+    List<String> images = [];
+    if (json['imageUrls'] is List) {
+      images = List<String>.from(json['imageUrls']);
+    } else if (json['imageUrl'] is String) {
+      // Handle old data
+      images = [json['imageUrl']];
+    }
+
+    return Product(
+      id: id,
+      productName: json['productName'],
+      category: json['category'],
+      pricePerUnit: (json['pricePerUnit'] ?? 0.0).toDouble(),
+      unit: json['unit'] ?? 'à¦ªà¦¿à¦¸',
+      availableQuantity: json['availableQuantity'] ?? 'N/A',
+      imageUrls: images, // <-- âš ï¸ Updated
+      sellerId: json['sellerId'],
+      sellerName: json['sellerName'],
+      sellerPhone: json['sellerPhone'],
+      sellerDistrict: json['sellerDistrict'],
+      sellerUpazila: json['sellerUpazila'],
+      createdAt: json['createdAt'] as Timestamp,
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\user_model.dart
+
+class User {
+  final String id;
+  final String email;
+  final String name;
+  final String? phone; // â† à¦à¦Ÿà¦¿ à¦†à¦›à§‡ à¦•à¦¿à¦¨à¦¾ à¦šà§‡à¦• à¦•à¦°à§à¦¨
+  final String? district; // â† à¦à¦Ÿà¦¿ à¦†à¦›à§‡ à¦•à¦¿à¦¨à¦¾ à¦šà§‡à¦• à¦•à¦°à§à¦¨
+  final String? upazila; // â† à¦à¦Ÿà¦¿ à¦†à¦›à§‡ à¦•à¦¿à¦¨à¦¾ à¦šà§‡à¦• à¦•à¦°à§à¦¨
+  final DateTime? createdAt;
+
+  User({
+    required this.id,
+    required this.email,
+    required this.name,
+    this.phone,
+    this.district,
+    this.upazila,
+    this.createdAt,
+  });
+
+  factory User.fromFirestore(Map<String, dynamic> data, String id) {
+    return User(
+      id: id,
+      email: data['email'] ?? '',
+      name: data['name'] ?? '',
+      phone: data['phone'], // â† Firestore à¦¥à§‡à¦•à§‡ phone à¦¨à¦¿à¦¯à¦¼à§‡ à¦†à¦¸à§à¦¨
+      district: data['district'], // â† Firestore à¦¥à§‡à¦•à§‡ district à¦¨à¦¿à¦¯à¦¼à§‡ à¦†à¦¸à§à¦¨
+      upazila: data['upazila'], // â† Firestore à¦¥à§‡à¦•à§‡ upazila à¦¨à¦¿à¦¯à¦¼à§‡ à¦†à¦¸à§à¦¨
+      createdAt:
+          data['createdAt'] != null ? DateTime.parse(data['createdAt']) : null,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'email': email,
+      'name': name,
+      'phone': phone,
+      'district': district,
+      'upazila': upazila,
+      'createdAt': createdAt?.toIso8601String(),
+    };
+  }
+
+  User copyWith({
+    String? id,
+    String? email,
+    String? name,
+    String? phone,
+    String? district,
+    String? upazila,
+    DateTime? createdAt,
+  }) {
+    return User(
+      id: id ?? this.id,
+      email: email ?? this.email,
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      district: district ?? this.district,
+      upazila: upazila ?? this.upazila,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\models\weather_model.dart
+
+/// Weather data model for dashboard
+class Weather {
+  final double temperature;
+  final String condition;
+  final String location;
+  final int humidity;
+  final double windSpeed;
+  final String icon;
+  final DateTime lastUpdated;
+
+  Weather({
+    required this.temperature,
+    required this.condition,
+    required this.location,
+    required this.humidity,
+    required this.windSpeed,
+    required this.icon,
+    required this.lastUpdated,
+  });
+
+  /// Create Weather from JSON
+  factory Weather.fromJson(Map<String, dynamic> json) {
+    return Weather(
+      temperature: (json['temperature'] ?? 0.0).toDouble(),
+      condition: json['condition'] ?? 'Clear',
+      location: json['location'] ?? 'Unknown',
+      humidity: json['humidity'] ?? 0,
+      windSpeed: (json['windSpeed'] ?? 0.0).toDouble(),
+      icon: json['icon'] ?? 'sunny',
+      lastUpdated: DateTime.parse(
+        json['lastUpdated'] ?? DateTime.now().toIso8601String(),
+      ),
+    );
+  }
+
+  /// Convert Weather to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'temperature': temperature,
+      'condition': condition,
+      'location': location,
+      'humidity': humidity,
+      'windSpeed': windSpeed,
+      'icon': icon,
+      'lastUpdated': lastUpdated.toIso8601String(),
+    };
+  }
+
+  /// Create mock weather data for demo
+  static Weather mock() {
+    return Weather(
+      temperature: 28.5,
+      condition: 'Partly Cloudy',
+      location: 'Dhaka, Bangladesh',
+      humidity: 65,
+      windSpeed: 12.5,
+      icon: 'partly_cloudy',
+      lastUpdated: DateTime.now(),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\splash_screen.dart
+
+import 'package:flutter/material.dart';
+import '../utils/constants.dart';
+import '../services/auth_service.dart';
+
+/// Splash screen with app logo and navigation logic
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeAnimations();
+    _navigateAfterDelay();
+  }
+
+  /// Initialize fade animations
+  void _initializeAnimations() {
+    _animationController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    ));
+
+    _animationController.forward();
+  }
+
+  /// Navigate to appropriate screen after delay
+  void _navigateAfterDelay() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    if (!mounted) return;
+
+    // Check if user is logged in
+    final authService = AuthService();
+    final isLoggedIn = authService.isLoggedIn; // âœ… Fixed: removed ()
+
+    if (!mounted) return;
+
+    if (isLoggedIn) {
+      // Navigate to dashboard if logged in
+      Navigator.pushReplacementNamed(context, '/dashboard');
+    } else {
+      // Navigate to onboarding if not logged in
+      Navigator.pushReplacementNamed(context, '/onboarding');
+    }
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.primaryGreen,
+      body: Center(
+        child: FadeTransition(
+          opacity: _fadeAnimation,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // App Logo
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(60),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black
+                          .withValues(alpha: 0.1), // âœ… Fixed: withValues
+                      spreadRadius: 5,
+                      blurRadius: 20,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.agriculture,
+                  size: 60,
+                  color: AppColors.primaryGreen,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // App Name
+              const Text(
+                AppStrings.appName,
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.white,
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              // Tagline
+              const Text(
+                AppStrings.tagline,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppColors.white,
+                  fontWeight: FontWeight.w300,
+                ),
+                textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: 50),
+
+              // Loading indicator
+              const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
+                strokeWidth: 2,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\auth\login_screen.dart
+
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../utils/validators.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_field.dart';
+import '../../services/auth_service.dart';
+
+/// Login screen with email and password fields
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _authService = AuthService();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  /// Handle login process
+  Future<void> _handleLogin() async {
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final success = await _authService.login(
+        _emailController.text.trim(),
+        _passwordController.text,
+      );
+
+      if (success && mounted) {
+        // Navigate to dashboard on successful login
+        Navigator.pushReplacementNamed(context, '/dashboard');
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Login successful! Welcome to KrishiBondhu'),
+            backgroundColor: AppColors.primaryGreen,
+          ),
+        );
+      } else if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Invalid email or password'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Login failed: ${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  /// Navigate to signup screen
+  void _navigateToSignup() {
+    Navigator.pushNamed(context, '/signup');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 50),
+
+                // Welcome back title
+                Text(
+                  'Welcome Back!',
+                  style: AppTextStyles.heading1.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+
+                const SizedBox(height: 8),
+
+                Text(
+                  'Please sign in to your account',
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onSurface
+                        .withValues(alpha: 0.7),
+                  ),
+                ),
+
+                const SizedBox(height: 50),
+
+                // Email field
+                CustomTextField(
+                  label: AppStrings.email,
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  prefixIcon: Icons.email_outlined,
+                  validator: Validators.validateEmail,
+                ),
+
+                // Password field
+                CustomTextField(
+                  label: AppStrings.password,
+                  controller: _passwordController,
+                  isPassword: true,
+                  prefixIcon: Icons.lock_outline,
+                  validator: Validators.validatePassword,
+                ),
+
+                // Forgot password link
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                              'Forgot password functionality will be added soon'),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      AppStrings.forgotPassword,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 30),
+
+                // Login button
+                CustomButton(
+                  text: AppStrings.login,
+                  onPressed: _handleLogin,
+                  isLoading: _isLoading,
+                ),
+
+                const SizedBox(height: 30),
+
+                // Sign up link
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      AppStrings.dontHaveAccount,
+                      style: AppTextStyles.body.copyWith(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withValues(alpha: 0.7),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: _navigateToSignup,
+                      child: Text(
+                        AppStrings.signup,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\auth\signup_screen.dart
+
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../utils/validators.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_field.dart';
+import '../../services/auth_service.dart';
+
+/// Signup screen with form validation
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _fullNameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _authService = AuthService();
+  bool _isLoading = false;
+
+  @override
+  void dispose() {
+    _fullNameController.dispose();
+    _emailController.dispose();
+    _phoneController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  /// Handle signup process
+  Future<void> _handleSignup() async {
+    // 1. Validate the form
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+
+    // 2. Show loading indicator
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      // 3. Call the signup method from AuthService
+      final success = await _authService.signup(
+        _fullNameController.text.trim(),
+        _emailController.text.trim(),
+        _passwordController.text,
+        phoneNumber: _phoneController.text.trim().isNotEmpty
+            ? _phoneController.text.trim()
+            : null,
+      );
+
+      // 4. Handle the result
+      if (success && mounted) {
+        // --- SUCCESS LOGIC ---
+        // Show a success dialog and navigate to the dashboard
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => AlertDialog(
+            icon: const Icon(Icons.check_circle, size: 48, color: Colors.green),
+            title: const Text('Account Created'),
+            content: const Text(
+              'Your account has been created successfully! Welcome to KrishiBondhu.',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pushReplacementNamed(context, '/dashboard');
+                },
+                child: const Text('Go to Dashboard'),
+              ),
+            ],
+          ),
+        );
+      }
+      // Note: The 'else' case is handled by the catch block,
+      // because authService will throw an error on failure.
+    } catch (e) {
+      // --- FAILURE LOGIC ---
+      // Show an error message if signup fails
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content:
+                Text(e.toString()), // Show the actual error from AuthService
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } finally {
+      // 5. Hide loading indicator
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  /// Navigate back to login screen
+  void _navigateToLogin() {
+    Navigator.pop(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: _navigateToLogin,
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Create account title
+                Text(
+                  'Create Account',
+                  style: AppTextStyles.heading1.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+
+                const SizedBox(height: 8),
+
+                Text(
+                  'Join our farming community today',
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onSurface
+                        .withOpacity(0.7),
+                  ),
+                ),
+
+                const SizedBox(height: 40),
+
+                // Full Name field
+                CustomTextField(
+                  label: AppStrings.fullName,
+                  controller: _fullNameController,
+                  prefixIcon: Icons.person_outline,
+                  validator: (value) =>
+                      Validators.validateRequired(value, 'Full name'),
+                ),
+
+                // Email field
+                CustomTextField(
+                  label: AppStrings.email,
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  prefixIcon: Icons.email_outlined,
+                  validator: Validators.validateEmail,
+                ),
+
+                // Phone number field (optional)
+                CustomTextField(
+                  label: '${AppStrings.phoneNumber} (Optional)',
+                  controller: _phoneController,
+                  keyboardType: TextInputType.phone,
+                  prefixIcon: Icons.phone_outlined,
+                  validator: (value) {
+                    if (value != null && value.isNotEmpty) {
+                      return Validators.validatePhoneNumber(value);
+                    }
+                    return null;
+                  },
+                ),
+
+                // Password field
+                CustomTextField(
+                  label: AppStrings.password,
+                  controller: _passwordController,
+                  isPassword: true,
+                  prefixIcon: Icons.lock_outline,
+                  validator: Validators.validatePassword,
+                ),
+
+                const SizedBox(height: 30),
+
+                // Signup button
+                CustomButton(
+                  text: AppStrings.signup,
+                  onPressed: _handleSignup,
+                  isLoading: _isLoading,
+                ),
+
+                const SizedBox(height: 30),
+
+                // Login link
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      AppStrings.alreadyHaveAccount,
+                      style: AppTextStyles.body.copyWith(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withOpacity(0.7),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: _navigateToLogin,
+                      child: Text(
+                        AppStrings.login,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\dashboard_screen.dart
+
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import '../../utils/constants.dart';
+import '../../services/auth_service.dart';
+import '../../services/weather_service.dart';
+import '../../models/weather_model.dart';
+import 'widgets/weather_card.dart';
+import 'widgets/quick_actions_grid.dart';
+
+/// Main dashboard screen for farmers
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  final _authService = AuthService();
+  final _weatherService = WeatherService();
+
+  Weather? _currentWeather;
+  bool _isLoading = true;
+  String _userName = 'Farmer';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadDashboardData();
+  }
+
+  /// Load dashboard data
+  Future<void> _loadDashboardData() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      // Get user data
+      final user = await _authService.getCurrentUser();
+      if (user != null) {
+        _userName = user.name.split(' ').first;
+      }
+
+      // Load weather data
+      _currentWeather = await _weatherService.getCurrentWeather();
+
+      setState(() {
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to load dashboard data: ${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  /// Handle logout
+  Future<void> _handleLogout() async {
+    final shouldLogout = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Logout'),
+        content: const Text('Are you sure you want to logout?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Logout'),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldLogout == true) {
+      await _authService.logout();
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/login');
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey.shade50,
+      appBar: AppBar(
+        title: const Text(
+          AppStrings.dashboard,
+          style: AppTextStyles.heading3,
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications_outlined),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    content: Text('Notifications feature coming soon!')),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Search feature coming soon!')),
+              );
+            },
+          ),
+        ],
+      ),
+      drawer: _buildDrawer(),
+      body: _isLoading
+          ? const Center(
+              child: CircularProgressIndicator(
+                color: AppColors.primaryGreen,
+              ),
+            )
+          : RefreshIndicator(
+              onRefresh: _loadDashboardData,
+              color: AppColors.primaryGreen,
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Welcome header
+                    _buildWelcomeHeader(),
+
+                    const SizedBox(height: 32),
+
+                    // Weather card
+                    if (_currentWeather != null)
+                      WeatherCard(weather: _currentWeather!),
+
+                    const SizedBox(height: 32),
+
+                    // Quick actions
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryGreen,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Icon(
+                            Icons.dashboard,
+                            color: AppColors.white,
+                            size: 20,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Text(
+                          AppStrings.quickActions,
+                          style: AppTextStyles.heading3.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    const QuickActionsGrid(),
+
+                    const SizedBox(height: 32),
+                  ],
+                ),
+              ),
+            ),
+    );
+  }
+
+  /// Build welcome header
+  Widget _buildWelcomeHeader() {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primaryGreen,
+            AppColors.darkGreen,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryGreen.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          // Profile picture placeholder
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: const CircleAvatar(
+              radius: 28,
+              backgroundColor: AppColors.lightGreen,
+              child: Icon(
+                Icons.person,
+                size: 28,
+                color: AppColors.darkGreen,
+              ),
+            ),
+          ),
+
+          const SizedBox(width: 20),
+
+          // Welcome message
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Good Day!', // âœ… Changed from AppStrings.welcomeMessage
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: AppColors.white.withValues(alpha: 0.9),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  _userName,
+                  style: AppTextStyles.heading2.copyWith(
+                    color: AppColors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'ðŸŒ± Have a productive day!',
+                  style: AppTextStyles.body.copyWith(
+                    color: AppColors.white.withValues(alpha: 0.8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Date and time
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: AppColors.white.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      DateFormat('MMM dd').format(DateTime.now()),
+                      style: AppTextStyles.caption.copyWith(
+                        color: AppColors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      DateFormat('hh:mm a').format(DateTime.now()),
+                      style: AppTextStyles.caption.copyWith(
+                        color: AppColors.white.withValues(alpha: 0.8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Build navigation drawer
+  Widget _buildDrawer() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: AppColors.primaryGreen,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const CircleAvatar(
+                  radius: 30,
+                  backgroundColor: AppColors.white,
+                  child: Icon(
+                    Icons.person,
+                    size: 30,
+                    color: AppColors.primaryGreen,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  _userName,
+                  style: const TextStyle(
+                    color: AppColors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const Text(
+                  'Farmer',
+                  style: TextStyle(
+                    color: AppColors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Dashboard'),
+            onTap: () => Navigator.pop(context),
+          ),
+          ListTile(
+            leading: const Icon(Icons.person),
+            title: const Text('Profile'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Profile feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.agriculture),
+            title: const Text('My Crops'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('My Crops feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.analytics),
+            title: const Text('Analytics'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Analytics feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Settings feature coming soon!')),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.help_outline),
+            title: const Text('Help & Support'),
+            onTap: () {
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Help feature coming soon!')),
+              );
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            onTap: _handleLogout,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\activity_list.dart
+
+import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+import '../../../models/activity_model.dart';
+
+/// List of recent farm activities
+class ActivityList extends StatelessWidget {
+  final List<FarmActivity> activities;
+
+  const ActivityList({
+    super.key,
+    required this.activities,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          // Header
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                const Text(
+                  AppStrings.recentActivity,
+                  style: AppTextStyles.heading3,
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content:
+                              Text('View All Activities feature coming soon!')),
+                    );
+                  },
+                  child: const Text(
+                    'View All',
+                    style: TextStyle(
+                      color: AppColors.primaryGreen,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Activity list
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: activities.length > 5 ? 5 : activities.length,
+            separatorBuilder: (context, index) => const Divider(
+              height: 1,
+              indent: 20,
+              endIndent: 20,
+            ),
+            itemBuilder: (context, index) {
+              final activity = activities[index];
+              return _buildActivityItem(activity);
+            },
+          ),
+
+          const SizedBox(height: 8),
+        ],
+      ),
+    );
+  }
+
+  /// Build individual activity item
+  Widget _buildActivityItem(FarmActivity activity) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      child: Row(
+        children: [
+          // Activity icon
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: activity.color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(
+              activity.icon,
+              size: 20,
+              color: activity.color,
+            ),
+          ),
+
+          const SizedBox(width: 16),
+
+          // Activity details
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  activity.title,
+                  style: AppTextStyles.body.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  activity.description,
+                  style: AppTextStyles.caption,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                if (activity.fieldName != null) ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    activity.fieldName!,
+                    style: AppTextStyles.caption.copyWith(
+                      color: AppColors.primaryGreen,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+
+          // Time
+          Text(
+            activity.timeAgo,
+            style: AppTextStyles.caption.copyWith(
+              color: AppColors.grey,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\quick_actions_grid.dart
+
+import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+import 'package:krishi_bondhu_app_bd/screens/market/market_price_screen.dart';
+// === 1. IMPORT YOUR NEW SCREEN ===
+import 'package:krishi_bondhu_app_bd/screens/market/buy_sell_screen.dart';
+
+/// Grid of quick action buttons for dashboard
+class QuickActionsGrid extends StatelessWidget {
+  const QuickActionsGrid({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final actions = _getQuickActions(context);
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.3,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+          ),
+          itemCount: actions.length,
+          itemBuilder: (context, index) {
+            final action = actions[index];
+            return AnimatedContainer(
+              duration: Duration(milliseconds: 200 + (index * 100)),
+              curve: Curves.easeOutBack,
+              child: _buildActionCard(action),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  /// Build individual action card
+  Widget _buildActionCard(QuickActionItem action) {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: action.color.withOpacity(0.1),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: action.onTap,
+          splashColor: action.color.withOpacity(0.1),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          action.color.withOpacity(0.15),
+                          action.color.withOpacity(0.08),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: action.color.withOpacity(0.2),
+                        width: 1,
+                      ),
+                    ),
+                    child: Icon(
+                      action.icon,
+                      size: 24,
+                      color: action.color,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Flexible(
+                  child: Text(
+                    action.title,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.caption.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Get list of quick actions
+  List<QuickActionItem> _getQuickActions(BuildContext context) {
+    return [
+      QuickActionItem(
+        title: AppStrings.cropManagement,
+        icon: Icons.agriculture,
+        color: AppColors.primaryGreen,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Crop Management feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.weatherForecast,
+        icon: Icons.wb_sunny,
+        color: Colors.orange,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Weather Forecast feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.marketPrices,
+        icon: Icons.trending_up,
+        color: Colors.blue,
+        onTap: () {
+          // --- âš ï¸ à¦­à§à¦²à¦Ÿà¦¿ à¦à¦–à¦¾à¦¨à§‡ à¦ à¦¿à¦• à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡ ---
+          // à¦à¦–à¦¨ à¦à¦Ÿà¦¿ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ MarketPriceScreen-à¦ à¦¯à¦¾à¦¬à§‡
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MarketPriceScreen()),
+          );
+        },
+      ),
+      // âœ… à¦¨à¦¤à§à¦¨ "Buy & Sell" action à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¹à¦²à§‹
+      QuickActionItem(
+        title: 'Buy & Sell',
+        icon: Icons.shopping_cart,
+        color: Colors.deepOrange,
+        onTap: () {
+          // === 2. THIS IS THE CHANGE ===
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const BuySellScreen()),
+          );
+          // ==============================
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.expertAdvice,
+        icon: Icons.psychology,
+        color: Colors.purple,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Expert Advice feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.communityForum,
+        icon: Icons.groups,
+        color: Colors.teal,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Community Forum feature coming soon!')),
+          );
+        },
+      ),
+      QuickActionItem(
+        title: AppStrings.pestControl,
+        icon: Icons.bug_report,
+        color: Colors.red,
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Pest Control feature coming soon!')),
+          );
+        },
+      ),
+    ];
+  }
+}
+// ...existing code...
+
+/// Quick Action Item Model
+class QuickActionItem {
+  final String title;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onTap;
+
+  const QuickActionItem({
+    required this.title,
+    required this.icon,
+    required this.color,
+    required this.onTap,
+  });
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\stats_cards.dart
+
+import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+
+/// Statistics cards for dashboard
+class StatsCards extends StatelessWidget {
+  const StatsCards({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: _buildStatCard(
+            'Active Fields',
+            '12',
+            Icons.landscape,
+            AppColors.primaryGreen,
+            context,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: _buildStatCard(
+            'Total Crops',
+            '8',
+            Icons.agriculture,
+            Colors.orange,
+            context,
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// Build individual stat card
+  Widget _buildStatCard(
+    String title,
+    String value,
+    IconData icon,
+    Color color,
+    BuildContext context,
+  ) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(
+                  icon,
+                  size: 20,
+                  color: color,
+                ),
+              ),
+              const Spacer(),
+              const Icon(
+                Icons.trending_up,
+                size: 16,
+                color: AppColors.primaryGreen,
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            value,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: AppColors.black,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            title,
+            style: AppTextStyles.caption,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\dashboard\widgets\weather_card.dart
+
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import '../../../utils/constants.dart';
+import '../../../models/weather_model.dart';
+
+/// Weather information card for dashboard
+class WeatherCard extends StatelessWidget {
+  final Weather weather;
+
+  const WeatherCard({
+    super.key,
+    required this.weather,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primaryGreen,
+            AppColors.darkGreen,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryGreen.withValues(alpha: 0.3),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header
+          Row(
+            children: [
+              const Icon(
+                Icons.wb_sunny,
+                color: AppColors.white,
+                size: 24,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                AppStrings.weatherToday,
+                style: AppTextStyles.subtitle.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                DateFormat('hh:mm a').format(weather.lastUpdated),
+                style: AppTextStyles.caption.copyWith(
+                  color: AppColors.white.withValues(alpha: 0.8),
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          // Main weather info
+          Row(
+            children: [
+              // Temperature and condition
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${weather.temperature.round()}Â°C',
+                      style: const TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.white,
+                      ),
+                    ),
+                    Text(
+                      weather.condition,
+                      style: AppTextStyles.body.copyWith(
+                        color: AppColors.white.withValues(alpha: 0.9),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.location_on,
+                          size: 16,
+                          color: AppColors.white,
+                        ),
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Text(
+                            weather.location,
+                            style: AppTextStyles.caption.copyWith(
+                              color: AppColors.white.withValues(alpha: 0.8),
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              // Weather icon
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.white.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  _getWeatherIcon(weather.icon),
+                  size: 48,
+                  color: AppColors.white,
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          // Additional info
+          Row(
+            children: [
+              Expanded(
+                child: _buildInfoItem(
+                  Icons.water_drop,
+                  'Humidity',
+                  '${weather.humidity}%',
+                ),
+              ),
+              Expanded(
+                child: _buildInfoItem(
+                  Icons.air,
+                  'Wind',
+                  '${weather.windSpeed.round()} km/h',
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Build info item widget
+  Widget _buildInfoItem(IconData icon, String label, String value) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: 16,
+          color: AppColors.white.withValues(alpha: 0.8),
+        ),
+        const SizedBox(width: 8),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              label,
+              style: AppTextStyles.caption.copyWith(
+                color: AppColors.white.withValues(alpha: 0.8),
+              ),
+            ),
+            Text(
+              value,
+              style: AppTextStyles.body.copyWith(
+                color: AppColors.white,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  /// Get weather icon based on condition
+  IconData _getWeatherIcon(String condition) {
+    switch (condition.toLowerCase()) {
+      case 'sunny':
+        return Icons.wb_sunny;
+      case 'partly_cloudy':
+        return Icons.wb_cloudy;
+      case 'cloudy':
+        return Icons.cloud;
+      case 'rainy':
+        return Icons.grain;
+      case 'thunderstorm':
+        return Icons.thunderstorm;
+      default:
+        return Icons.wb_sunny;
+    }
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\buy_sell_screen.dart
+
+import 'package:flutter/material.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+import 'package:krishi_bondhu_app_bd/screens/market/create_listing_screen.dart';
+import 'package:krishi_bondhu_app_bd/services/product_service.dart';
+import 'package:krishi_bondhu_app_bd/utils/constants.dart';
+import 'package:krishi_bondhu_app_bd/screens/market/product_detail_screen.dart';
+import 'package:krishi_bondhu_app_bd/screens/market/my_listings_screen.dart';
+
+class BuySellScreen extends StatefulWidget {
+  const BuySellScreen({super.key});
+
+  @override
+  State<BuySellScreen> createState() => _BuySellScreenState();
+}
+
+class _BuySellScreenState extends State<BuySellScreen> {
+  final ProductService _productService = ProductService();
+  String _selectedCategory = 'à¦¸à¦¬';
+
+  final List<String> _categories = [
+    'à¦¸à¦¬',
+    'à¦¸à¦¬à¦œà¦¿',
+    'à¦«à¦²',
+    'à¦¶à¦¸à§à¦¯',
+    'à¦¬à§€à¦œ',
+    'à¦¸à¦¾à¦°',
+    'à¦•à§€à¦Ÿà¦¨à¦¾à¦¶à¦•',
+    'à¦•à§ƒà¦·à¦¿ à¦¸à¦°à¦žà§à¦œà¦¾à¦®',
+    'à¦ªà¦¶à§à¦–à¦¾à¦¦à§à¦¯',
+    'à¦…à¦¨à§à¦¯à¦¾à¦¨à§à¦¯',
+  ];
+
+  // --- à¦¨à¦¤à§à¦¨: à¦¡à§à¦°à§à¦¯à¦¾à¦— à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯ à¦¬à¦¾à¦Ÿà¦¨à¦Ÿà¦¿à¦° à¦ªà¦œà¦¿à¦¶à¦¨ ---
+  Offset? _fabPosition;
+  bool _hasBeenDragged = false;
+  // --- à¦¶à§‡à¦· ---
+
+  @override
+  Widget build(BuildContext context) {
+    // --- à¦¨à¦¤à§à¦¨: à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¾à¦° à¦à¦¬à¦‚ à¦¸à§à¦•à§à¦°à¦¿à¦¨à§‡à¦° à¦®à¦¾à¦ª ---
+    final appBar = AppBar(
+      title: const Text('à¦•à§‡à¦¨à¦¾-à¦¬à§‡à¦šà¦¾'),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: TextButton.icon(
+            icon: const Icon(Icons.storefront, color: Colors.white),
+            label: const Text(
+              'à¦†à¦®à¦¾à¦° à¦ªà¦£à§à¦¯',
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MyListingsScreen()),
+              );
+            },
+            style: TextButton.styleFrom(
+              backgroundColor: AppColors.darkGreen,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
+            ),
+          ),
+        )
+      ],
+    );
+
+    final size = MediaQuery.of(context).size;
+    final topPadding = MediaQuery.of(context).padding.top;
+
+    // --- à¦¨à¦¤à§à¦¨: à¦¬à¦¾à¦Ÿà¦¨à¦Ÿà¦¿à¦° à¦ªà§à¦°à¦¥à¦® à¦ªà¦œà¦¿à¦¶à¦¨ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¾ ---
+    if (!_hasBeenDragged) {
+      _fabPosition = Offset(
+        size.width - 230, // à¦¬à¦¾à¦Ÿà¦¨à¦Ÿà¦¿à¦° à¦†à¦¨à§à¦®à¦¾à¦¨à¦¿à¦• à¤šà¥Œà¤¡à¤¼à¤¾à¤ˆ + à¦ªà§à¦¯à¦¾à¦¡à¦¿à¦‚
+        size.height -
+            appBar.preferredSize.height -
+            topPadding -
+            100, // à¦¨à¦¿à¦š à¦¥à§‡à¦•à§‡ à§§à§¦à§¦ à¦ªà¦¿à¦•à§à¦¸à§‡à¦² à¦‰à¦ªà¦°à§‡
+      );
+    }
+    // --- à¦¶à§‡à¦· ---
+
+    return Scaffold(
+      appBar: appBar, // à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¾à¦°à¦Ÿà¦¿ à¦à¦–à¦¾à¦¨à§‡ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨
+
+      // --- à¦¨à¦¤à§à¦¨: Stack à¦‰à¦‡à¦œà§‡à¦Ÿ ---
+      // Stack à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡ à¦¯à¦¾à¦¤à§‡ à¦¬à¦¾à¦Ÿà¦¨à¦Ÿà¦¿ à¦•à¦¨à§à¦Ÿà§‡à¦¨à§à¦Ÿà§‡à¦° à¦‰à¦ªà¦°à§‡ à¦­à¦¾à¦¸à¦¤à§‡ à¦ªà¦¾à¦°à§‡
+      body: Stack(
+        children: [
+          // --- à¦†à¦ªà¦¨à¦¾à¦° à¦ªà§à¦°à¦¨à§‹ à¦•à¦¨à§à¦Ÿà§‡à¦¨à§à¦Ÿ ---
+          Column(
+            children: [
+              Container(
+                height: 50,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _categories.length,
+                  itemBuilder: (context, index) {
+                    final category = _categories[index];
+                    final isSelected = category == _selectedCategory;
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: FilterChip(
+                        label: Text(category),
+                        selected: isSelected,
+                        onSelected: (selected) {
+                          setState(() {
+                            _selectedCategory = category;
+                          });
+                        },
+                        backgroundColor: Colors.grey[200],
+                        selectedColor: AppColors.lightGreen,
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: StreamBuilder<List<Product>>(
+                  stream: _selectedCategory == 'à¦¸à¦¬'
+                      ? _productService.getAllProducts()
+                      : _productService
+                          .getProductsByCategory(_selectedCategory),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            'Error: ${snapshot.error}\n\nà¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ Firebase Console-à¦ à¦—à¦¿à§Ÿà§‡ à¦à¦•à¦Ÿà¦¿ Index à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨ (à¦†à¦—à§‡à¦°à¦¬à¦¾à¦° à¦¯à§‡à¦®à¦¨ à¦•à¦°à§‡à¦›à¦¿à¦²à§‡à¦¨)à¥¤',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      );
+                    }
+                    if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Text(
+                          'à¦à¦‡ à¦•à§à¦¯à¦¾à¦Ÿà¦¾à¦—à¦°à¦¿à¦¤à§‡ à¦•à§‹à¦¨à§‹ à¦ªà¦£à§à¦¯ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿à¥¤',
+                          style: AppTextStyles.subtitle,
+                        ),
+                      );
+                    }
+                    final products = snapshot.data!;
+                    return GridView.builder(
+                      padding: const EdgeInsets.fromLTRB(
+                          16, 16, 16, 100), // <-- à¦¬à¦¾à¦Ÿà¦¨à§‡à¦° à¦œà¦¨à§à¦¯ à¦¨à¦¿à¦šà§‡ à¦œà¦¾à§Ÿà¦—à¦¾
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16.0,
+                        mainAxisSpacing: 16.0,
+                        childAspectRatio: 0.75,
+                      ),
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        final product = products[index];
+                        return _buildProductCard(product);
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+          // --- à¦¶à§‡à¦·: à¦ªà§à¦°à¦¨à§‹ à¦•à¦¨à§à¦Ÿà§‡à¦¨à§à¦Ÿ ---
+
+          // --- à¦¨à¦¤à§à¦¨: à¦¡à§à¦°à§à¦¯à¦¾à¦— à¦•à¦°à¦¾ à¦¯à¦¾à§Ÿ à¦à¦®à¦¨ à¦¬à¦¾à¦Ÿà¦¨ ---
+          Positioned(
+            left: _fabPosition!.dx,
+            top: _fabPosition!.dy,
+            child: Draggable(
+              // à¦¡à§à¦°à§à¦¯à¦¾à¦— à¦•à¦°à¦¾à¦° à¦¸à¦®à§Ÿ à¦¬à¦¾à¦Ÿà¦¨à¦Ÿà¦¿ à¦•à§‡à¦®à¦¨ à¦¦à§‡à¦–à¦¾à¦¬à§‡
+              feedback: FloatingActionButton.extended(
+                onPressed: () {}, // feedback-à¦ onPressed à¦²à¦¾à¦—à§‡ à¦¨à¦¾
+                label: const Text('à¦†à¦ªà¦¨à¦¾à¦° à¦ªà¦£à§à¦¯ à¦¬à¦¿à¦•à§à¦°à§Ÿ à¦•à¦°à§à¦¨'),
+                icon: const Icon(Icons.add),
+                backgroundColor: AppColors.primaryGreen,
+              ),
+              // à¦¡à§à¦°à§à¦¯à¦¾à¦— à¦•à¦°à¦¾à¦° à¦¸à¦®à§Ÿ à¦ªà§à¦°à¦¨à§‹ à¦œà¦¾à§Ÿà¦—à¦¾à§Ÿ à¦•à§€ à¦¦à§‡à¦–à¦¾à¦¬à§‡ (à¦•à¦¿à¦›à§à¦‡ à¦¨à¦¾)
+              childWhenDragging: Container(),
+              // à¦¡à§à¦°à§à¦¯à¦¾à¦— à¦•à¦°à¦¾ à¦¶à§‡à¦· à¦¹à¦²à§‡
+              onDragEnd: (details) {
+                setState(() {
+                  _hasBeenDragged = true;
+                  // à¦¨à¦¤à§à¦¨ à¦ªà¦œà¦¿à¦¶à¦¨ à¦¸à§‡à¦­ à¦•à¦°à§à¦¨ (à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¾à¦° à¦à¦¬à¦‚ à¦¸à§à¦Ÿà§à¦¯à¦¾à¦Ÿà¦¾à¦¸ à¦¬à¦¾à¦°à§‡à¦° à¦‰à¦šà§à¦šà¦¤à¦¾ à¦¬à¦¾à¦¦ à¦¦à¦¿à§Ÿà§‡)
+                  _fabPosition = Offset(
+                    details.offset.dx,
+                    details.offset.dy -
+                        appBar.preferredSize.height -
+                        topPadding,
+                  );
+                });
+              },
+              // à¦†à¦¸à¦² à¦¬à¦¾à¦Ÿà¦¨à¦Ÿà¦¿ à¦¯à¦¾ à¦¦à§‡à¦–à¦¾ à¦¯à¦¾à¦¬à§‡
+              child: FloatingActionButton.extended(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CreateListingScreen()),
+                  );
+                },
+                label: const Text('à¦†à¦ªà¦¨à¦¾à¦° à¦ªà¦£à§à¦¯ à¦¬à¦¿à¦•à§à¦°à§Ÿ à¦•à¦°à§à¦¨'),
+                icon: const Icon(Icons.add),
+                backgroundColor: AppColors.primaryGreen,
+              ),
+            ),
+          ),
+          // --- à¦¶à§‡à¦·: à¦¨à¦¤à§à¦¨ à¦¬à¦¾à¦Ÿà¦¨ ---
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProductCard(Product product) {
+    // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: `imageUrls[0]` à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨ ---
+    final bool hasImages = product.imageUrls.isNotEmpty;
+    final String thumbnailUrl = hasImages ? product.imageUrls[0] : '';
+
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductDetailScreen(product: product),
+          ),
+        );
+      },
+      child: Card(
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        elevation: 3,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: hasImages
+                  ? Image.network(
+                      thumbnailUrl, // <-- à¦à¦–à¦¾à¦¨à§‡ à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡
+                      fit: BoxFit.cover,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return const Center(child: CircularProgressIndicator());
+                      },
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(Icons.image_not_supported,
+                            color: Colors.grey, size: 50);
+                      },
+                    )
+                  : Container(
+                      // à¦¯à¦¦à¦¿ à¦•à§‹à¦¨à§‹ à¦›à¦¬à¦¿ à¦¨à¦¾ à¦¥à¦¾à¦•à§‡
+                      color: Colors.grey[200],
+                      child: const Icon(Icons.image_not_supported,
+                          color: Colors.grey, size: 50),
+                    ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.productName,
+                    style: AppTextStyles.body
+                        .copyWith(fontWeight: FontWeight.bold),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'à§³${product.pricePerUnit.toStringAsFixed(0)} / ${product.unit}',
+                    style: AppTextStyles.body.copyWith(
+                        color: AppColors.primaryGreen,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    'à¦®à§‹à¦Ÿ à¦†à¦›à§‡: ${product.availableQuantity} ${product.unit}',
+                    style: AppTextStyles.caption,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\create_listing_screen.dart
+
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:krishi_bondhu_app_bd/models/user_model.dart' as app_user;
+import 'package:krishi_bondhu_app_bd/services/auth_service.dart';
+import 'package:krishi_bondhu_app_bd/services/product_service.dart';
+import 'package:krishi_bondhu_app_bd/services/storage_service.dart';
+import 'package:krishi_bondhu_app_bd/utils/constants.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+// âš ï¸ StaggeredGridView à¦‡à¦®à§à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à¦¾à¦° à¦¦à¦°à¦•à¦¾à¦° à¦¨à§‡à¦‡, à¦†à¦®à¦°à¦¾ GridView.builder à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¬à§‹
+
+class CreateListingScreen extends StatefulWidget {
+  const CreateListingScreen({super.key});
+
+  @override
+  State<CreateListingScreen> createState() => _CreateListingScreenState();
+}
+
+class _CreateListingScreenState extends State<CreateListingScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _priceController = TextEditingController();
+  final _quantityController = TextEditingController();
+
+  final StorageService _storageService = StorageService();
+  final ProductService _productService = ProductService();
+  final AuthService _authService = AuthService();
+
+  String? _selectedCategory = 'à¦¸à¦¬à¦œà¦¿';
+  String? _selectedUnit = 'à¦•à§‡à¦œà¦¿';
+  final List<File> _images = [];
+  bool _isLoading = false;
+
+  final List<String> _categories = [
+    'à¦¸à¦¬à¦œà¦¿',
+    'à¦«à¦²',
+    'à¦¶à¦¸à§à¦¯',
+    'à¦¬à§€à¦œ',
+    'à¦¸à¦¾à¦°',
+    'à¦•à§€à¦Ÿà¦¨à¦¾à¦¶à¦•',
+    'à¦•à§ƒà¦·à¦¿ à¦¸à¦°à¦žà§à¦œà¦¾à¦®',
+    'à¦ªà¦¶à§à¦–à¦¾à¦¦à§à¦¯',
+    'à¦…à¦¨à§à¦¯à¦¾à¦¨à§à¦¯',
+  ];
+  final List<String> _units = [
+    'à¦•à§‡à¦œà¦¿',
+    'à¦ªà¦¿à¦¸',
+    'à¦²à¦¿à¦Ÿà¦¾à¦°',
+    'à¦—à§à¦°à¦¾à¦®',
+    'à¦œà§‹à§œà¦¾',
+    'à¦®à¦¨',
+    'à¦¬à¦¸à§à¦¤à¦¾',
+  ];
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _priceController.dispose();
+    _quantityController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _pickImages(ImageSource source) async {
+    final picker = ImagePicker();
+    if (source == ImageSource.gallery) {
+      final List<XFile> pickedFiles =
+          await picker.pickMultiImage(imageQuality: 70);
+      setState(() {
+        _images.addAll(pickedFiles.map((file) => File(file.path)).toList());
+      });
+    } else {
+      final XFile? pickedFile =
+          await picker.pickImage(source: source, imageQuality: 70);
+      if (pickedFile != null) {
+        setState(() {
+          _images.add(File(pickedFile.path));
+        });
+      }
+    }
+  }
+
+  void _showImagePickerOptions() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SafeArea(
+          child: Wrap(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.photo_library),
+                title: const Text('à¦«à¦Ÿà§‹ à¦—à§à¦¯à¦¾à¦²à¦¾à¦°à¦¿ (à¦à¦•à¦¾à¦§à¦¿à¦• à¦›à¦¬à¦¿)'),
+                onTap: () {
+                  _pickImages(ImageSource.gallery);
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.camera_alt),
+                title: const Text('à¦•à§à¦¯à¦¾à¦®à§‡à¦°à¦¾ (à¦à¦•à¦Ÿà¦¿ à¦›à¦¬à¦¿)'),
+                onTap: () {
+                  _pickImages(ImageSource.camera);
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _submitListing() async {
+    if (!_formKey.currentState!.validate()) return;
+    if (_images.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('à¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ à¦•à¦®à¦ªà¦•à§à¦·à§‡ à¦à¦•à¦Ÿà¦¿ à¦›à¦¬à¦¿ à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿ à¦•à¦°à§à¦¨'),
+            backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      app_user.User? currentUser = await _authService.getCurrentUser();
+      if (currentUser == null) {
+        throw Exception('à¦¬à¦¿à¦•à§à¦°à§Ÿ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯ à¦†à¦ªà¦¨à¦¾à¦•à§‡ à¦²à¦—à¦‡à¦¨ à¦•à¦°à¦¤à§‡ à¦¹à¦¬à§‡à¥¤');
+      }
+
+      List<String> imageUrls =
+          await _storageService.uploadMultipleImages(_images);
+
+      final newProduct = Product(
+        productName: _nameController.text.trim(),
+        category: _selectedCategory!,
+        pricePerUnit: double.tryParse(_priceController.text) ?? 0.0,
+        unit: _selectedUnit!,
+        availableQuantity: _quantityController.text.trim(),
+        imageUrls: imageUrls,
+        sellerId: currentUser.id,
+        sellerName: currentUser.name,
+        sellerPhone: currentUser.phone,
+        sellerDistrict: currentUser.district,
+        sellerUpazila: currentUser.upazila,
+        createdAt: Timestamp.now(),
+      );
+
+      await _productService.createProduct(newProduct);
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('à¦†à¦ªà¦¨à¦¾à¦° à¦ªà¦£à§à¦¯à¦Ÿà¦¿ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦²à¦¿à¦¸à§à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡!'),
+              backgroundColor: Colors.green),
+        );
+        Navigator.of(context).pop();
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('à¦²à¦¿à¦¸à§à¦Ÿà¦¿à¦‚ à¦¬à§à¦¯à¦°à§à¦¥ à¦¹à§Ÿà§‡à¦›à§‡: ${e.toString()}'),
+              backgroundColor: Colors.red),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('à¦†à¦ªà¦¨à¦¾à¦° à¦ªà¦£à§à¦¯ à¦¬à¦¿à¦•à§à¦°à§Ÿ à¦•à¦°à§à¦¨'),
+      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              padding: const EdgeInsets.all(24.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: GridView.builder à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨ ---
+                    _buildImageGrid(),
+                    const SizedBox(height: 24),
+
+                    TextFormField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                          labelText: 'à¦ªà¦£à§à¦¯à§‡à¦° à¦¨à¦¾à¦® (à¦¯à§‡à¦®à¦¨: à¦«à¦œà¦²à¦¿ à¦†à¦®)'),
+                      validator: (value) => value == null || value.isEmpty
+                          ? 'à¦à¦•à¦Ÿà¦¿ à¦¨à¦¾à¦® à¦¦à¦¿à¦¨'
+                          : null,
+                    ),
+                    const SizedBox(height: 16),
+
+                    DropdownButtonFormField<String>(
+                      initialValue: _selectedCategory,
+                      decoration: const InputDecoration(labelText: 'à¦•à§à¦¯à¦¾à¦Ÿà¦¾à¦—à¦°à¦¿'),
+                      items: _categories.map((category) {
+                        return DropdownMenuItem<String>(
+                          value: category,
+                          child: Text(category),
+                        );
+                      }).toList(),
+                      onChanged: (newValue) {
+                        setState(() {
+                          _selectedCategory = newValue;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 16),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: TextFormField(
+                            controller: _priceController,
+                            decoration: const InputDecoration(
+                                labelText: 'à¦®à§‚à¦²à§à¦¯ (à¦Ÿà¦¾à¦•à¦¾)'),
+                            keyboardType: TextInputType.number,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'à¦®à§‚à¦²à§à¦¯ à¦¦à¦¿à¦¨';
+                              }
+                              if (double.tryParse(value) == null) {
+                                return 'à¦¸à¦ à¦¿à¦• à¦¸à¦‚à¦–à§à¦¯à¦¾ à¦¦à¦¿à¦¨';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          flex: 1,
+                          child: DropdownButtonFormField<String>(
+                            initialValue: _selectedUnit,
+                            decoration: const InputDecoration(labelText: 'à¦à¦•à¦•'),
+                            items: _units.map((unit) {
+                              return DropdownMenuItem<String>(
+                                value: unit,
+                                child: Text(unit),
+                              );
+                            }).toList(),
+                            onChanged: (newValue) {
+                              setState(() {
+                                _selectedUnit = newValue;
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+
+                    TextFormField(
+                      controller: _quantityController,
+                      decoration: const InputDecoration(
+                          labelText: 'à¦®à§‹à¦Ÿ à¦ªà¦°à¦¿à¦®à¦¾à¦£ (à¦¯à§‡à¦®à¦¨: à§«à§¦)'),
+                      keyboardType: TextInputType.number,
+                      validator: (value) => value == null || value.isEmpty
+                          ? 'à¦ªà¦°à¦¿à¦®à¦¾à¦£ à¦²à¦¿à¦–à§à¦¨'
+                          : null,
+                    ),
+                    const SizedBox(height: 32),
+
+                    ElevatedButton(
+                      onPressed: _submitListing,
+                      child: const Text('à¦²à¦¿à¦¸à§à¦Ÿà¦¿à¦‚ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à§à¦¨'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+    );
+  }
+
+  // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: GridView.builder à¦¦à¦¿à§Ÿà§‡ à¦¨à¦¤à§à¦¨ UI ---
+  Widget _buildImageGrid() {
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3, // à¦ªà§à¦°à¦¤à¦¿ à¦¸à¦¾à¦°à¦¿à¦¤à§‡ à§©à¦Ÿà¦¿ à¦†à¦‡à¦Ÿà§‡à¦®
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 8.0,
+      ),
+      itemCount: _images.length + 1, // +1 "Add" à¦¬à¦¾à¦Ÿà¦¨à§‡à¦° à¦œà¦¨à§à¦¯
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        if (index == _images.length) {
+          // à¦à¦Ÿà¦¿ "Add" à¦¬à¦¾à¦Ÿà¦¨
+          return InkWell(
+            onTap: _showImagePickerOptions,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.grey),
+              ),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.camera_alt, size: 40, color: Colors.grey),
+                  Text('Add Photo', style: TextStyle(color: Colors.grey)),
+                ],
+              ),
+            ),
+          );
+        }
+        // à¦à¦—à§à¦²à§‹ à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿ à¦•à¦°à¦¾ à¦›à¦¬à¦¿
+        return Stack(
+          fit: StackFit.expand,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.file(_images[index], fit: BoxFit.cover),
+            ),
+            // à¦›à¦¬à¦¿ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾à¦° à¦¬à¦¾à¦Ÿà¦¨
+            Positioned(
+              top: 4,
+              right: 4,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    _images.removeAt(index);
+                  });
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.black54,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.close, color: Colors.white, size: 18),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\edit_listing_screen.dart
+
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:krishi_bondhu_app_bd/services/product_service.dart';
+import 'package:krishi_bondhu_app_bd/services/storage_service.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+// âš ï¸ StaggeredGridView à¦‡à¦®à§à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à¦¾à¦° à¦¦à¦°à¦•à¦¾à¦° à¦¨à§‡à¦‡
+
+class EditListingScreen extends StatefulWidget {
+  final Product product;
+
+  const EditListingScreen({super.key, required this.product});
+
+  @override
+  State<EditListingScreen> createState() => _EditListingScreenState();
+}
+
+class _EditListingScreenState extends State<EditListingScreen> {
+  final _formKey = GlobalKey<FormState>();
+  late TextEditingController _nameController;
+  late TextEditingController _priceController;
+  late TextEditingController _quantityController;
+
+  final StorageService _storageService = StorageService();
+  final ProductService _productService = ProductService();
+
+  String? _selectedCategory;
+  String? _selectedUnit;
+  final List<File> _newImages = [];
+  List<String> _existingImageUrls = [];
+  bool _isLoading = false;
+
+  final List<String> _categories = [
+    'à¦¸à¦¬à¦œà¦¿',
+    'à¦«à¦²',
+    'à¦¶à¦¸à§à¦¯',
+    'à¦¬à§€à¦œ',
+    'à¦¸à¦¾à¦°',
+    'à¦•à§€à¦Ÿà¦¨à¦¾à¦¶à¦•',
+    'à¦•à§ƒà¦·à¦¿ à¦¸à¦°à¦žà§à¦œà¦¾à¦®',
+    'à¦ªà¦¶à§à¦–à¦¾à¦¦à§à¦¯',
+    'à¦…à¦¨à§à¦¯à¦¾à¦¨à§à¦¯',
+  ];
+  final List<String> _units = [
+    'à¦•à§‡à¦œà¦¿',
+    'à¦ªà¦¿à¦¸',
+    'à¦²à¦¿à¦Ÿà¦¾à¦°',
+    'à¦—à§à¦°à¦¾à¦®',
+    'à¦œà§‹à§œà¦¾',
+    'à¦®à¦¨',
+    'à¦¬à¦¸à§à¦¤à¦¾',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: widget.product.productName);
+    _priceController = TextEditingController(
+        text: widget.product.pricePerUnit.toStringAsFixed(0));
+    _quantityController =
+        TextEditingController(text: widget.product.availableQuantity);
+    _selectedCategory = widget.product.category;
+    _selectedUnit = widget.product.unit;
+    _existingImageUrls = List<String>.from(widget.product.imageUrls);
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _priceController.dispose();
+    _quantityController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _pickImages(ImageSource source) async {
+    final picker = ImagePicker();
+    if (source == ImageSource.gallery) {
+      final List<XFile> pickedFiles =
+          await picker.pickMultiImage(imageQuality: 70);
+      setState(() {
+        _newImages.addAll(pickedFiles.map((file) => File(file.path)).toList());
+      });
+    } else {
+      final XFile? pickedFile =
+          await picker.pickImage(source: source, imageQuality: 70);
+      if (pickedFile != null) {
+        setState(() {
+          _newImages.add(File(pickedFile.path));
+        });
+      }
+    }
+  }
+
+  void _showImagePickerOptions() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => SafeArea(
+        child: Wrap(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_library),
+              title: const Text('à¦«à¦Ÿà§‹ à¦—à§à¦¯à¦¾à¦²à¦¾à¦°à¦¿ (à¦à¦•à¦¾à¦§à¦¿à¦• à¦›à¦¬à¦¿)'),
+              onTap: () {
+                _pickImages(ImageSource.gallery);
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.camera_alt),
+              title: const Text('à¦•à§à¦¯à¦¾à¦®à§‡à¦°à¦¾ (à¦à¦•à¦Ÿà¦¿ à¦›à¦¬à¦¿)'),
+              onTap: () {
+                _pickImages(ImageSource.camera);
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _submitUpdate() async {
+    if (!_formKey.currentState!.validate()) return;
+    if (_existingImageUrls.isEmpty && _newImages.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Please add at least one image'),
+            backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      List<String> finalImageUrls = List<String>.from(_existingImageUrls);
+
+      if (_newImages.isNotEmpty) {
+        List<String> newUrls =
+            await _storageService.uploadMultipleImages(_newImages);
+        finalImageUrls.addAll(newUrls);
+      }
+
+      Map<String, dynamic> updatedData = {
+        'productName': _nameController.text.trim(),
+        'category': _selectedCategory!,
+        'pricePerUnit': double.tryParse(_priceController.text) ?? 0.0,
+        'unit': _selectedUnit!,
+        'availableQuantity': _quantityController.text.trim(),
+        'imageUrls': finalImageUrls,
+        'createdAt': Timestamp.now(),
+      };
+
+      await _productService.updateProduct(widget.product.id!, updatedData);
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('à¦ªà¦£à§à¦¯ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡!'),
+              backgroundColor: Colors.green),
+        );
+        Navigator.of(context).pop();
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('à¦†à¦ªà¦¡à§‡à¦Ÿ à¦¬à§à¦¯à¦°à§à¦¥ à¦¹à§Ÿà§‡à¦›à§‡: ${e.toString()}'),
+              backgroundColor: Colors.red),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('à¦ªà¦£à§à¦¯ à¦à¦¡à¦¿à¦Ÿ à¦•à¦°à§à¦¨'),
+      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              padding: const EdgeInsets.all(24.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: GridView.builder à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨ ---
+                    _buildImageGrid(),
+                    const Center(
+                        child: Text('à¦›à¦¬à¦¿ à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦¬à¦¾ à¦¯à§‹à¦— à¦•à¦°à¦¤à§‡ à¦Ÿà§à¦¯à¦¾à¦ª à¦•à¦°à§à¦¨',
+                            style: TextStyle(color: Colors.grey))),
+                    const SizedBox(height: 24),
+
+                    TextFormField(
+                      controller: _nameController,
+                      decoration:
+                          const InputDecoration(labelText: 'à¦ªà¦£à§à¦¯à§‡à¦° à¦¨à¦¾à¦®'),
+                      validator: (value) => value == null || value.isEmpty
+                          ? 'à¦à¦•à¦Ÿà¦¿ à¦¨à¦¾à¦® à¦¦à¦¿à¦¨'
+                          : null,
+                    ),
+                    const SizedBox(height: 16),
+
+                    DropdownButtonFormField<String>(
+                      initialValue: _selectedCategory,
+                      decoration: const InputDecoration(labelText: 'à¦•à§à¦¯à¦¾à¦Ÿà¦¾à¦—à¦°à¦¿'),
+                      items: _categories.map((category) {
+                        return DropdownMenuItem<String>(
+                          value: category,
+                          child: Text(category),
+                        );
+                      }).toList(),
+                      onChanged: (newValue) {
+                        setState(() {
+                          _selectedCategory = newValue;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 16),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: TextFormField(
+                            controller: _priceController,
+                            decoration: const InputDecoration(
+                                labelText: 'à¦®à§‚à¦²à§à¦¯ (à¦Ÿà¦¾à¦•à¦¾)'),
+                            keyboardType: TextInputType.number,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'à¦®à§‚à¦²à§à¦¯ à¦¦à¦¿à¦¨';
+                              }
+                              if (double.tryParse(value) == null) {
+                                return 'à¦¸à¦ à¦¿à¦• à¦¸à¦‚à¦–à§à¦¯à¦¾ à¦¦à¦¿à¦¨';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          flex: 1,
+                          child: DropdownButtonFormField<String>(
+                            initialValue: _selectedUnit,
+                            decoration: const InputDecoration(labelText: 'à¦à¦•à¦•'),
+                            items: _units.map((unit) {
+                              return DropdownMenuItem<String>(
+                                value: unit,
+                                child: Text(unit),
+                              );
+                            }).toList(),
+                            onChanged: (newValue) {
+                              setState(() {
+                                _selectedUnit = newValue;
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+
+                    TextFormField(
+                      controller: _quantityController,
+                      decoration:
+                          const InputDecoration(labelText: 'à¦®à§‹à¦Ÿ à¦ªà¦°à¦¿à¦®à¦¾à¦£'),
+                      keyboardType: TextInputType.number,
+                      validator: (value) => value == null || value.isEmpty
+                          ? 'à¦ªà¦°à¦¿à¦®à¦¾à¦£ à¦²à¦¿à¦–à§à¦¨'
+                          : null,
+                    ),
+                    const SizedBox(height: 32),
+
+                    ElevatedButton(
+                      onPressed: _submitUpdate,
+                      child: const Text('à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦¸à§‡à¦­ à¦•à¦°à§à¦¨'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+    );
+  }
+
+  // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: GridView.builder à¦¦à¦¿à§Ÿà§‡ à¦¨à¦¤à§à¦¨ UI ---
+  Widget _buildImageGrid() {
+    int totalImages = _existingImageUrls.length + _newImages.length;
+
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 8.0,
+      ),
+      itemCount: totalImages + 1, // +1 for the "Add" button
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        if (index == totalImages) {
+          // à¦à¦Ÿà¦¿ "Add" à¦¬à¦¾à¦Ÿà¦¨
+          return InkWell(
+            onTap: _showImagePickerOptions,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.grey),
+              ),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.camera_alt, size: 40, color: Colors.grey),
+                  Text('Add Photo', style: TextStyle(color: Colors.grey)),
+                ],
+              ),
+            ),
+          );
+        }
+
+        // à¦à¦Ÿà¦¿ à¦à¦•à¦Ÿà¦¿ à¦›à¦¬à¦¿
+        Widget imageWidget;
+        bool isNewImage = index >= _existingImageUrls.length;
+
+        if (isNewImage) {
+          // à¦à¦Ÿà¦¿ à¦à¦•à¦Ÿà¦¿ à¦¨à¦¤à§à¦¨ File à¦›à¦¬à¦¿
+          File imageFile = _newImages[index - _existingImageUrls.length];
+          imageWidget = Image.file(imageFile, fit: BoxFit.cover);
+        } else {
+          // à¦à¦Ÿà¦¿ à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à¦¨à§‹ Network à¦›à¦¬à¦¿
+          String imageUrl = _existingImageUrls[index];
+          imageWidget = Image.network(imageUrl, fit: BoxFit.cover);
+        }
+
+        return Stack(
+          fit: StackFit.expand,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: imageWidget,
+            ),
+            // à¦›à¦¬à¦¿ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾à¦° à¦¬à¦¾à¦Ÿà¦¨
+            Positioned(
+              top: 4,
+              right: 4,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    if (isNewImage) {
+                      _newImages.removeAt(index - _existingImageUrls.length);
+                    } else {
+                      _existingImageUrls.removeAt(index);
+                    }
+                  });
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.black54,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.close, color: Colors.white, size: 18),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\gallery_view_screen.dart
+
+import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
+
+class GalleryViewScreen extends StatefulWidget {
+  final List<String> imageUrls;
+  final int initialIndex;
+
+  const GalleryViewScreen({
+    super.key,
+    required this.imageUrls,
+    this.initialIndex = 0,
+  });
+
+  @override
+  State<GalleryViewScreen> createState() => _GalleryViewScreenState();
+}
+
+class _GalleryViewScreenState extends State<GalleryViewScreen> {
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: widget.initialIndex);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.white),
+      ),
+      body: PhotoViewGallery.builder(
+        pageController: _pageController,
+        itemCount: widget.imageUrls.length,
+        builder: (context, index) {
+          final imageUrl = widget.imageUrls[index];
+          return PhotoViewGalleryPageOptions(
+            imageProvider: NetworkImage(imageUrl),
+            minScale: PhotoViewComputedScale.contained,
+            maxScale: PhotoViewComputedScale.covered * 2,
+            heroAttributes: PhotoViewHeroAttributes(tag: imageUrl),
+          );
+        },
+        scrollPhysics: const BouncingScrollPhysics(),
+        backgroundDecoration: const BoxDecoration(color: Colors.black),
+        loadingBuilder: (context, event) => const Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\market_price_screen.dart
+
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+
+class MarketPriceScreen extends StatelessWidget {
+  const MarketPriceScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Market Prices'),
+        backgroundColor: AppColors.primaryGreen,
+      ),
+      body: const Center(
+        child: Padding(
+          padding: EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.trending_up,
+                size: 100,
+                color: AppColors.primaryGreen,
+              ),
+              SizedBox(height: 24),
+              Text(
+                'Market Prices',
+                style: AppTextStyles.heading1,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 16),
+              Text(
+                'This feature is coming soon!\nYou will be able to check live market prices here.',
+                style: AppTextStyles.body,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\my_listings_screen.dart
+
+import 'package:flutter/material.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+import 'package:krishi_bondhu_app_bd/services/auth_service.dart';
+import 'package:krishi_bondhu_app_bd/services/product_service.dart';
+import 'package:krishi_bondhu_app_bd/utils/constants.dart';
+import 'package:intl/intl.dart';
+import 'edit_listing_screen.dart';
+
+class MyListingsScreen extends StatefulWidget {
+  const MyListingsScreen({super.key});
+
+  @override
+  State<MyListingsScreen> createState() => _MyListingsScreenState();
+}
+
+class _MyListingsScreenState extends State<MyListingsScreen> {
+  final ProductService _productService = ProductService();
+  final AuthService _authService = AuthService();
+  late Stream<List<Product>> _myProductsStream;
+  String? _userId;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserAndProducts();
+  }
+
+  void _loadUserAndProducts() async {
+    final user = await _authService.getCurrentUser();
+    if (user != null) {
+      setState(() {
+        _userId = user.id;
+        _myProductsStream = _productService.getProductsForUser(_userId!);
+        _isLoading = false;
+      });
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  Future<void> _deleteListing(Product product) async {
+    final bool didConfirm = await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('à¦²à¦¿à¦¸à§à¦Ÿà¦¿à¦‚ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¬à§‡à¦¨?'),
+            content: const Text(
+                'à¦†à¦ªà¦¨à¦¿ à¦•à¦¿ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤à¦­à¦¾à¦¬à§‡ à¦à¦‡ à¦ªà¦£à§à¦¯à¦Ÿà¦¿ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¤à§‡ à¦šà¦¾à¦¨? à¦à¦Ÿà¦¿ à¦«à§‡à¦°à¦¤ à¦†à¦¨à¦¾ à¦¯à¦¾à¦¬à§‡ à¦¨à¦¾à¥¤'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: const Text('à¦¬à¦¾à¦¤à¦¿à¦² à¦•à¦°à§à¦¨'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, true),
+                style: TextButton.styleFrom(foregroundColor: Colors.red),
+                child: const Text('à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à§à¦¨'),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+
+    if (didConfirm) {
+      try {
+        await _productService.deleteProduct(product);
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('à¦²à¦¿à¦¸à§à¦Ÿà¦¿à¦‚ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡'),
+                backgroundColor: Colors.green),
+          );
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.toString()), backgroundColor: Colors.red),
+          );
+        }
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('à¦†à¦®à¦¾à¦° à¦ªà¦£à§à¦¯ à¦¤à¦¾à¦²à¦¿à¦•à¦¾'),
+      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _userId == null
+              ? const Center(
+                  child: Text('à¦à¦Ÿà¦¿ à¦¦à§‡à¦–à¦¾à¦° à¦œà¦¨à§à¦¯ à¦†à¦ªà¦¨à¦¾à¦•à§‡ à¦²à¦—à¦‡à¦¨ à¦•à¦°à¦¤à§‡ à¦¹à¦¬à§‡à¥¤'))
+              : StreamBuilder<List<Product>>(
+                  stream: _myProductsStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            'Error: ${snapshot.error}\n\nà¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ Firebase Console-à¦ à¦—à¦¿à§Ÿà§‡ à¦à¦•à¦Ÿà¦¿ Index à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨à¥¤',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      );
+                    }
+                    if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Text(
+                          'à¦†à¦ªà¦¨à¦¿ à¦à¦–à¦¨à§‹ à¦•à§‹à¦¨à§‹ à¦ªà¦£à§à¦¯ à¦²à¦¿à¦¸à§à¦Ÿ à¦•à¦°à§‡à¦¨à¦¨à¦¿à¥¤',
+                          style: AppTextStyles.subtitle,
+                        ),
+                      );
+                    }
+
+                    final products = snapshot.data!;
+
+                    return ListView.builder(
+                      padding: const EdgeInsets.all(12.0),
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        final product = products[index];
+                        return _buildMyProductCard(product);
+                      },
+                    );
+                  },
+                ),
+    );
+  }
+
+  Widget _buildMyProductCard(Product product) {
+    final formattedDate =
+        DateFormat('dd MMM yyyy, hh:mm a').format(product.createdAt.toDate());
+    // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: `imageUrls[0]` à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨ ---
+    final bool hasImages = product.imageUrls.isNotEmpty;
+    final String thumbnailUrl = hasImages ? product.imageUrls[0] : '';
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12.0),
+      elevation: 3,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.network(
+            thumbnailUrl, // <-- à¦à¦–à¦¾à¦¨à§‡ à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡
+            height: 180,
+            width: double.infinity,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) => Container(
+              height: 180,
+              color: Colors.grey[200],
+              child: const Icon(Icons.image, size: 50, color: Colors.grey),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.productName,
+                  style: AppTextStyles.heading3.copyWith(fontSize: 18),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'à§³${product.pricePerUnit.toStringAsFixed(0)} / ${product.unit}',
+                      style: AppTextStyles.body.copyWith(
+                        color: AppColors.primaryGreen,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      'à¦®à§‹à¦Ÿ à¦†à¦›à§‡: ${product.availableQuantity} ${product.unit}',
+                      style: AppTextStyles.body
+                          .copyWith(color: AppColors.textSecondary),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'à¦ªà§‹à¦¸à§à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡: $formattedDate',
+                  style: AppTextStyles.caption.copyWith(fontSize: 11),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.grey.shade50,
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton.icon(
+                  icon: const Icon(Icons.edit, size: 18),
+                  label: const Text('à¦à¦¡à¦¿à¦Ÿ'),
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.blue.shade700),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            EditListingScreen(product: product),
+                      ),
+                    );
+                  },
+                ),
+                TextButton.icon(
+                  icon: const Icon(Icons.delete, size: 18),
+                  label: const Text('à¦¡à¦¿à¦²à¦¿à¦Ÿ'),
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.red.shade700),
+                  onPressed: () {
+                    _deleteListing(product);
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\product_detail_screen.dart
+
+import 'package:flutter/material.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+import 'package:krishi_bondhu_app_bd/utils/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'gallery_view_screen.dart'; // <-- à¦—à§à¦¯à¦¾à¦²à¦¾à¦°à¦¿ à¦ªà§‡à¦œ à¦‡à¦®à§à¦ªà§‹à¦°à§à¦Ÿ
+
+class ProductDetailScreen extends StatelessWidget {
+  final Product product;
+  final String? currentUserId; // <-- à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦‡à¦‰à¦œà¦¾à¦° à¦†à¦‡à¦¡à¦¿ à¦à¦–à¦¾à¦¨à§‡ à¦†à¦¸à¦¬à§‡
+
+  const ProductDetailScreen({
+    super.key,
+    required this.product,
+    this.currentUserId, // <-- à¦•à¦¨à¦¸à§à¦Ÿà§à¦°à¦¾à¦•à§à¦Ÿà¦°à§‡ à¦¯à§‹à¦— à¦•à¦°à§à¦¨
+  });
+
+  Future<void> _makePhoneCall(BuildContext context, String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+
+    try {
+      if (await canLaunchUrl(launchUri)) {
+        await launchUrl(launchUri);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('à¦«à§‹à¦¨ à¦•à¦² à¦•à¦°à¦¾ à¦¸à¦®à§à¦­à¦¬ à¦¹à¦šà§à¦›à§‡ à¦¨à¦¾à¥¤'),
+              backgroundColor: Colors.red),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text('à¦•à¦² à¦•à¦°à¦¤à§‡ à¦¬à§à¦¯à¦°à§à¦¥ à¦¹à§Ÿà§‡à¦›à§‡: $e'),
+            backgroundColor: Colors.red),
+      );
+    }
+  }
+
+  // --- à¦—à§à¦¯à¦¾à¦²à¦¾à¦°à¦¿ à¦–à§‹à¦²à¦¾à¦° à¦«à¦¾à¦‚à¦¶à¦¨ ---
+  void _openGallery(BuildContext context, int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => GalleryViewScreen(
+          imageUrls: product.imageUrls,
+          initialIndex: index,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    String sellerAddress = 'à¦ à¦¿à¦•à¦¾à¦¨à¦¾ à¦¦à§‡à¦“à§Ÿà¦¾ à¦¨à§‡à¦‡';
+    if (product.sellerUpazila != null && product.sellerDistrict != null) {
+      sellerAddress = '${product.sellerUpazila}, ${product.sellerDistrict}';
+    } else if (product.sellerDistrict != null) {
+      sellerAddress = product.sellerDistrict!;
+    }
+
+    // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: `imageUrls[0]` à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨ ---
+    final bool hasImages = product.imageUrls.isNotEmpty;
+    final String mainImageUrl = hasImages ? product.imageUrls[0] : '';
+
+    final bool isOwnProduct = product.sellerId == currentUserId;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(product.productName),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // --- âš ï¸ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à¦¾ à¦‡à¦®à§‡à¦œ à¦¸à§‡à¦•à¦¶à¦¨ ---
+            if (hasImages)
+              InkWell(
+                onTap: () =>
+                    _openGallery(context, 0), // à¦Ÿà§à¦¯à¦¾à¦ª à¦•à¦°à¦²à§‡ à¦—à§à¦¯à¦¾à¦²à¦¾à¦°à¦¿ à¦–à§à¦²à¦¬à§‡
+                child: Hero(
+                  tag: mainImageUrl,
+                  child: Image.network(
+                    mainImageUrl,
+                    height: 300,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                        _imageErrorPlaceholder(),
+                  ),
+                ),
+              )
+            else
+              _imageErrorPlaceholder(),
+
+            // --- âš ï¸ à¦¨à¦¤à§à¦¨: à¦¥à¦¾à¦®à§à¦¬à¦¨à§‡à¦‡à¦² à¦›à¦¬à¦¿à¦° à¦²à¦¿à¦¸à§à¦Ÿ ---
+            if (product.imageUrls.length > 1)
+              SizedBox(
+                height: 80,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  itemCount: product.imageUrls.length,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () => _openGallery(context, index),
+                      child: Container(
+                        width: 70,
+                        margin: const EdgeInsets.only(right: 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.grey.shade400),
+                          image: DecorationImage(
+                            image: NetworkImage(product.imageUrls[index]),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+            // --- à¦ªà¦£à§à¦¯à§‡à¦° à¦¤à¦¥à§à¦¯ ---
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.productName,
+                    style: AppTextStyles.heading2,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'à§³${product.pricePerUnit.toStringAsFixed(0)} / ${product.unit}',
+                    style: AppTextStyles.heading1
+                        .copyWith(color: AppColors.primaryGreen, fontSize: 32),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'à¦®à§‹à¦Ÿ à¦†à¦›à§‡: ${product.availableQuantity} ${product.unit}',
+                    style: AppTextStyles.subtitle.copyWith(fontSize: 18),
+                  ),
+                  const SizedBox(height: 8),
+                  Chip(
+                    label: Text(product.category),
+                    backgroundColor: AppColors.lightGreen,
+                  ),
+                  const Divider(height: 40),
+                  Text(
+                    'à¦¬à¦¿à¦•à§à¦°à§‡à¦¤à¦¾à¦° à¦¤à¦¥à§à¦¯',
+                    style: AppTextStyles.heading3,
+                  ),
+                  const SizedBox(height: 16),
+                  ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: AppColors.primaryGreen,
+                      child: Icon(Icons.person, color: AppColors.white),
+                    ),
+                    title: Text(product.sellerName,
+                        style: AppTextStyles.body
+                            .copyWith(fontWeight: FontWeight.bold)),
+                    subtitle: Text(sellerAddress),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: AppColors.primaryGreen,
+                      child: Icon(Icons.phone, color: AppColors.white),
+                    ),
+                    title: Text(product.sellerPhone ?? 'à¦«à§‹à¦¨ à¦¨à¦®à§à¦¬à¦° à¦¦à§‡à¦“à§Ÿà¦¾ à¦¨à§‡à¦‡'),
+                    subtitle: const Text('à¦•à¦² à¦•à¦°à¦¤à§‡ à¦¨à¦¿à¦šà§‡à¦° à¦¬à¦¾à¦Ÿà¦¨à§‡ à¦Ÿà§à¦¯à¦¾à¦ª à¦•à¦°à§à¦¨'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+
+      // --- à¦•à¦² à¦¬à¦¾à¦Ÿà¦¨ (à¦†à¦ªà¦¡à§‡à¦Ÿ à¦•à¦°à¦¾) ---
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ElevatedButton.icon(
+          icon: const Icon(Icons.call),
+          label: Text(
+              isOwnProduct ? 'à¦à¦Ÿà¦¿ à¦†à¦ªà¦¨à¦¾à¦° à¦¨à¦¿à¦œà§‡à¦° à¦ªà¦£à§à¦¯' : 'à¦¬à¦¿à¦•à§à¦°à§‡à¦¤à¦¾à¦•à§‡ à¦•à¦² à¦•à¦°à§à¦¨'),
+          onPressed: (product.sellerPhone == null ||
+                  product.sellerPhone!.isEmpty ||
+                  isOwnProduct)
+              ? null
+              : () {
+                  _makePhoneCall(context, product.sellerPhone!);
+                },
+        ),
+      ),
+    );
+  }
+
+  Widget _imageErrorPlaceholder() {
+    return Container(
+      height: 300,
+      color: Colors.grey[200],
+      child:
+          const Icon(Icons.image_not_supported, color: Colors.grey, size: 100),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\market\tempCodeRunnerFile.dart
+
+import 'package:flutter/material.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+import 'package:krishi_bondhu_app_bd/services/auth_service.dart';
+import 'package:krishi_bondhu_app_bd/services/product_service.dart';
+import 'package:krishi_bondhu_app_bd/utils/constants.dart';
+import 'package:intl/intl.dart';
+import 'edit_listing_screen.dart';
+
+class MyListingsScreen extends StatefulWidget {
+  const MyListingsScreen({super.key});
+
+  @override
+  State<MyListingsScreen> createState() => _MyListingsScreenState();
+}
+
+class _MyListingsScreenState extends State<MyListingsScreen> {
+  final ProductService _productService = ProductService();
+  final AuthService _authService = AuthService();
+  late Stream<List<Product>> _myProductsStream;
+  String? _userId;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserAndProducts();
+  }
+
+  void _loadUserAndProducts() async {
+    final user = await _authService.getCurrentUser();
+    if (user != null) {
+      setState(() {
+        _userId = user.id;
+        _myProductsStream = _productService.getProductsForUser(_userId!);
+        _isLoading = false;
+      });
+    } else {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  Future<void> _deleteListing(Product product) async {
+    final bool didConfirm = await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('à¦²à¦¿à¦¸à§à¦Ÿà¦¿à¦‚ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¬à§‡à¦¨?'),
+            content: const Text(
+                'à¦†à¦ªà¦¨à¦¿ à¦•à¦¿ à¦¨à¦¿à¦¶à§à¦šà¦¿à¦¤à¦­à¦¾à¦¬à§‡ à¦à¦‡ à¦ªà¦£à§à¦¯à¦Ÿà¦¿ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¤à§‡ à¦šà¦¾à¦¨? à¦à¦Ÿà¦¿ à¦«à§‡à¦°à¦¤ à¦†à¦¨à¦¾ à¦¯à¦¾à¦¬à§‡ à¦¨à¦¾à¥¤'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: const Text('à¦¬à¦¾à¦¤à¦¿à¦² à¦•à¦°à§à¦¨'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, true),
+                style: TextButton.styleFrom(foregroundColor: Colors.red),
+                child: const Text('à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à§à¦¨'),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+
+    if (didConfirm) {
+      try {
+        await _productService.deleteProduct(product);
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('à¦²à¦¿à¦¸à§à¦Ÿà¦¿à¦‚ à¦¸à¦«à¦²à¦­à¦¾à¦¬à§‡ à¦¡à¦¿à¦²à¦¿à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡'),
+                backgroundColor: Colors.green),
+          );
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.toString()), backgroundColor: Colors.red),
+          );
+        }
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('à¦†à¦®à¦¾à¦° à¦ªà¦£à§à¦¯ à¦¤à¦¾à¦²à¦¿à¦•à¦¾'),
+      ),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _userId == null
+              ? const Center(
+                  child: Text('à¦à¦Ÿà¦¿ à¦¦à§‡à¦–à¦¾à¦° à¦œà¦¨à§à¦¯ à¦†à¦ªà¦¨à¦¾à¦•à§‡ à¦²à¦—à¦‡à¦¨ à¦•à¦°à¦¤à§‡ à¦¹à¦¬à§‡à¥¤'))
+              : StreamBuilder<List<Product>>(
+                  stream: _myProductsStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.hasError) {
+                      return Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            'Error: ${snapshot.error}\n\nà¦…à¦¨à§à¦—à§à¦°à¦¹ à¦•à¦°à§‡ Firebase Console-à¦ à¦—à¦¿à§Ÿà§‡ à¦à¦•à¦Ÿà¦¿ Index à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§à¦¨à¥¤',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      );
+                    }
+                    if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Text(
+                          'à¦†à¦ªà¦¨à¦¿ à¦à¦–à¦¨à§‹ à¦•à§‹à¦¨à§‹ à¦ªà¦£à§à¦¯ à¦²à¦¿à¦¸à§à¦Ÿ à¦•à¦°à§‡à¦¨à¦¨à¦¿à¥¤',
+                          style: AppTextStyles.subtitle,
+                        ),
+                      );
+                    }
+
+                    final products = snapshot.data!;
+
+                    return ListView.builder(
+                      padding: const EdgeInsets.all(12.0),
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        final product = products[index];
+                        return _buildMyProductCard(product);
+                      },
+                    );
+                  },
+                ),
+    );
+  }
+
+  Widget _buildMyProductCard(Product product) {
+    final formattedDate =
+        DateFormat('dd MMM yyyy, hh:mm a').format(product.createdAt.toDate());
+    // --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: `imageUrls[0]` à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à§à¦¨ ---
+    final bool hasImages = product.imageUrls.isNotEmpty;
+    final String thumbnailUrl = hasImages ? product.imageUrls[0] : '';
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12.0),
+      elevation: 3,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.network(
+            thumbnailUrl, // <-- à¦à¦–à¦¾à¦¨à§‡ à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡
+            height: 180,
+            width: double.infinity,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) => Container(
+              height: 180,
+              color: Colors.grey[200],
+              child: const Icon(Icons.image, size: 50, color: Colors.grey),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.productName,
+                  style: AppTextStyles.heading3.copyWith(fontSize: 18),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'à§³${product.pricePerUnit.toStringAsFixed(0)} / ${product.unit}',
+                      style: AppTextStyles.body.copyWith(
+                        color: AppColors.primaryGreen,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      'à¦®à§‹à¦Ÿ à¦†à¦›à§‡: ${product.availableQuantity} ${product.unit}',
+                      style: AppTextStyles.body
+                          .copyWith(color: AppColors.textSecondary),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'à¦ªà§‹à¦¸à§à¦Ÿ à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡: $formattedDate',
+                  style: AppTextStyles.caption.copyWith(fontSize: 11),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.grey.shade50,
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton.icon(
+                  icon: const Icon(Icons.edit, size: 18),
+                  label: const Text('à¦à¦¡à¦¿à¦Ÿ'),
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.blue.shade700),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            EditListingScreen(product: product),
+                      ),
+                    );
+                  },
+                ),
+                TextButton.icon(
+                  icon: const Icon(Icons.delete, size: 18),
+                  label: const Text('à¦¡à¦¿à¦²à¦¿à¦Ÿ'),
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.red.shade700),
+                  onPressed: () {
+                    _deleteListing(product);
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\onboarding\onboarding_content.dart
+
+import 'package:flutter/material.dart';
+
+/// Model class for onboarding content
+class OnboardingContent {
+  final String image;
+  final String title;
+  final String description;
+
+  OnboardingContent({
+    required this.image,
+    required this.title,
+    required this.description,
+  });
+}
+
+/// Widget to display onboarding content
+class OnboardingContentWidget extends StatelessWidget {
+  final OnboardingContent content;
+
+  const OnboardingContentWidget({
+    super.key,
+    required this.content,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // Image placeholder (using icon for now)
+          Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Icon(
+              _getIconForImage(content.image),
+              size: 80,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+
+          const SizedBox(height: 50),
+
+          // Title
+          Text(
+            content.title,
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: 20),
+
+          // Description
+          Text(
+            content.description,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
+                  height: 1.5,
+                ),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Get icon based on image name
+  IconData _getIconForImage(String imageName) {
+    switch (imageName) {
+      case 'onboarding1.png':
+        return Icons.agriculture;
+      case 'onboarding2.png':
+        return Icons.wb_sunny;
+      case 'onboarding3.png':
+        return Icons.groups;
+      default:
+        return Icons.agriculture;
+    }
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\onboarding\onboarding_screen.dart
+
+import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
+import '../../widgets/custom_button.dart';
+import 'onboarding_content.dart';
+
+/// Onboarding screen with three slides
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  /// List of onboarding content
+  final List<OnboardingContent> _contents = [
+    OnboardingContent(
+      image: 'onboarding1.png',
+      title: AppStrings.onboarding1Title,
+      description: AppStrings.onboarding1Description,
+    ),
+    OnboardingContent(
+      image: 'onboarding2.png',
+      title: AppStrings.onboarding2Title,
+      description: AppStrings.onboarding2Description,
+    ),
+    OnboardingContent(
+      image: 'onboarding3.png',
+      title: AppStrings.onboarding3Title,
+      description: AppStrings.onboarding3Description,
+    ),
+  ];
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  /// Navigate to next page or login screen
+  void _nextPage() {
+    if (_currentPage < _contents.length - 1) {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    } else {
+      _navigateToLogin();
+    }
+  }
+
+  /// Skip onboarding and go to login
+  void _skipOnboarding() {
+    _navigateToLogin();
+  }
+
+  /// Navigate to login screen
+  void _navigateToLogin() {
+    Navigator.pushReplacementNamed(context, '/login');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Skip button
+            Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextButton(
+                  onPressed: _skipOnboarding,
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            // Page view
+            Expanded(
+              child: PageView.builder(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                itemCount: _contents.length,
+                itemBuilder: (context, index) {
+                  return OnboardingContentWidget(
+                    content: _contents[index],
+                  );
+                },
+              ),
+            ),
+
+            // Page indicators
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  _contents.length,
+                  (index) => _buildPageIndicator(index),
+                ),
+              ),
+            ),
+
+            // Next/Get Started button
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: CustomButton(
+                text: _currentPage == _contents.length - 1
+                    ? 'Get Started'
+                    : 'Next',
+                onPressed: _nextPage,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Build page indicator dot
+  Widget _buildPageIndicator(int index) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      width: _currentPage == index ? 12 : 8,
+      height: 8,
+      decoration: BoxDecoration(
+        color: _currentPage == index
+            ? AppColors.primaryGreen
+            : AppColors.grey.withValues(alpha: 0.3),
+        borderRadius: BorderRadius.circular(4),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\screens\settings\change_password_screen.dart
+
+// lib/screens/settings/change_password_screen.dart
+import 'package:flutter/material.dart';
+// --- âš ï¸ à¦¸à¦®à¦¾à¦§à¦¾à¦¨: à¦‡à¦®à§à¦ªà§‹à¦°à§à¦Ÿà¦Ÿà¦¿ à¦ à¦¿à¦• à¦•à¦°à¦¾ à¦¹à§Ÿà§‡à¦›à§‡ ---
+import '../../services/auth_service.dart';
+
+class ChangePasswordScreen extends StatefulWidget {
+  const ChangePasswordScreen({super.key});
+
+  @override
+  State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();
+}
+
+class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _authService = AuthService();
+  bool _isLoading = false;
+  bool _obscureCurrent = true;
+  bool _obscureNew = true;
+  bool _obscureConfirm = true;
+
+  final _currentPasswordController = TextEditingController();
+  final _newPasswordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _currentPasswordController.dispose();
+    _newPasswordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleChangePassword() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      await _authService.changePassword(
+        _currentPasswordController.text,
+        _newPasswordController.text,
+      );
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('Password changed successfully!'),
+              backgroundColor: Colors.green),
+        );
+        Navigator.pop(context);
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString()), backgroundColor: Colors.red),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  // --- à¦¨à¦¤à§à¦¨ à¦«à¦¾à¦‚à¦¶à¦¨ ---
+  // à¦à¦‡ à¦«à¦¾à¦‚à¦¶à¦¨à¦Ÿà¦¿ à¦ªà¦¾à¦¸à¦“à¦¯à¦¼à¦¾à¦°à§à¦¡ à¦°à¦¿à¦¸à§‡à¦Ÿ à¦‡à¦®à§‡à¦‡à¦² à¦ªà¦¾à¦ à¦¾à¦¬à§‡
+  Future<void> _handleForgotPassword() async {
+    // à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦‡à¦‰à¦œà¦¾à¦°à§‡à¦° à¦‡à¦®à§‡à¦‡à¦² à¦ªà¦¾à¦¨
+    final user = _authService.currentFirebaseUser;
+    if (user == null || user.email == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('Could not find user email.'),
+            backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    try {
+      // AuthService à¦¥à§‡à¦•à§‡ sendPasswordResetEmail à¦«à¦¾à¦‚à¦¶à¦¨à¦Ÿà¦¿ à¦•à¦² à¦•à¦°à§à¦¨
+      await _authService.sendPasswordResetEmail(user.email!);
+      if (mounted) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('Email Sent'),
+            content: Text(
+                'A password reset link has been sent to ${user.email!}. Please check your inbox.'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString()), backgroundColor: Colors.red),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Change Password'),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Current Password
+              TextFormField(
+                controller: _currentPasswordController,
+                obscureText: _obscureCurrent,
+                decoration: InputDecoration(
+                  labelText: 'Current Password',
+                  prefixIcon: const Icon(Icons.lock_outline),
+                  suffixIcon: IconButton(
+                    icon: Icon(_obscureCurrent
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () =>
+                        setState(() => _obscureCurrent = !_obscureCurrent),
+                  ),
+                ),
+                validator: (value) =>
+                    (value == null || value.isEmpty) ? 'Cannot be empty' : null,
+              ),
+
+              // --- à¦¨à¦¤à§à¦¨ à¦¬à¦¾à¦Ÿà¦¨ à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡ ---
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed:
+                        _handleForgotPassword, // à¦¨à¦¤à§à¦¨ à¦«à¦¾à¦‚à¦¶à¦¨à¦Ÿà¦¿ à¦à¦–à¦¾à¦¨à§‡ à¦•à¦² à¦•à¦°à§à¦¨
+                    child: const Text('Forgot Current Password?'),
+                  ),
+                ),
+              ),
+              // --- à¦¶à§‡à¦· ---
+
+              const SizedBox(height: 16), // à¦à¦•à¦Ÿà¦¿ à¦—à§à¦¯à¦¾à¦ª à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¹à¦¯à¦¼à§‡à¦›à§‡
+
+              // New Password
+              TextFormField(
+                controller: _newPasswordController,
+                obscureText: _obscureNew,
+                decoration: InputDecoration(
+                  labelText: 'New Password',
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                        _obscureNew ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () => setState(() => _obscureNew = !_obscureNew),
+                  ),
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) return 'Cannot be empty';
+                  if (value.length < 6) return 'Must be at least 6 characters';
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16),
+
+              // Confirm New Password
+              TextFormField(
+                controller: _confirmPasswordController,
+                obscureText: _obscureConfirm,
+                decoration: InputDecoration(
+                  labelText: 'Confirm New Password',
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    icon: Icon(_obscureConfirm
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () =>
+                        setState(() => _obscureConfirm = !_obscureConfirm),
+                  ),
+                ),
+                validator: (value) {
+                  if (value != _newPasswordController.text) {
+                    return 'Passwords do not match';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 32),
+
+              ElevatedButton(
+                onPressed: _isLoading ? null : _handleChangePassword,
+                child: _isLoading
+                    ? const SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(
+                            strokeWidth: 2, color: Colors.white))
+                    : const Text('Update Password'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\auth_service.dart
+
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../models/user_model.dart';
+
+class AuthService {
+  final firebase_auth.FirebaseAuth _auth = firebase_auth.FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  // Get current Firebase user
+  firebase_auth.User? get currentFirebaseUser => _auth.currentUser;
+
+  // Get current user stream
+  Stream<firebase_auth.User?> get authStateChanges => _auth.authStateChanges();
+
+  // Get current user ID
+  String? get currentUserId => _auth.currentUser?.uid;
+
+  /// Login with email and password
+  Future<bool> login(String email, String password) async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return true;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw Exception('Login failed: ${e.toString()}');
+    }
+  }
+
+  /// Signup with email and password
+  Future<bool> signup(
+    String fullName,
+    String email,
+    String password, {
+    String? phoneNumber,
+  }) async {
+    try {
+      // Create user in Firebase Auth
+      final userCredential = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      // Create user document in Firestore
+      await _firestore.collection('users').doc(userCredential.user!.uid).set({
+        'name': fullName,
+        'email': email,
+        'phone': phoneNumber,
+        'district': null,
+        'upazila': null,
+        'createdAt': DateTime.now().toIso8601String(),
+      });
+
+      return true;
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw Exception('Signup failed: ${e.toString()}');
+    }
+  }
+
+  /// Logout
+  Future<void> logout() async {
+    await _auth.signOut();
+  }
+
+  /// Send password reset email
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw Exception('Failed to send password reset email: ${e.toString()}');
+    }
+  }
+
+  /// Change password
+  Future<void> changePassword(
+      String currentPassword, String newPassword) async {
+    try {
+      final user = _auth.currentUser;
+      if (user == null || user.email == null) {
+        throw Exception('No user is currently signed in');
+      }
+
+      // Re-authenticate the user
+      final credential = firebase_auth.EmailAuthProvider.credential(
+        email: user.email!,
+        password: currentPassword,
+      );
+
+      await user.reauthenticateWithCredential(credential);
+      await user.updatePassword(newPassword);
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw Exception('Failed to change password: ${e.toString()}');
+    }
+  }
+
+  /// Get current user data from Firestore
+  Future<User?> getCurrentUser() async {
+    try {
+      final userId = currentUserId;
+      if (userId == null) return null;
+
+      final doc = await _firestore.collection('users').doc(userId).get();
+      if (!doc.exists) return null;
+
+      return User.fromFirestore(doc.data()!, userId);
+    } catch (e) {
+      throw Exception('Failed to get user data: ${e.toString()}');
+    }
+  }
+
+  /// Update user profile
+  Future<void> updateUserProfile({
+    String? name,
+    String? phone,
+    String? district,
+    String? upazila,
+  }) async {
+    try {
+      final userId = currentUserId;
+      if (userId == null) {
+        throw Exception('No user is currently signed in');
+      }
+
+      Map<String, dynamic> updateData = {};
+      if (name != null) updateData['name'] = name;
+      if (phone != null) updateData['phone'] = phone;
+      if (district != null) updateData['district'] = district;
+      if (upazila != null) updateData['upazila'] = upazila;
+
+      if (updateData.isNotEmpty) {
+        await _firestore.collection('users').doc(userId).update(updateData);
+      }
+    } catch (e) {
+      throw Exception('Failed to update profile: ${e.toString()}');
+    }
+  }
+
+  /// Get user by ID
+  Future<User?> getUserById(String userId) async {
+    try {
+      final doc = await _firestore.collection('users').doc(userId).get();
+      if (!doc.exists) return null;
+
+      return User.fromFirestore(doc.data()!, userId);
+    } catch (e) {
+      throw Exception('Failed to get user: ${e.toString()}');
+    }
+  }
+
+  /// Check if user is logged in
+  bool get isLoggedIn => _auth.currentUser != null;
+
+  /// Handle Firebase Auth exceptions
+  String _handleAuthException(firebase_auth.FirebaseAuthException e) {
+    switch (e.code) {
+      case 'user-not-found':
+        return 'No user found with this email.';
+      case 'wrong-password':
+        return 'Wrong password provided.';
+      case 'email-already-in-use':
+        return 'An account already exists with this email.';
+      case 'invalid-email':
+        return 'Invalid email address.';
+      case 'weak-password':
+        return 'Password should be at least 6 characters.';
+      case 'user-disabled':
+        return 'This account has been disabled.';
+      case 'too-many-requests':
+        return 'Too many attempts. Please try again later.';
+      case 'operation-not-allowed':
+        return 'Email/password accounts are not enabled.';
+      case 'invalid-credential':
+        return 'The provided credentials are invalid.';
+      default:
+        return 'Authentication error: ${e.message ?? "Unknown error"}';
+    }
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\product_service.dart
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:krishi_bondhu_app_bd/models/product_model.dart';
+
+class ProductService {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final String _collection = 'products';
+
+  /// Create a new product listing
+  Future<void> createProduct(Product product) async {
+    try {
+      await _firestore.collection(_collection).add(product.toJson());
+    } catch (e) {
+      throw Exception('Failed to create product listing: $e');
+    }
+  }
+
+  /// Update an existing product
+  Future<void> updateProduct(
+      String productId, Map<String, dynamic> data) async {
+    try {
+      await _firestore.collection(_collection).doc(productId).update(data);
+    } catch (e) {
+      throw Exception('Failed to update product: $e');
+    }
+  }
+
+  /// Get all products (for the marketplace)
+  Stream<List<Product>> getAllProducts() {
+    return _firestore
+        .collection(_collection)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => Product.fromJson(doc.data(), doc.id))
+          .toList();
+    });
+  }
+
+  /// Get products by category
+  Stream<List<Product>> getProductsByCategory(String category) {
+    return _firestore
+        .collection(_collection)
+        .where('category', isEqualTo: category)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => Product.fromJson(doc.data(), doc.id))
+          .toList();
+    });
+  }
+
+  /// Get products for a specific user (for "My Listings")
+  Stream<List<Product>> getProductsForUser(String userId) {
+    return _firestore
+        .collection(_collection)
+        .where('sellerId', isEqualTo: userId)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => Product.fromJson(doc.data(), doc.id))
+          .toList();
+    });
+  }
+
+  /// Get a single product by ID
+  Future<Product?> getProductById(String productId) async {
+    try {
+      final doc = await _firestore.collection(_collection).doc(productId).get();
+      if (doc.exists && doc.data() != null) {
+        return Product.fromJson(doc.data()!, doc.id);
+      }
+      return null;
+    } catch (e) {
+      throw Exception('Failed to get product: $e');
+    }
+  }
+
+  /// Delete a product
+  Future<void> deleteProduct(Product product) async {
+    if (product.id == null || product.id!.isEmpty) {
+      throw Exception('Product ID is null or empty');
+    }
+
+    try {
+      // Delete from Firestore
+      await _firestore.collection(_collection).doc(product.id).delete();
+
+      // Note: ImgBB free API doesn't support image deletion
+      // Images will remain on ImgBB but won't be linked to any product
+    } catch (e) {
+      throw Exception('Failed to delete product: $e');
+    }
+  }
+
+  /// Search products by name
+  Stream<List<Product>> searchProducts(String query) {
+    final lowercaseQuery = query.toLowerCase();
+    return _firestore
+        .collection(_collection)
+        .orderBy('productName')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => Product.fromJson(doc.data(), doc.id))
+          .where((product) =>
+              product.productName.toLowerCase().contains(lowercaseQuery))
+          .toList();
+    });
+  }
+
+  /// Get products by location (district)
+  Stream<List<Product>> getProductsByDistrict(String district) {
+    return _firestore
+        .collection(_collection)
+        .where('sellerDistrict', isEqualTo: district)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs
+          .map((doc) => Product.fromJson(doc.data(), doc.id))
+          .toList();
+    });
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\storage_service.dart
+
+import 'dart:io';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class StorageService {
+  final String _imgbbApiKey =
+      "14de6aa76a479b81224e18a9087f5bac"; // <-- Make sure your API key is here
+
+  // This function now uploads a *list* of images
+  Future<List<String>> uploadMultipleImages(List<File> images) async {
+    List<String> imageUrls = [];
+    try {
+      for (File image in images) {
+        String url = await _uploadSingleImage(image);
+        imageUrls.add(url);
+      }
+      return imageUrls;
+    } catch (e) {
+      print("Error uploading multiple images: $e");
+      throw Exception('Image upload failed');
+    }
+  }
+
+  // This is your old function, renamed
+  Future<String> _uploadSingleImage(File image) async {
+    final uri = Uri.parse('https://api.imgbb.com/1/upload?key=$_imgbbApiKey');
+    var request = http.MultipartRequest('POST', uri);
+    var file = await http.MultipartFile.fromPath('image', image.path);
+    request.files.add(file);
+
+    var response = await request.send();
+    var responseBody = await response.stream.bytesToString();
+
+    if (response.statusCode == 200) {
+      var jsonResponse = json.decode(responseBody);
+      return jsonResponse['data']['url'];
+    } else {
+      print('ImgBB Error: $responseBody');
+      throw Exception('Image upload failed');
+    }
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\services\weather_service.dart
+
+import '../models/weather_model.dart';
+
+/// Service to handle weather data
+class WeatherService {
+  static final WeatherService _instance = WeatherService._internal();
+  factory WeatherService() => _instance;
+  WeatherService._internal();
+
+  /// Get current weather data
+  /// In a real app, this would fetch from a weather API
+  Future<Weather> getCurrentWeather() async {
+    // Simulate API call delay
+    await Future.delayed(const Duration(seconds: 1));
+
+    // Return mock data for demo
+    return Weather.mock();
+  }
+
+  /// Get weather forecast for next days
+  Future<List<Weather>> getWeatherForecast({int days = 7}) async {
+    await Future.delayed(const Duration(seconds: 1));
+
+    // Generate mock forecast data
+    final List<Weather> forecast = [];
+    final now = DateTime.now();
+
+    for (int i = 0; i < days; i++) {
+      forecast.add(Weather(
+        temperature: 25.0 + (i * 2) + (DateTime.now().millisecond % 10),
+        condition: _getRandomCondition(),
+        location: 'Dhaka, Bangladesh',
+        humidity: 60 + (i * 5),
+        windSpeed: 10.0 + (i * 1.5),
+        icon: _getRandomIcon(),
+        lastUpdated: now.add(Duration(days: i)),
+      ));
+    }
+
+    return forecast;
+  }
+
+  /// Get random weather condition for mock data
+  String _getRandomCondition() {
+    final conditions = [
+      'Sunny',
+      'Partly Cloudy',
+      'Cloudy',
+      'Rainy',
+      'Thunderstorm'
+    ];
+    return conditions[DateTime.now().millisecond % conditions.length];
+  }
+
+  /// Get random weather icon for mock data
+  String _getRandomIcon() {
+    final icons = ['sunny', 'partly_cloudy', 'cloudy', 'rainy', 'thunderstorm'];
+    return icons[DateTime.now().millisecond % icons.length];
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\utils\constants.dart
+
+import 'package:flutter/material.dart';
+
+/// Application constants and color definitions
+class AppColors {
+  // Primary colors
+  static const Color primaryGreen = Color(0xFF4CAF50);
+  static const Color darkGreen = Color(0xFF388E3C);
+  static const Color lightGreen = Color(0xFFC8E6C9);
+
+  // Neutral colors
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+  static const Color grey = Colors.grey;
+  static const Color lightGrey = Color(0xFFF5F5F5);
+  static const Color cardBackground = Color(0xFFF8F9FA);
+  static const Color textSecondary = Color(0xFF757575); // âœ… Added
+
+  // Accent colors
+  static const Color accentOrange = Color(0xFFFF9800); // âœ… Added
+  static const Color accentBlue = Color(0xFF2196F3); // âœ… Added
+}
+
+/// Text style constants
+class AppTextStyles {
+  static const TextStyle heading1 = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
+  static const TextStyle heading2 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle heading3 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle subtitle = TextStyle(
+    fontSize: 16,
+    color: AppColors.grey,
+  );
+
+  static const TextStyle body = TextStyle(
+    fontSize: 14,
+    color: AppColors.black,
+  );
+
+  static const TextStyle caption = TextStyle(
+    fontSize: 12,
+    color: AppColors.grey,
+  );
+}
+
+/// App string constants
+class AppStrings {
+  static const String appName = 'KrishiBondhu';
+  static const String tagline = 'Empowering Farmers, Growing Together';
+
+  // Dashboard
+  static const String welcomeMessage = 'Welcome back,';
+  static const String dashboard = 'Dashboard';
+  static const String quickActions = 'Quick Actions';
+  static const String recentActivity = 'Recent Activity';
+  static const String weatherToday = 'Today\'s Weather';
+
+  // Quick Actions
+  static const String cropManagement = 'Crop Management';
+  static const String weatherForecast = 'Weather Forecast';
+  static const String marketPrices = 'Market Prices';
+  static const String expertAdvice = 'Expert Advice';
+  static const String communityForum = 'Community Forum';
+  static const String pestControl = 'Pest Control';
+
+  // Navigation
+  static const String profile = 'Profile';
+  static const String settings = 'Settings';
+  static const String logout = 'Logout';
+
+  // Onboarding
+  static const String onboarding1Title = 'Welcome to KrishiBondhu';
+  static const String onboarding1Description =
+      'Your digital companion for modern farming and agricultural solutions.';
+
+  static const String onboarding2Title = 'Smart Farming Solutions';
+  static const String onboarding2Description =
+      'Get expert advice, weather updates, and crop management tools.';
+
+  static const String onboarding3Title = 'Connect with Community';
+  static const String onboarding3Description =
+      'Join thousands of farmers sharing knowledge and experiences.';
+
+  // Authentication
+  static const String login = 'Login';
+  static const String signup = 'Sign Up';
+  static const String email = 'Email';
+  static const String password = 'Password';
+  static const String fullName = 'Full Name';
+  static const String phoneNumber = 'Phone Number';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String dontHaveAccount = "Don't have an account?";
+  static const String alreadyHaveAccount = 'Already have an account?';
+
+  // Common
+  static const String loading = 'Loading...';
+  static const String error = 'Error';
+  static const String success = 'Success';
+  static const String cancel = 'Cancel';
+  static const String ok = 'OK';
+  static const String save = 'Save';
+  static const String delete = 'Delete';
+}
+
+/// App constants
+class AppConstants {
+  static const double defaultPadding = 16.0;
+  static const double defaultBorderRadius = 12.0;
+  static const Duration defaultAnimationDuration = Duration(milliseconds: 300);
+}
+
+/// Dashboard action items
+class QuickActionItem {
+  final String title;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onTap;
+
+  const QuickActionItem({
+    required this.title,
+    required this.icon,
+    required this.color,
+    required this.onTap,
+  });
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\utils\validators.dart
+
+import 'package:email_validator/email_validator.dart';
+
+/// Form validation utilities
+class Validators {
+  /// Validate email format
+  static String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Email is required';
+    }
+    if (!EmailValidator.validate(value)) {
+      return 'Please enter a valid email';
+    }
+    return null;
+  }
+
+  /// Validate password strength
+  static String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required';
+    }
+    if (value.length < 8) {
+      return 'Password must be at least 8 characters';
+    }
+    return null;
+  }
+
+  /// Validate required fields
+  static String? validateRequired(String? value, String fieldName) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required';
+    }
+    return null;
+  }
+
+  /// Validate phone number
+  static String? validatePhoneNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone number is required';
+    }
+    if (value.length < 10) {
+      return 'Please enter a valid phone number';
+    }
+    return null;
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\widgets\custom_button.dart
+
+import 'package:flutter/material.dart';
+import '../utils/constants.dart';
+
+/// Custom elevated button widget with loading state
+class CustomButton extends StatelessWidget {
+  final String text;
+  final VoidCallback? onPressed;
+  final bool isLoading;
+  final Color? backgroundColor;
+  final Color? textColor;
+  final double? width;
+  final EdgeInsets? margin;
+
+  const CustomButton({
+    super.key,
+    required this.text,
+    this.onPressed,
+    this.isLoading = false,
+    this.backgroundColor,
+    this.textColor,
+    this.width,
+    this.margin,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width ?? double.infinity,
+      margin: margin,
+      child: ElevatedButton(
+        onPressed: isLoading ? null : onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor ?? AppColors.primaryGreen,
+          foregroundColor: textColor ?? AppColors.white,
+          disabledBackgroundColor: AppColors.grey,
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: isLoading
+            ? const SizedBox(
+                height: 20,
+                width: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
+                ),
+              )
+            : Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\widgets\custom_text_field.dart
+
+import 'package:flutter/material.dart';
+import '../utils/constants.dart';
+
+/// Custom text form field with validation
+class CustomTextField extends StatefulWidget {
+  final String label;
+  final String? hint;
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
+  final TextInputType keyboardType;
+  final bool obscureText;
+  final bool isPassword;
+  final IconData? prefixIcon;
+  final EdgeInsets? margin;
+  final int? maxLines;
+
+  const CustomTextField({
+    super.key,
+    required this.label,
+    this.hint,
+    required this.controller,
+    this.validator,
+    this.keyboardType = TextInputType.text,
+    this.obscureText = false,
+    this.isPassword = false,
+    this.prefixIcon,
+    this.margin,
+    this.maxLines = 1,
+  });
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool _isObscured = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isObscured = widget.obscureText || widget.isPassword;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: widget.margin ?? const EdgeInsets.only(bottom: 16),
+      child: TextFormField(
+        controller: widget.controller,
+        validator: widget.validator,
+        keyboardType: widget.keyboardType,
+        obscureText: _isObscured,
+        maxLines: widget.maxLines,
+        decoration: InputDecoration(
+          labelText: widget.label,
+          hintText: widget.hint ?? widget.label,
+          prefixIcon: widget.prefixIcon != null
+              ? Icon(widget.prefixIcon, color: AppColors.primaryGreen)
+              : null,
+          suffixIcon: widget.isPassword
+              ? IconButton(
+                  icon: Icon(
+                    _isObscured ? Icons.visibility : Icons.visibility_off,
+                    color: AppColors.grey,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _isObscured = !_isObscured;
+                    });
+                  },
+                )
+              : null,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: AppColors.grey),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide:
+                const BorderSide(color: AppColors.primaryGreen, width: 2),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Colors.red),
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\test\widget_test.dart
+
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility in the flutter_test package. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:krishi_bondhu_app_bd/main.dart';
+
+void main() {
+  testWidgets('KrishiBondhu app creates MaterialApp with correct title',
+      (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester
+        .pumpWidget(const KrishiBondhuApp()); // âœ… Fixed: KrishiBondhuApp
+
+    // Verify that the MaterialApp is created
+    expect(find.byType(MaterialApp), findsOneWidget);
+
+    // Verify that the app title is correct
+    final MaterialApp materialApp =
+        tester.widget<MaterialApp>(find.byType(MaterialApp));
+    expect(materialApp.title, 'KrishiBondhu');
+
+    // Verify that debug banner is disabled
+    expect(materialApp.debugShowCheckedModeBanner, false);
+  });
+}
+
+
+

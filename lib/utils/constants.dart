@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 
 /// Application constants and color definitions
 class AppColors {
+  // Primary colors
   static const Color primaryGreen = Color(0xFF4CAF50);
   static const Color darkGreen = Color(0xFF388E3C);
   static const Color lightGreen = Color(0xFFC8E6C9);
+
+  // Neutral colors
   static const Color white = Colors.white;
   static const Color black = Colors.black;
   static const Color grey = Colors.grey;
   static const Color lightGrey = Color(0xFFF5F5F5);
   static const Color cardBackground = Color(0xFFF8F9FA);
+  static const Color textSecondary = Color(0xFF757575); // ✅ Added
+
+  // Accent colors
+  static const Color accentOrange = Color(0xFFFF9800); // ✅ Added
+  static const Color accentBlue = Color(0xFF2196F3); // ✅ Added
 }
 
 /// Text style constants
@@ -96,6 +104,22 @@ class AppStrings {
   static const String forgotPassword = 'Forgot Password?';
   static const String dontHaveAccount = "Don't have an account?";
   static const String alreadyHaveAccount = 'Already have an account?';
+
+  // Common
+  static const String loading = 'Loading...';
+  static const String error = 'Error';
+  static const String success = 'Success';
+  static const String cancel = 'Cancel';
+  static const String ok = 'OK';
+  static const String save = 'Save';
+  static const String delete = 'Delete';
+}
+
+/// App constants
+class AppConstants {
+  static const double defaultPadding = 16.0;
+  static const double defaultBorderRadius = 12.0;
+  static const Duration defaultAnimationDuration = Duration(milliseconds: 300);
 }
 
 /// Dashboard action items
@@ -103,12 +127,12 @@ class QuickActionItem {
   final String title;
   final IconData icon;
   final Color color;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
 
-  QuickActionItem({
+  const QuickActionItem({
     required this.title,
     required this.icon,
     required this.color,
-    this.onTap,
+    required this.onTap,
   });
 }

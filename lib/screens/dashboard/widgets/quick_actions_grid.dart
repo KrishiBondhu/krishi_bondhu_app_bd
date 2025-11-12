@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
+import 'package:krishi_bondhu_app_bd/screens/market/market_price_screen.dart';
+// === 1. IMPORT YOUR NEW SCREEN ===
+import 'package:krishi_bondhu_app_bd/screens/market/buy_sell_screen.dart';
 
 /// Grid of quick action buttons for dashboard
 class QuickActionsGrid extends StatelessWidget {
@@ -42,12 +45,12 @@ class QuickActionsGrid extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: action.color.withValues(alpha: 0.1),
+            color: action.color.withOpacity(0.1),
             blurRadius: 15,
             offset: const Offset(0, 5),
           ),
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withOpacity(0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -58,7 +61,7 @@ class QuickActionsGrid extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
           onTap: action.onTap,
-          splashColor: action.color.withValues(alpha: 0.1),
+          splashColor: action.color.withOpacity(0.1),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
@@ -73,13 +76,13 @@ class QuickActionsGrid extends StatelessWidget {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          action.color.withValues(alpha: 0.15),
-                          action.color.withValues(alpha: 0.08),
+                          action.color.withOpacity(0.15),
+                          action.color.withOpacity(0.08),
                         ],
                       ),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: action.color.withValues(alpha: 0.2),
+                        color: action.color.withOpacity(0.2),
                         width: 1,
                       ),
                     ),
@@ -141,9 +144,26 @@ class QuickActionsGrid extends StatelessWidget {
         icon: Icons.trending_up,
         color: Colors.blue,
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Market Prices feature coming soon!')),
+          // --- ⚠️ ভুলটি এখানে ঠিক করা হয়েছে ---
+          // এখন এটি সরাসরি MarketPriceScreen-এ যাবে
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MarketPriceScreen()),
           );
+        },
+      ),
+      // ✅ নতুন "Buy & Sell" action যোগ করা হলো
+      QuickActionItem(
+        title: 'Buy & Sell',
+        icon: Icons.shopping_cart,
+        color: Colors.deepOrange,
+        onTap: () {
+          // === 2. THIS IS THE CHANGE ===
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const BuySellScreen()),
+          );
+          // ==============================
         },
       ),
       QuickActionItem(
@@ -179,4 +199,20 @@ class QuickActionsGrid extends StatelessWidget {
       ),
     ];
   }
+}
+// ...existing code...
+
+/// Quick Action Item Model
+class QuickActionItem {
+  final String title;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onTap;
+
+  const QuickActionItem({
+    required this.title,
+    required this.icon,
+    required this.color,
+    required this.onTap,
+  });
 }

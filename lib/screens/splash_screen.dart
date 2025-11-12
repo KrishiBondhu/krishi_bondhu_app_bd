@@ -46,17 +46,17 @@ class _SplashScreenState extends State<SplashScreen>
 
     if (!mounted) return;
 
-    // Check if user has completed onboarding
+    // Check if user is logged in
     final authService = AuthService();
-    final isLoggedIn = await authService.isLoggedIn();
+    final isLoggedIn = authService.isLoggedIn; // ✅ Fixed: removed ()
 
     if (!mounted) return;
 
     if (isLoggedIn) {
-      // Navigate to main app (not implemented in this demo)
-      Navigator.pushReplacementNamed(context, '/login');
+      // Navigate to dashboard if logged in
+      Navigator.pushReplacementNamed(context, '/dashboard');
     } else {
-      // Navigate to onboarding
+      // Navigate to onboarding if not logged in
       Navigator.pushReplacementNamed(context, '/onboarding');
     }
   }
@@ -86,7 +86,8 @@ class _SplashScreenState extends State<SplashScreen>
                   borderRadius: BorderRadius.circular(60),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
+                      color: Colors.black
+                          .withValues(alpha: 0.1), // ✅ Fixed: withValues
                       spreadRadius: 5,
                       blurRadius: 20,
                       offset: const Offset(0, 5),

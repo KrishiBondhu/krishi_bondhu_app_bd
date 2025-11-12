@@ -1,4 +1,7 @@
+// filepath: C:\Users\User\AndroidStudioProjects\krishi_bondhu_app_bd\lib\main.dart
+
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart'; // <-- ১. এই লাইনটি যোগ করুন
 import 'screens/splash_screen.dart';
 import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/auth/login_screen.dart';
@@ -6,12 +9,15 @@ import 'screens/auth/signup_screen.dart';
 import 'screens/dashboard/dashboard_screen.dart';
 import 'utils/constants.dart';
 
-void main() {
-  runApp(const KrishiBondhuApp());
+void main() async { // <-- ২. এখানে 'async' যোগ করুন
+  WidgetsFlutterBinding.ensureInitialized(); // <-- ৩. এই লাইনটি যোগ করুন
+  await Firebase.initializeApp(); // <-- ৪. এই লাইনটি যোগ করুন
+runApp(const KrishiBondhuApp());
 }
 
 /// Main application widget for KrishiBondhu
 class KrishiBondhuApp extends StatelessWidget {
+// ...বাকি কোড সব একই থাকবে...
   const KrishiBondhuApp({super.key});
 
   @override

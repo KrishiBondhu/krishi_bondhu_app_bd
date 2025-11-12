@@ -5,21 +5,21 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-
-import 'package:krishibondhu/main.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:krishi_bondhu_app_bd/main.dart';
 
 void main() {
   testWidgets('KrishiBondhu app creates MaterialApp with correct title',
       (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const KrishiBondhuApp());
+    await tester
+        .pumpWidget(const KrishiBondhuApp()); // ✅ Fixed: KrishiBondhuApp
 
     // Verify that the MaterialApp is created
     expect(find.byType(MaterialApp), findsOneWidget);
 
-    // Verify that the app title is KrishiBondhu
+    // Verify that the app title is correct
     final MaterialApp materialApp =
         tester.widget<MaterialApp>(find.byType(MaterialApp));
     expect(materialApp.title, 'KrishiBondhu');

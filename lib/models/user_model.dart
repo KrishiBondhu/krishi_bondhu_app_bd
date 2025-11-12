@@ -1,55 +1,65 @@
-/// User model for the application
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class User {
   final String id;
-  final String fullName;
   final String email;
-  final String? phoneNumber;
-  final DateTime createdAt;
+  final String name;
+  final String? phone;
+  final String? district;
+  final String? upazila;
+  final DateTime? createdAt;
 
   User({
     required this.id,
-    required this.fullName,
     required this.email,
-    this.phoneNumber,
-    required this.createdAt,
+    required this.name,
+    this.phone,
+    this.district,
+    this.upazila,
+    this.createdAt,
   });
 
-  /// Create User from JSON
-  factory User.fromJson(Map<String, dynamic> json) {
+  factory User.fromFirestore(Map<String, dynamic> data, String id) {
+    final Timestamp? createdAtTimestamp = data['createdAt'] as Timestamp?;
+
     return User(
-      id: json['id'] ?? '',
-      fullName: json['fullName'] ?? '',
-      email: json['email'] ?? '',
-      phoneNumber: json['phoneNumber'],
-      createdAt:
-          DateTime.parse(json['createdAt'] ?? DateTime.now().toIso8601String()),
+      id: id,
+      email: data['email'] ?? '',
+      name: data['name'] ?? '',
+      phone: data['phone'],
+      district: data['district'],
+      upazila: data['upazila'],
+      createdAt: createdAtTimestamp?.toDate(),
     );
   }
 
-  /// Convert User to JSON
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return {
-      'id': id,
-      'fullName': fullName,
       'email': email,
-      'phoneNumber': phoneNumber,
-      'createdAt': createdAt.toIso8601String(),
+      'name': name,
+      'phone': phone,
+      'district': district,
+      'upazila': upazila,
+      'createdAt': createdAt != null ? Timestamp.fromDate(createdAt!) : null,
     };
   }
 
-  /// Create a copy of User with updated fields
   User copyWith({
     String? id,
-    String? fullName,
     String? email,
-    String? phoneNumber,
+    String? name,
+    String? phone,
+    String? district,
+    String? upazila,
     DateTime? createdAt,
   }) {
     return User(
       id: id ?? this.id,
-      fullName: fullName ?? this.fullName,
       email: email ?? this.email,
-      phoneNumber: phoneNumber ?? this.phoneNumber,
+      name: name ?? this.name,
+      phone: phone ?? this.phone,
+      district: district ?? this.district,
+      upazila: upazila ?? this.upazila,
       createdAt: createdAt ?? this.createdAt,
     );
   }

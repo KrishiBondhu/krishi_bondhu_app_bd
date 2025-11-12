@@ -33,15 +33,18 @@ class _SignupScreenState extends State<SignupScreen> {
 
   /// Handle signup process
   Future<void> _handleSignup() async {
+    // 1. Validate the form
     if (!_formKey.currentState!.validate()) {
       return;
     }
 
+    // 2. Show loading indicator
     setState(() {
       _isLoading = true;
     });
 
     try {
+      // 3. Call the signup method from AuthService
       final success = await _authService.signup(
         _fullNameController.text.trim(),
         _emailController.text.trim(),
@@ -51,33 +54,47 @@ class _SignupScreenState extends State<SignupScreen> {
             : null,
       );
 
+      // 4. Handle the result
       if (success && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Account created successfully!'),
-            backgroundColor: AppColors.primaryGreen,
-          ),
-        );
-        // Navigate to main app or login screen
-        Navigator.pushReplacementNamed(context, '/login');
-      } else if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Failed to create account'),
-            backgroundColor: Colors.red,
+        // --- SUCCESS LOGIC ---
+        // Show a success dialog and navigate to the dashboard
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => AlertDialog(
+            icon: const Icon(Icons.check_circle, size: 48, color: Colors.green),
+            title: const Text('Account Created'),
+            content: const Text(
+              'Your account has been created successfully! Welcome to KrishiBondhu.',
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pushReplacementNamed(context, '/dashboard');
+                },
+                child: const Text('Go to Dashboard'),
+              ),
+            ],
           ),
         );
       }
+      // Note: The 'else' case is handled by the catch block,
+      // because authService will throw an error on failure.
     } catch (e) {
+      // --- FAILURE LOGIC ---
+      // Show an error message if signup fails
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Signup failed: ${e.toString()}'),
+            content:
+                Text(e.toString()), // Show the actual error from AuthService
             backgroundColor: Colors.red,
           ),
         );
       }
     } finally {
+      // 5. Hide loading indicator
       if (mounted) {
         setState(() {
           _isLoading = false;
@@ -127,7 +144,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     color: Theme.of(context)
                         .colorScheme
                         .onSurface
-                        .withValues(alpha: 0.7),
+                        .withOpacity(0.7),
                   ),
                 ),
 
@@ -195,7 +212,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         color: Theme.of(context)
                             .colorScheme
                             .onSurface
-                            .withValues(alpha: 0.7),
+                            .withOpacity(0.7),
                       ),
                     ),
                     TextButton(
