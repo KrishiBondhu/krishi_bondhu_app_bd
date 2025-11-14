@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
 import 'screens/splash_screen.dart';
 import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/auth/login_screen.dart';
@@ -6,7 +8,13 @@ import 'screens/auth/signup_screen.dart';
 import 'screens/dashboard/dashboard_screen.dart';
 import 'utils/constants.dart';
 
-void main() {
+// --- THIS IS THE CORRECTED IMPORT ---
+import 'screens/weather/weather_full_screen.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('bn_BD', null);
+
   runApp(const KrishiBondhuApp());
 }
 
@@ -27,6 +35,9 @@ class KrishiBondhuApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
         '/dashboard': (context) => const DashboardScreen(),
+
+        // This line is now correct
+        '/weather': (context) => WeatherForecastScreen(),
       },
     );
   }

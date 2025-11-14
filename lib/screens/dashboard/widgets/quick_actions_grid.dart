@@ -41,48 +41,25 @@ class QuickActionsGrid extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          BoxShadow(
-            color: action.color.withValues(alpha: 0.1),
-            blurRadius: 15,
-            offset: const Offset(0, 5),
-          ),
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
+          // ... (rest of the card styling is unchanged) ...
         ],
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
-          onTap: action.onTap,
+          onTap: action.onTap, // This line correctly uses the onTap from below
           splashColor: action.color.withValues(alpha: 0.1),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
+              // ... (rest of the card layout is unchanged) ...
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Flexible(
                   child: Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          action.color.withValues(alpha: 0.15),
-                          action.color.withValues(alpha: 0.08),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: action.color.withValues(alpha: 0.2),
-                        width: 1,
-                      ),
-                    ),
+                    // ...
                     child: Icon(
                       action.icon,
                       size: 24,
@@ -94,13 +71,7 @@ class QuickActionsGrid extends StatelessWidget {
                 Flexible(
                   child: Text(
                     action.title,
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.caption.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    ),
+                    // ...
                   ),
                 ),
               ],
@@ -125,17 +96,19 @@ class QuickActionsGrid extends StatelessWidget {
           );
         },
       ),
+
+      // --- THIS IS YOUR CHANGE ---
       QuickActionItem(
         title: AppStrings.weatherForecast,
         icon: Icons.wb_sunny,
         color: Colors.orange,
+        // Replace the SnackBar with your navigation
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-                content: Text('Weather Forecast feature coming soon!')),
-          );
+          Navigator.pushNamed(context, '/weather');
         },
       ),
+      // --- END OF YOUR CHANGE ---
+
       QuickActionItem(
         title: AppStrings.marketPrices,
         icon: Icons.trending_up,
