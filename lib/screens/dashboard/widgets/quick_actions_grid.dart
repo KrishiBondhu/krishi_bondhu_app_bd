@@ -164,7 +164,8 @@ class QuickActionsGrid extends StatelessWidget {
         color: Colors.purple,
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('বিশেষজ্ঞ পরামর্শ ফিচার খুব শীঘ্রই আসছে!')),
+            const SnackBar(
+                content: Text('বিশেষজ্ঞ পরামর্শ ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),
@@ -185,7 +186,8 @@ class QuickActionsGrid extends StatelessWidget {
         color: Colors.red,
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('পোকামাকড় নিয়ন্ত্রণ ফিচার খুব শীঘ্রই আসছে!')),
+            const SnackBar(
+                content: Text('পোকামাকড় নিয়ন্ত্রণ ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),

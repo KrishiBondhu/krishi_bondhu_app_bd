@@ -117,7 +117,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             icon: const Icon(Icons.search),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('অনুসন্ধান ফিচার খুব শীঘ্রই আসছে!')),
+                const SnackBar(
+                    content: Text('অনুসন্ধান ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
@@ -359,7 +360,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             onTap: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('আমার ফসল ফিচার খুব শীঘ্রই আসছে!')),
+                const SnackBar(
+                    content: Text('আমার ফসল ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
@@ -369,7 +371,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             onTap: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('বিশ্লেষণ ফিচার খুব শীঘ্রই আসছে!')),
+                const SnackBar(
+                    content: Text('বিশ্লেষণ ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
