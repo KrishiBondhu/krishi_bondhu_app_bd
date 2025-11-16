@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 const String kOpenWeatherApiKey = "4fa4e0c1e03c2e989b915bec887f48e1";
+
 /// Application constants and color definitions
 class AppColors {
   static const Color primaryGreen = Color(0xFF4CAF50);
@@ -10,6 +12,7 @@ class AppColors {
   static const Color grey = Colors.grey;
   static const Color lightGrey = Color(0xFFF5F5F5);
   static const Color cardBackground = Color(0xFFF8F9FA);
+  static const Color textSecondary = Color(0xFF757575);
 }
 
 /// Text style constants

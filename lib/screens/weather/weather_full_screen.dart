@@ -622,7 +622,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
       crossAxisCount: 2,
       mainAxisSpacing: 12,
       crossAxisSpacing: 12,
-      childAspectRatio: 1.5,
+      childAspectRatio: 1.1,
       children: [
         _buildAgriCard("বৃষ্টিপাত", "$rain মিমি", Icons.water_drop_rounded,
             Colors.blue, rain > 5 ? Colors.red[50] : Colors.blue[50]),
@@ -644,26 +644,27 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: iconColor.withOpacity(0.1), width: 1.5),
       ),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.min,
         children: [
           CircleAvatar(
               backgroundColor: iconColor.withOpacity(0.2),
-              child: Icon(icon, color: iconColor)),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(value,
-                  style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87)),
-              Text(title,
-                  style: TextStyle(fontSize: 14, color: Colors.grey[700])),
-            ],
-          )
+              radius: 20,
+              child: Icon(icon, color: iconColor, size: 20)),
+          const SizedBox(height: 8),
+          Text(value,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87)),
+          Text(title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 12, color: Colors.grey[700])),
         ],
       ),
     );
