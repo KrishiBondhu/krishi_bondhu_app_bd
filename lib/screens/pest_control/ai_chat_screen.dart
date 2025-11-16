@@ -33,7 +33,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
     // Add welcome message
     _messages.add(
       ChatMessage(
-        text: 'Hello! How can I help you today?',
+        text: 'হ্যালো! আজ আমি আপনাকে কিভাবে সাহায্য করতে পারি?',
         isUser: false,
         timestamp: DateTime.now(),
       ),
@@ -53,7 +53,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
 
     // Add user message
     final userMessage = ChatMessage(
-      text: text.isEmpty ? 'Please analyze this image' : text,
+      text: text.isEmpty ? 'অনুগ্রহ করে এই ছবিটি বিশ্লেষণ করুন' : text,
       isUser: true,
       timestamp: DateTime.now(),
       imageUrl: _selectedImage?.path,
@@ -99,7 +99,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
         _isLoading = false;
         _messages.add(
           ChatMessage(
-            text: 'Sorry, an error occurred: ${e.toString()}',
+            text: 'দুঃখিত, একটি ত্রুটি ঘটেছে: ${e.toString()}',
             isUser: false,
             timestamp: DateTime.now(),
           ),
@@ -125,7 +125,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error picking image: $e')),
+          SnackBar(content: Text('ছবি নির্বাচনে ত্রুটি: $e')),
         );
       }
     }
@@ -135,14 +135,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Choose Image Source'),
+        title: const Text('ছবির উৎস নির্বাচন করুন'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               leading:
                   const Icon(Icons.camera_alt, color: AppColors.primaryGreen),
-              title: const Text('Camera'),
+              title: const Text('ক্যামেরা'),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage(ImageSource.camera);
@@ -151,7 +151,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
             ListTile(
               leading: const Icon(Icons.photo_library,
                   color: AppColors.primaryGreen),
-              title: const Text('Gallery'),
+              title: const Text('গ্যালারি'),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage(ImageSource.gallery);
@@ -179,7 +179,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Talk to AI'),
+        title: const Text('এআই এর সাথে কথা বলুন'),
         backgroundColor: AppColors.primaryGreen,
         foregroundColor: AppColors.white,
         actions: [
@@ -190,14 +190,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
                 _messages.clear();
                 _messages.add(
                   ChatMessage(
-                    text: 'Chat cleared. How can I help you?',
+                    text: 'চ্যাট মুছে ফেলা হয়েছে। আমি কিভাবে সাহায্য করতে পারি?',
                     isUser: false,
                     timestamp: DateTime.now(),
                   ),
                 );
               });
             },
-            tooltip: 'Clear chat',
+            tooltip: 'চ্যাট মুছুন',
           ),
         ],
       ),
@@ -225,7 +225,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
                   SizedBox(width: 16),
                   CircularProgressIndicator(),
                   SizedBox(width: 16),
-                  Text('AI is thinking...'),
+                  Text('এআই চিন্তা করছে...'),
                 ],
               ),
             ),
@@ -253,7 +253,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
                   const SizedBox(width: 12),
                   const Expanded(
                     child: Text(
-                      'Image selected. Add description (optional) and send.',
+                      'ছবি নির্বাচিত। বিবরণ যোগ করুন (ঐচ্ছিক) এবং পাঠান।',
                       style: TextStyle(fontSize: 12),
                     ),
                   ),
@@ -288,15 +288,15 @@ class _AiChatScreenState extends State<AiChatScreen> {
                   icon: const Icon(Icons.add_photo_alternate),
                   color: AppColors.primaryGreen,
                   onPressed: _showImageSourceDialog,
-                  tooltip: 'Upload image',
+                  tooltip: 'ছবি আপলোড করুন',
                 ),
                 Expanded(
                   child: TextField(
                     controller: _textController,
                     decoration: InputDecoration(
                       hintText: _selectedImage != null
-                          ? 'Add description (optional)'
-                          : 'Ask about pest control...',
+                          ? 'বিবরণ যোগ করুন (ঐচ্ছিক)'
+                          : 'পোকামাকড় নিয়ন্ত্রণ সম্পর্কে জিজ্ঞাসা করুন...',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(24),
                         borderSide: BorderSide.none,

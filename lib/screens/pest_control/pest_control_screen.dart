@@ -11,7 +11,7 @@ class PestControlScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pest Control'),
+        title: const Text('পোকামাকড় নিয়ন্ত্রণ'),
         backgroundColor: AppColors.primaryGreen,
         foregroundColor: AppColors.white,
       ),
@@ -22,7 +22,7 @@ class PestControlScreen extends StatelessWidget {
           children: [
             // Header
             const Text(
-              'Choose Your Service',
+              'আপনার সেবা নির্বাচন করুন',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class PestControlScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Get expert advice on pest control and crop diseases',
+              'পোকামাকড় নিয়ন্ত্রণ এবং ফসলের রোগ সম্পর্কে বিশেষজ্ঞ পরামর্শ পান',
               style: TextStyle(
                 fontSize: 14,
                 color: AppColors.grey,
@@ -45,9 +45,9 @@ class PestControlScreen extends StatelessWidget {
             _buildFeatureCard(
               context: context,
               icon: Icons.smart_toy,
-              title: 'Talk to AI',
+              title: 'এআই এর সাথে কথা বলুন',
               description:
-                  'Chat with AI, upload crop images to detect diseases and get suggestions',
+                  'এআই এর সাথে চ্যাট করুন, ফসলের ছবি আপলোড করে রোগ সনাক্ত করুন এবং পরামর্শ পান',
               gradient: const LinearGradient(
                 colors: [Color(0xFF4CAF50), Color(0xFF388E3C)],
                 begin: Alignment.topLeft,
@@ -69,9 +69,9 @@ class PestControlScreen extends StatelessWidget {
             _buildFeatureCard(
               context: context,
               icon: Icons.article,
-              title: 'Read Blogs',
+              title: 'ব্লগ পড়ুন',
               description:
-                  'Browse articles, tips and best practices for pest control',
+                  'পোকামাকড় নিয়ন্ত্রণের জন্য নিবন্ধ, টিপস এবং সর্বোত্তম অনুশীলন দেখুন',
               gradient: const LinearGradient(
                 colors: [Color(0xFF2196F3), Color(0xFF1976D2)],
                 begin: Alignment.topLeft,

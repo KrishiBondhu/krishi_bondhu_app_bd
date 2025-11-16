@@ -45,7 +45,7 @@ class _BlogsScreenState extends State<BlogsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pest Control Blogs'),
+        title: const Text('পোকামাকড় নিয়ন্ত্রণ ব্লগ'),
         backgroundColor: AppColors.primaryGreen,
         foregroundColor: AppColors.white,
         actions: [
@@ -54,7 +54,7 @@ class _BlogsScreenState extends State<BlogsScreen> {
             onPressed: () {
               _controller.reload();
             },
-            tooltip: 'Refresh',
+            tooltip: 'রিফ্রেশ করুন',
           ),
         ],
       ),
