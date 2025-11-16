@@ -190,7 +190,8 @@ class _AiChatScreenState extends State<AiChatScreen> {
                 _messages.clear();
                 _messages.add(
                   ChatMessage(
-                    text: 'চ্যাট মুছে ফেলা হয়েছে। আমি কিভাবে সাহায্য করতে পারি?',
+                    text:
+                        'চ্যাট মুছে ফেলা হয়েছে। আমি কিভাবে সাহায্য করতে পারি?',
                     isUser: false,
                     timestamp: DateTime.now(),
                   ),
