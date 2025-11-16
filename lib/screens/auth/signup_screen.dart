@@ -56,9 +56,9 @@ class _SignupScreenState extends State<SignupScreen> {
           barrierDismissible: false,
           builder: (context) => AlertDialog(
             icon: const Icon(Icons.check_circle, size: 48, color: Colors.green),
-            title: const Text('Account Created'),
+            title: const Text('অ্যাকাউন্ট তৈরি হয়েছে'),
             content: const Text(
-              'Your account has been created successfully!\n\nA verification email has been sent to your email address.',
+              'আপনার অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!\n\nএকটি যাচাইকরণ ইমেইল আপনার ইমেইল ঠিকানায় পাঠানো হয়েছে।',
             ),
             actions: [
               TextButton(
@@ -66,7 +66,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   Navigator.pop(context); // Close dialog
                   Navigator.pushReplacementNamed(context, '/login');
                 },
-                child: const Text('Go to Login'),
+                child: const Text('লগইনে যান'),
               ),
             ],
           ),
@@ -95,7 +95,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Create Account'),
+        title: const Text('অ্যাকাউন্ট তৈরি করুন'),
         backgroundColor: AppColors.primaryGreen,
       ),
       body: SafeArea(
@@ -110,7 +110,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                 // Title
                 Text(
-                  'Sign Up',
+                  'নিবন্ধন করুন',
                   style: AppTextStyles.heading1.copyWith(
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryGreen,
@@ -121,7 +121,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(height: 8),
 
                 Text(
-                  'Create your account to get started',
+                  'শুরু করতে আপনার অ্যাকাউন্ট তৈরি করুন',
                   style: AppTextStyles.body.copyWith(
                     color: AppColors.textSecondary,
                   ),
@@ -134,16 +134,16 @@ class _SignupScreenState extends State<SignupScreen> {
                 TextFormField(
                   controller: _nameController,
                   decoration: const InputDecoration(
-                    labelText: 'Full Name',
-                    hintText: 'Enter your full name',
+                    labelText: 'পূর্ণ নাম',
+                    hintText: 'আপনার পূর্ণ নাম লিখুন',
                     prefixIcon: Icon(Icons.person_outline),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
+                      return 'অনুগ্রহ করে আপনার নাম লিখুন';
                     }
                     if (value.length < 3) {
-                      return 'Name must be at least 3 characters';
+                      return 'নাম অবশ্যই ৩টি অক্ষরের বেশি হতে হবে';
                     }
                     return null;
                   },
@@ -156,16 +156,16 @@ class _SignupScreenState extends State<SignupScreen> {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Enter your email',
+                    labelText: 'ইমেইল',
+                    hintText: 'আপনার ইমেইল লিখুন',
                     prefixIcon: Icon(Icons.email_outlined),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter email';
+                      return 'অনুগ্রহ করে ইমেইল লিখুন';
                     }
                     if (!value.contains('@')) {
-                      return 'Please enter valid email';
+                      return 'অনুগ্রহ করে সঠিক ইমেইল লিখুন';
                     }
                     return null;
                   },
@@ -178,8 +178,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   controller: _phoneController,
                   keyboardType: TextInputType.phone,
                   decoration: const InputDecoration(
-                    labelText: 'Phone Number (Optional)',
-                    hintText: 'Enter your phone number',
+                    labelText: 'ফোন নম্বর (ঐচ্ছিক)',
+                    hintText: 'আপনার ফোন নম্বর লিখুন',
                     prefixIcon: Icon(Icons.phone_outlined),
                   ),
                 ),
@@ -191,8 +191,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    labelText: 'Password',
-                    hintText: 'Enter your password',
+                    labelText: 'পাসওয়ার্ড',
+                    hintText: 'আপনার পাসওয়ার্ড লিখুন',
                     prefixIcon: const Icon(Icons.lock_outline),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -209,10 +209,10 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter password';
+                      return 'অনুগ্রহ করে পাসওয়ার্ড লিখুন';
                     }
                     if (value.length < 6) {
-                      return 'Password must be at least 6 characters';
+                      return 'পাসওয়ার্ড অবশ্যই ৬টি অক্ষরের বেশি হতে হবে';
                     }
                     return null;
                   },
@@ -225,8 +225,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   controller: _confirmPasswordController,
                   obscureText: _obscureConfirmPassword,
                   decoration: InputDecoration(
-                    labelText: 'Confirm Password',
-                    hintText: 'Re-enter your password',
+                    labelText: 'পাসওয়ার্ড নিশ্চিত করুন',
+                    hintText: 'আবার পাসওয়ার্ড লিখুন',
                     prefixIcon: const Icon(Icons.lock_outline),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -243,10 +243,10 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please confirm password';
+                      return 'অনুগ্রহ করে পাসওয়ার্ড নিশ্চিত করুন';
                     }
                     if (value != _passwordController.text) {
-                      return 'Passwords do not match';
+                      return 'পাসওয়ার্ড মিলছে না';
                     }
                     return null;
                   },
@@ -272,7 +272,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         )
                       : const Text(
-                          'Sign Up',
+                          'নিবন্ধন করুন',
                           style: TextStyle(fontSize: 16),
                         ),
                 ),
@@ -284,7 +284,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account? ',
+                      'ইতিমধ্যে অ্যাকাউন্ট আছে? ',
                       style: AppTextStyles.body.copyWith(
                         color: AppColors.textSecondary,
                       ),
@@ -294,7 +294,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         Navigator.pop(context);
                       },
                       child: const Text(
-                        'Login',
+                        'লগইন',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: AppColors.primaryGreen,

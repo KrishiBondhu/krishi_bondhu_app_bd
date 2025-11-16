@@ -10,14 +10,14 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const Text('সেটিংস'),
       ),
       body: ListView(
         children: [
           ListTile(
             leading: const Icon(Icons.person_outline),
-            title: const Text('Profile'),
-            subtitle: const Text('Update your district & upazila'),
+            title: const Text('প্রোফাইল'),
+            subtitle: const Text('আপনার জেলা এবং উপজেলা আপডেট করুন'),
             onTap: () {
               Navigator.push(
                 context,
@@ -29,8 +29,8 @@ class SettingsScreen extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.lock_outline),
-            title: const Text('Change Password'),
-            subtitle: const Text('Update your account password'),
+            title: const Text('পাসওয়ার্ড পরিবর্তন করুন'),
+            subtitle: const Text('আপনার অ্যাকাউন্ট পাসওয়ার্ড আপডেট করুন'),
             onTap: () {
               Navigator.push(
                 context,
@@ -42,12 +42,12 @@ class SettingsScreen extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.notifications_none),
-            title: const Text('Notifications'),
-            subtitle: const Text('Manage app notifications'),
+            title: const Text('নোটিফিকেশন'),
+            subtitle: const Text('অ্যাপ নোটিফিকেশন পরিচালনা করুন'),
             onTap: () {
               // Not implemented yet
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Feature coming soon!')),
+                const SnackBar(content: Text('ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),

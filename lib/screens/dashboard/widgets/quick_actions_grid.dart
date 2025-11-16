@@ -121,7 +121,7 @@ class QuickActionsGrid extends StatelessWidget {
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-                content: Text('Crop Management feature coming soon!')),
+                content: Text('ফসল ব্যবস্থাপনা ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),
@@ -132,7 +132,7 @@ class QuickActionsGrid extends StatelessWidget {
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-                content: Text('Weather Forecast feature coming soon!')),
+                content: Text('আবহাওয়া পূর্বাভাস ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),
@@ -146,13 +146,13 @@ class QuickActionsGrid extends StatelessWidget {
       ),
       // ✅ নতুন "Buy & Sell" action যোগ করা হলো
       QuickActionItem(
-        title: 'Buy & Sell',
+        title: 'কিনুন ও বিক্রি করুন',
         icon: Icons.shopping_cart,
         color: Colors.deepOrange,
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Buy & Sell feature coming soon!'),
+              content: Text('কিনুন ও বিক্রি ফিচার খুব শীঘ্রই আসছে!'),
               backgroundColor: Colors.deepOrange,
             ),
           );
@@ -164,7 +164,7 @@ class QuickActionsGrid extends StatelessWidget {
         color: Colors.purple,
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Expert Advice feature coming soon!')),
+            const SnackBar(content: Text('বিশেষজ্ঞ পরামর্শ ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),
@@ -175,7 +175,7 @@ class QuickActionsGrid extends StatelessWidget {
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-                content: Text('Community Forum feature coming soon!')),
+                content: Text('কমিউনিটি ফোরাম ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),
@@ -185,7 +185,7 @@ class QuickActionsGrid extends StatelessWidget {
         color: Colors.red,
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Pest Control feature coming soon!')),
+            const SnackBar(content: Text('পোকামাকড় নিয়ন্ত্রণ ফিচার খুব শীঘ্রই আসছে!')),
           );
         },
       ),

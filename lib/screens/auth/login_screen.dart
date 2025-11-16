@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 // Title
                 Text(
-                  'Welcome Back',
+                  'স্বাগতম',
                   style: AppTextStyles.heading1.copyWith(
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryGreen,
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 8),
 
                 Text(
-                  'Sign in to continue',
+                  'চালিয়ে যেতে সাইন ইন করুন',
                   style: AppTextStyles.body.copyWith(
                     color: AppColors.textSecondary,
                   ),
@@ -116,16 +116,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Enter your email',
+                    labelText: 'ইমেইল',
+                    hintText: 'আপনার ইমেইল লিখুন',
                     prefixIcon: Icon(Icons.email_outlined),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter email';
+                      return 'অনুগ্রহ করে ইমেইল লিখুন';
                     }
                     if (!value.contains('@')) {
-                      return 'Please enter valid email';
+                      return 'অনুগ্রহ করে সঠিক ইমেইল লিখুন';
                     }
                     return null;
                   },
@@ -138,8 +138,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    labelText: 'Password',
-                    hintText: 'Enter your password',
+                    labelText: 'পাসওয়ার্ড',
+                    hintText: 'আপনার পাসওয়ার্ড লিখুন',
                     prefixIcon: const Icon(Icons.lock_outline),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -156,10 +156,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter password';
+                      return 'অনুগ্রহ করে পাসওয়ার্ড লিখুন';
                     }
                     if (value.length < 6) {
-                      return 'Password must be at least 6 characters';
+                      return 'পাসওয়ার্ড অবশ্যই ৬টি অক্ষরের বেশি হতে হবে';
                     }
                     return null;
                   },
@@ -185,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         )
                       : const Text(
-                          'Login',
+                          'লগইন',
                           style: TextStyle(fontSize: 16),
                         ),
                 ),
@@ -198,7 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.pushNamed(context, '/forgot-password');
                   },
                   child: const Text(
-                    'Forgot Password?',
+                    'পাসওয়ার্ড ভুলে গেছেন?',
                     style: TextStyle(color: AppColors.primaryGreen),
                   ),
                 ),
@@ -210,7 +210,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account? ",
+                      "অ্যাকাউন্ট নেই? ",
                       style: AppTextStyles.body.copyWith(
                         color: AppColors.textSecondary,
                       ),
@@ -220,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, '/signup');
                       },
                       child: const Text(
-                        'Sign Up',
+                        'নিবন্ধন করুন',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: AppColors.primaryGreen,

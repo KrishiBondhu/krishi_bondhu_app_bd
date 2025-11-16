@@ -56,52 +56,52 @@ class AppTextStyles {
 
 /// App string constants
 class AppStrings {
-  static const String appName = 'KrishiBondhu';
-  static const String tagline = 'Empowering Farmers, Growing Together';
+  static const String appName = 'কৃষি বন্ধু';
+  static const String tagline = 'কৃষকদের ক্ষমতায়ন, একসাথে বৃদ্ধি';
 
   // Dashboard
-  static const String welcomeMessage = 'Welcome back,';
-  static const String dashboard = 'Dashboard';
-  static const String quickActions = 'Quick Actions';
-  static const String recentActivity = 'Recent Activity';
-  static const String weatherToday = 'Today\'s Weather';
+  static const String welcomeMessage = 'স্বাগতম,';
+  static const String dashboard = 'ড্যাশবোর্ড';
+  static const String quickActions = 'দ্রুত কার্যক্রম';
+  static const String recentActivity = 'সাম্প্রতিক কার্যক্রম';
+  static const String weatherToday = 'আজকের আবহাওয়া';
 
   // Quick Actions
-  static const String cropManagement = 'Crop Management';
-  static const String weatherForecast = 'Weather Forecast';
-  static const String marketPrices = 'Market Prices';
-  static const String expertAdvice = 'Expert Advice';
-  static const String communityForum = 'Community Forum';
-  static const String pestControl = 'Pest Control';
+  static const String cropManagement = 'ফসল ব্যবস্থাপনা';
+  static const String weatherForecast = 'আবহাওয়া পূর্বাভাস';
+  static const String marketPrices = 'বাজার দর';
+  static const String expertAdvice = 'বিশেষজ্ঞ পরামর্শ';
+  static const String communityForum = 'কমিউনিটি ফোরাম';
+  static const String pestControl = 'পোকামাকড় নিয়ন্ত্রণ';
 
   // Navigation
-  static const String profile = 'Profile';
-  static const String settings = 'Settings';
-  static const String logout = 'Logout';
+  static const String profile = 'প্রোফাইল';
+  static const String settings = 'সেটিংস';
+  static const String logout = 'লগআউট';
 
   // Onboarding
-  static const String onboarding1Title = 'Welcome to KrishiBondhu';
+  static const String onboarding1Title = 'কৃষি বন্ধুতে স্বাগতম';
   static const String onboarding1Description =
-      'Your digital companion for modern farming and agricultural solutions.';
+      'আধুনিক কৃষি এবং কৃষি সমাধানের জন্য আপনার ডিজিটাল সঙ্গী।';
 
-  static const String onboarding2Title = 'Smart Farming Solutions';
+  static const String onboarding2Title = 'স্মার্ট কৃষি সমাধান';
   static const String onboarding2Description =
-      'Get expert advice, weather updates, and crop management tools.';
+      'বিশেষজ্ঞ পরামর্শ, আবহাওয়া আপডেট এবং ফসল ব্যবস্থাপনা সরঞ্জাম পান।';
 
-  static const String onboarding3Title = 'Connect with Community';
+  static const String onboarding3Title = 'কমিউনিটির সাথে সংযুক্ত হন';
   static const String onboarding3Description =
-      'Join thousands of farmers sharing knowledge and experiences.';
+      'হাজার হাজার কৃষক জ্ঞান এবং অভিজ্ঞতা ভাগ করে নিচ্ছেন, তাদের সাথে যোগ দিন।';
 
   // Authentication
-  static const String login = 'Login';
-  static const String signup = 'Sign Up';
-  static const String email = 'Email';
-  static const String password = 'Password';
-  static const String fullName = 'Full Name';
-  static const String phoneNumber = 'Phone Number';
-  static const String forgotPassword = 'Forgot Password?';
-  static const String dontHaveAccount = "Don't have an account?";
-  static const String alreadyHaveAccount = 'Already have an account?';
+  static const String login = 'লগইন';
+  static const String signup = 'নিবন্ধন করুন';
+  static const String email = 'ইমেইল';
+  static const String password = 'পাসওয়ার্ড';
+  static const String fullName = 'পুরো নাম';
+  static const String phoneNumber = 'ফোন নম্বর';
+  static const String forgotPassword = 'পাসওয়ার্ড ভুলে গেছেন?';
+  static const String dontHaveAccount = "অ্যাকাউন্ট নেই?";
+  static const String alreadyHaveAccount = 'ইতিমধ্যে অ্যাকাউন্ট আছে?';
 }
 
 /// Dashboard action items

@@ -77,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: TextButton(
                   onPressed: _skipOnboarding,
                   child: const Text(
-                    'Skip',
+                    'এড়িয়ে যান',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -122,8 +122,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               padding: const EdgeInsets.all(24.0),
               child: CustomButton(
                 text: _currentPage == _contents.length - 1
-                    ? 'Get Started'
-                    : 'Next',
+                    ? 'শুরু করুন'
+                    : 'পরবর্তী',
                 onPressed: _nextPage,
               ),
             ),

@@ -56,7 +56,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Failed to load dashboard data: ${e.toString()}'),
+            content: Text('ড্যাশবোর্ড ডেটা লোড করতে ব্যর্থ: ${e.toString()}'),
             backgroundColor: Colors.red,
           ),
         );
@@ -69,16 +69,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final shouldLogout = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Logout'),
-        content: const Text('Are you sure you want to logout?'),
+        title: const Text('লগআউট'),
+        content: const Text('আপনি কি নিশ্চিত লগআউট করতে চান?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
+            child: const Text('বাতিল'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Logout'),
+            child: const Text('লগআউট'),
           ),
         ],
       ),
@@ -109,7 +109,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                    content: Text('Notifications feature coming soon!')),
+                    content: Text('নোটিফিকেশন ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
@@ -117,7 +117,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             icon: const Icon(Icons.search),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Search feature coming soon!')),
+                const SnackBar(content: Text('অনুসন্ধান ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
@@ -250,7 +250,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '🌱 Have a productive day!', // Original emoji was a seedling
+                  '🌱 উৎপাদনশীল একটি দিন কাটুক!',
                   style: AppTextStyles.body.copyWith(
                     color: AppColors.white.withOpacity(0.8),
                   ),
@@ -327,7 +327,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
                 const Text(
-                  'Farmer',
+                  'কৃষক',
                   style: TextStyle(
                     color: AppColors.white,
                     fontSize: 14,
@@ -338,12 +338,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Dashboard'),
+            title: const Text('ড্যাশবোর্ড'),
             onTap: () => Navigator.pop(context),
           ),
           ListTile(
             leading: const Icon(Icons.person),
-            title: const Text('Profile'),
+            title: const Text('প্রোফাইল'),
             onTap: () {
               Navigator.pop(context);
               // Changed this to point to Settings, as it's more direct
@@ -355,27 +355,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.agriculture),
-            title: const Text('My Crops'),
+            title: const Text('আমার ফসল'),
             onTap: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('My Crops feature coming soon!')),
+                const SnackBar(content: Text('আমার ফসল ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
           ListTile(
             leading: const Icon(Icons.analytics),
-            title: const Text('Analytics'),
+            title: const Text('বিশ্লেষণ'),
             onTap: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Analytics feature coming soon!')),
+                const SnackBar(content: Text('বিশ্লেষণ ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
+            title: const Text('সেটিংস'),
             onTap: () {
               // === THIS IS THE CHANGE ===
               Navigator.pop(context); // Close the drawer
@@ -388,18 +388,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.help_outline),
-            title: const Text('Help & Support'),
+            title: const Text('সাহায্য এবং সহায়তা'),
             onTap: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Help feature coming soon!')),
+                const SnackBar(content: Text('সাহায্য ফিচার খুব শীঘ্রই আসছে!')),
               );
             },
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),
-            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            title: const Text('লগআউট', style: TextStyle(color: Colors.red)),
             onTap: _handleLogout,
           ),
         ],

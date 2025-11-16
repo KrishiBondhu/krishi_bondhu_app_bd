@@ -134,15 +134,15 @@ class WeatherCard extends StatelessWidget {
               Expanded(
                 child: _buildInfoItem(
                   Icons.water_drop,
-                  'Humidity',
+                  'আর্দ্রতা',
                   '${weather.humidity}%',
                 ),
               ),
               Expanded(
                 child: _buildInfoItem(
                   Icons.air,
-                  'Wind',
-                  '${weather.windSpeed.round()} km/h',
+                  'বাতাস',
+                  '${weather.windSpeed.round()} কিমি/ঘণ্টা',
                 ),
               ),
             ],

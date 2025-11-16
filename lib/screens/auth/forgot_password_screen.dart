@@ -38,9 +38,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           builder: (context) => AlertDialog(
             icon: const Icon(Icons.email,
                 size: 48, color: AppColors.primaryGreen),
-            title: const Text('Email Sent'),
+            title: const Text('ইমেইল পাঠানো হয়েছে'),
             content: Text(
-              'Password reset link has been sent to ${_emailController.text}\n\nPlease check your email and click the link to reset your password.',
+              'পাসওয়ার্ড রিসেট লিঙ্ক ${_emailController.text} এ পাঠানো হয়েছে\n\nঅনুগ্রহ করে আপনার ইমেইল চেক করুন এবং পাসওয়ার্ড রিসেট করতে লিঙ্কে ক্লিক করুন।',
             ),
             actions: [
               TextButton(
@@ -48,7 +48,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   Navigator.pop(context); // Close dialog
                   Navigator.pop(context); // Go back to login
                 },
-                child: const Text('OK'),
+                child: const Text('ঠিক আছে'),
               ),
             ],
           ),
@@ -76,7 +76,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reset Password'),
+        title: const Text('পাসওয়ার্ড পুনরায় সেট করুন'),
         backgroundColor: AppColors.primaryGreen,
       ),
       body: SafeArea(
@@ -107,7 +107,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
                 // Title
                 Text(
-                  'Forgot Password?',
+                  'পাসওয়ার্ড ভুলে গেছেন?',
                   style: AppTextStyles.heading2.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -118,7 +118,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
                 // Description
                 Text(
-                  'Enter your email address and we will send you a link to reset your password.',
+                  'আপনার ইমেইল ঠিকানা লিখুন এবং আমরা আপনাকে পাসওয়ার্ড রিসেট করার জন্য একটি লিঙ্ক পাঠাব।',
                   style: AppTextStyles.body.copyWith(
                     color: AppColors.textSecondary,
                   ),
@@ -132,16 +132,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Enter your email',
+                    labelText: 'ইমেইল',
+                    hintText: 'আপনার ইমেইল লিখুন',
                     prefixIcon: Icon(Icons.email_outlined),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter email';
+                      return 'অনুগ্রহ করে ইমেইল লিখুন';
                     }
                     if (!value.contains('@')) {
-                      return 'Please enter valid email';
+                      return 'অনুগ্রহ করে সঠিক ইমেইল লিখুন';
                     }
                     return null;
                   },
@@ -167,7 +167,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           ),
                         )
                       : const Text(
-                          'Send Reset Link',
+                          'রিসেট লিঙ্ক পাঠান',
                           style: TextStyle(fontSize: 16),
                         ),
                 ),
@@ -177,7 +177,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 // Back to login
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: const Text('Back to Login'),
+                  child: const Text('লগইনে ফিরে যান'),
                 ),
               ],
             ),
