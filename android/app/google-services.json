@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "517335557294",
+    "project_id": "krishi-bondhu-app",
+    "storage_bucket": "krishi-bondhu-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517335557294:android:a504fc0ae2325b51dab93f",
+        "android_client_info": {
+          "package_name": "com.example.krishi_bondhu_app_bd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUpDVgDy5CklmNvlaBRdL1W8t26tGILxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

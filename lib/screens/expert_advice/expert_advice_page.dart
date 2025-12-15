@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:uuid/uuid.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../services/firebase_expert_service.dart';
 
 // ============================================================
 // MAIN ENTRY POINT - ROLE SELECTION
@@ -142,12 +143,6 @@ class _ExpertLoginPageState extends State<ExpertLoginPage> {
   bool _isLoading = false;
 
   @override
-  void initState() {
-    super.initState();
-    ExpertAuthService.instance.ensureInitialized();
-  }
-
-  @override
   void dispose() {
     _phoneController.dispose();
     _passwordController.dispose();
@@ -159,7 +154,7 @@ class _ExpertLoginPageState extends State<ExpertLoginPage> {
 
     setState(() => _isLoading = true);
 
-    final error = await ExpertAuthService.instance.login(
+    final error = await FirebaseExpertService.instance.login(
       phone: _phoneController.text.trim(),
       password: _passwordController.text,
     );
@@ -268,17 +263,6 @@ class _ExpertLoginPageState extends State<ExpertLoginPage> {
                     ),
                   ],
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ForgotPasswordPage(),
-                      ),
-                    );
-                  },
-                  child: const Text('পাসওয়ার্ড ভুলে গেছেন?'),
-                ),
               ],
             ),
           ),
@@ -325,7 +309,7 @@ class _ExpertSignupPageState extends State<ExpertSignupPage> {
 
     setState(() => _isLoading = true);
 
-    final error = await ExpertAuthService.instance.signUp(
+    final error = await FirebaseExpertService.instance.signUp(
       name: _nameController.text.trim(),
       phone: _phoneController.text.trim(),
       password: _passwordController.text,
@@ -485,141 +469,6 @@ class _ExpertSignupPageState extends State<ExpertSignupPage> {
 }
 
 // ============================================================
-// FORGOT PASSWORD
-// ============================================================
-
-class ForgotPasswordPage extends StatefulWidget {
-  const ForgotPasswordPage({super.key});
-
-  @override
-  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
-}
-
-class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  final _formKey = GlobalKey<FormState>();
-  final _phoneController = TextEditingController();
-  final _newPasswordController = TextEditingController();
-  bool _obscurePassword = true;
-  bool _isLoading = false;
-
-  @override
-  void dispose() {
-    _phoneController.dispose();
-    _newPasswordController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _resetPassword() async {
-    if (!_formKey.currentState!.validate()) return;
-
-    setState(() => _isLoading = true);
-
-    final error = await ExpertAuthService.instance.resetPassword(
-      phone: _phoneController.text.trim(),
-      newPassword: _newPasswordController.text,
-    );
-
-    setState(() => _isLoading = false);
-
-    if (!mounted) return;
-
-    if (error != null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(error), backgroundColor: Colors.red),
-      );
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে'),
-          backgroundColor: Colors.green,
-        ),
-      );
-      Navigator.pop(context);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('পাসওয়ার্ড রিসেট')),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.lock_reset, size: 80, color: Colors.orange),
-                const SizedBox(height: 24),
-                Text(
-                  'পাসওয়ার্ড পুনরায় সেট করুন',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                const SizedBox(height: 32),
-                TextFormField(
-                  controller: _phoneController,
-                  keyboardType: TextInputType.phone,
-                  decoration: const InputDecoration(
-                    labelText: 'ফোন নম্বর',
-                    hintText: '01XXXXXXXXX',
-                    prefixIcon: Icon(Icons.phone),
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (v) {
-                    if (v?.trim().isEmpty ?? true) return 'ফোন নম্বর দিন';
-                    if (v!.length != 11) return 'সঠিক ফোন নম্বর দিন';
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 16),
-                TextFormField(
-                  controller: _newPasswordController,
-                  obscureText: _obscurePassword,
-                  decoration: InputDecoration(
-                    labelText: 'নতুন পাসওয়ার্ড',
-                    prefixIcon: const Icon(Icons.lock),
-                    border: const OutlineInputBorder(),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        _obscurePassword
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                      ),
-                      onPressed: () =>
-                          setState(() => _obscurePassword = !_obscurePassword),
-                    ),
-                  ),
-                  validator: (v) {
-                    if (v?.trim().isEmpty ?? true) return 'নতুন পাসওয়ার্ড দিন';
-                    if (v!.length < 6) return 'কমপক্ষে ৬ অক্ষর হতে হবে';
-                    return null;
-                  },
-                ),
-                const SizedBox(height: 24),
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: FilledButton(
-                    onPressed: _isLoading ? null : _resetPassword,
-                    child: _isLoading
-                        ? const CircularProgressIndicator(color: Colors.white)
-                        : const Text('পাসওয়ার্ড পরিবর্তন করুন',
-                            style: TextStyle(fontSize: 18)),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ============================================================
 // USER DASHBOARD
 // ============================================================
 
@@ -700,7 +549,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
     );
 
     if (confirm == true) {
-      await ExpertAuthService.instance.logout();
+      await FirebaseExpertService.instance.logout();
       if (mounted) {
         Navigator.pushReplacement(
           context,
@@ -851,7 +700,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
   @override
   Widget build(BuildContext context) {
     final repo = ProblemRepository.instance;
-    final expert = ExpertAuthService.instance.currentExpert;
+    final expert = FirebaseExpertService.instance.currentExpert;
     final allProblems = [...repo.pending, ...repo.answered];
     allProblems.sort((a, b) => b.createdAt.compareTo(a.createdAt));
 
@@ -1234,7 +1083,7 @@ class _UserProblemsState extends State<_UserProblems> {
                                 child: Text(p.expertResponse ?? ''),
                               ),
                             ],
-                          ],
+                          ], // Changed from }, to ],
                         ),
                       ),
                     ],
@@ -1444,159 +1293,5 @@ class ProblemRepository extends ChangeNotifier {
     _problems.removeWhere((p) => p.id == id);
     await _save();
     notifyListeners();
-  }
-}
-
-class Expert {
-  final String id;
-  final String name;
-  final String phone;
-  final String password;
-  final String specialization;
-
-  Expert({
-    required this.id,
-    required this.name,
-    required this.phone,
-    required this.password,
-    required this.specialization,
-  });
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'phone': phone,
-        'password': password,
-        'specialization': specialization,
-      };
-
-  factory Expert.fromJson(Map<String, dynamic> json) => Expert(
-        id: json['id'],
-        name: json['name'],
-        phone: json['phone'],
-        password: json['password'],
-        specialization: json['specialization'],
-      );
-}
-
-class ExpertAuthService extends ChangeNotifier {
-  static final ExpertAuthService instance = ExpertAuthService._();
-  ExpertAuthService._();
-
-  Expert? _currentExpert;
-  final List<Expert> _experts = [];
-  bool _initialized = false;
-
-  Expert? get currentExpert => _currentExpert;
-  bool get isLoggedIn => _currentExpert != null;
-
-  Future<void> ensureInitialized() async {
-    if (_initialized) return;
-    final prefs = await SharedPreferences.getInstance();
-
-    final expertsJson = prefs.getString('experts');
-    if (expertsJson != null) {
-      final list = jsonDecode(expertsJson) as List;
-      _experts.addAll(list.map((e) => Expert.fromJson(e)));
-    }
-
-    final currentExpertJson = prefs.getString('currentExpert');
-    if (currentExpertJson != null) {
-      _currentExpert = Expert.fromJson(jsonDecode(currentExpertJson));
-    }
-
-    _initialized = true;
-    notifyListeners();
-  }
-
-  Future<void> _save() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-      'experts',
-      jsonEncode(_experts.map((e) => e.toJson()).toList()),
-    );
-    if (_currentExpert != null) {
-      await prefs.setString(
-        'currentExpert',
-        jsonEncode(_currentExpert!.toJson()),
-      );
-    }
-  }
-
-  Future<String?> signUp({
-    required String name,
-    required String phone,
-    required String password,
-    required String specialization,
-  }) async {
-    await ensureInitialized();
-
-    if (_experts.any((e) => e.phone == phone)) {
-      return 'এই ফোন নম্বর দিয়ে ইতিমধ্যে একটি অ্যাকাউন্ট রয়েছে';
-    }
-
-    final expert = Expert(
-      id: DateTime.now().millisecondsSinceEpoch.toString(),
-      name: name,
-      phone: phone,
-      password: password,
-      specialization: specialization,
-    );
-
-    _experts.add(expert);
-    _currentExpert = expert;
-    await _save();
-    notifyListeners();
-    return null;
-  }
-
-  Future<String?> login({
-    required String phone,
-    required String password,
-  }) async {
-    await ensureInitialized();
-
-    try {
-      final expert = _experts.firstWhere((e) => e.phone == phone);
-      if (expert.password != password) {
-        return 'ভুল পাসওয়ার্ড';
-      }
-      _currentExpert = expert;
-      await _save();
-      notifyListeners();
-      return null;
-    } catch (e) {
-      return 'এই ফোন নম্বর দিয়ে কোনো অ্যাকাউন্ট পাওয়া যায়নি';
-    }
-  }
-
-  Future<void> logout() async {
-    _currentExpert = null;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove('currentExpert');
-    notifyListeners();
-  }
-
-  Future<String?> resetPassword({
-    required String phone,
-    required String newPassword,
-  }) async {
-    await ensureInitialized();
-
-    try {
-      final expert = _experts.firstWhere((e) => e.phone == phone);
-      final index = _experts.indexOf(expert);
-      _experts[index] = Expert(
-        id: expert.id,
-        name: expert.name,
-        phone: expert.phone,
-        password: newPassword,
-        specialization: expert.specialization,
-      );
-      await _save();
-      return null;
-    } catch (e) {
-      return 'এই ফোন নম্বর দিয়ে কোনো অ্যাকাউন্ট পাওয়া যায়নি';
-    }
   }
 }
